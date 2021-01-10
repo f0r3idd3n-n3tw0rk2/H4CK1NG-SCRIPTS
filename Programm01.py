@@ -1,1 +1,3 @@
-print("test")
+print(True > False)
+print(True < False)
+
