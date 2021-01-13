@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 
 def print5time(line_to_print):
