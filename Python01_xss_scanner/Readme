@@ -3,6 +3,26 @@
 ##############################################################
 1.) Programm beschreiben
 ##############################################################
+
+- Befehl: python3 xss_scanner.py https://www.myserver.com/submit.php attribut1,attribut2,attribut3
+- Befehl2: python3 xss_scanner.py -h https://www.myserver.com/submit.php -f attribut1,attribut2,attribut3 -l xss_teststrings.txt
+
+Parameter MAN Liste vom Programm:
+-h      Serverhost
+-f      Field Entries Server Formular Post
+-l      Liste übergeben, durchiterieren und in eine Liste speichern
+-h      Hilfeausgabe
+
+
+------
+Jedes auszufüllende Feld auf der zu testenden Webseite soll anhand einer XSS-Test-String Liste
+getestet werden auf eine XSS Schwachstelle.
+Wenn das Feld "Vulnerable ist", also keine Eingabe Blackliste enthält, soll eine Warnmeldung im generierten Report
+ausgegeben werden.
+------
+
+
+
 - Serverschnittstelle testen
 - Http Post Requests
 POST /submit.php HTTP/1.1
@@ -35,12 +55,7 @@ complaints=%3Ch1%3Etest%3C%2Fh1%3E&
 outcome=%3Ch1%3Etest%3C%2Fh1%3E&
 signature=%3Ch1%3Etest%3C%2Fh1%3E
 
-- Befehl: python3 xss_scanner.py https://www.myserver.com/submit.php attribut1,attribut2,attribut3
 
-Jedes auszufüllende Feld auf der zu testenden Webseite soll anhand einer XSS-Test-String Liste
-getestet werden auf eine XSS Schwachstelle.
-Wenn das Feld "Vulnerable ist", also keine Eingabe Blackliste enthält, soll eine Warnmeldung im generierten Report
-ausgegeben werden.
 
 
 
@@ -57,14 +72,13 @@ ausgegeben werden.
 
 
 
-
 ##############################################################
 3.) XSS-Test-Strings einlesen
 ##############################################################
-
-
-
-
+-> xss_teststrings.txt
+1. Datei durchiterieren
+2. Liste erstellen
+3. Jede Zeile ist ein Listeneintrag
 
 
 
@@ -74,7 +88,47 @@ ausgegeben werden.
 4.) Requests vorbereiten
 ##############################################################
 
+1. Für jeden Eintrag in der XSS Liste "xss_teststrings.txt" wird ein Post Request generiert
+    und an den Server und die Felder gesendet.
+2. Jedes Feld erhält mit jedem Request den gleichen Eintrag, somit können die Einträge
+    durchiteriert werden aus der Liste und wenn ein erfolgreicher XSS Attack möglich war,
+    wird dieser später im Report gelistet.
+3. URL Encoding: https://www.w3schools.com/tags/ref_urlencode.ASP
+- %3C -> <
+- %3E -> >
+- %28 -> (
+- %27 -> '
+- %29 -> )
+- %2F -> /
 
+4. Variablen
+- $post_sub:    Postnummer hochzählen
+- $host:        -h host von Eingabe
+- $field1:       -felder hochzählen z.b. feld vorname
+
+
+
+$post_sub
+POST /submit.php  HTTP/2
+Host: "$host"
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:84.0) Gecko/20100101 Firefox/84.0
+Content-Type: application/x-www-form-urlencoded
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Content-Length: 174
+
+vorname=%3Cscript%3Ealert%28%27test1%27%29%3C%2Fscript%3E&nachname=%3Cscript%3Ealert%28%27test1%27%29%3C%2Fscript%3E&adresse=%3Cscript%3Ealert%28%27test1%27%29%3C%2Fscript%3E
+
+
+Beispiel:
+######################
+POST /submit.php  HTTP/2
+Host: www.myserver.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:84.0) Gecko/20100101 Firefox/84.0
+Content-Type: application/x-www-form-urlencoded
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Content-Length: 174
+
+vorname=%3Cscript%3Ealert%28%27test1%27%29%3C%2Fscript%3E&nachname=%3Cscript%3Ealert%28%27test1%27%29%3C%2Fscript%3E&adresse=%3Cscript%3Ealert%28%27test1%27%29%3C%2Fscript%3E
 
 
 
@@ -82,21 +136,25 @@ ausgegeben werden.
 ##############################################################
 5.) Request erstellen und absenden
 ##############################################################
+1. Request HTTP Library nutzen von Python
+https://requests.readthedocs.io/en/master/
 
+import requests
+r = requests.post
 
 
 
 ##############################################################
 6.) Response auf XSS überprüfen
 ##############################################################
-
+1. Response der Test-Strings liste "xss_teststrings.txt" überprüfen
+2. Wenn der String genauso wiederkommt wie eingegeben und kein Escape stattfindet -> Warning "Reflected XSS"
 
 
 
 ##############################################################
 7.) Erweiterung Detektierung von Angriffen
 ##############################################################
-
 
 
 
