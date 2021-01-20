@@ -1,9 +1,46 @@
-#Readme File for xss_scanner.py Python programme
+#Readme File for xss_scanner.py Python program
 
 ##############################################################
 1.) Programm beschreiben
 ##############################################################
+- Serverschnittstelle testen
+- Http Post Requests
+POST /submit.php HTTP/1.1
 
+Parameter Liste der Eingabefelder auf der Testseite
+first=%3Ch1%3Etest%3C%2Fh1%3E&
+Body	first	%3Ch1%3Etest%3C%2Fh1%3E
+
+last=%3Ch1%3Etest%3C%2Fh1%3E&
+Body	last	%3Ch1%3Etest%3C%2Fh1%3E
+
+email=%3Ch1%3Etest%3C%2Fh1%3E&
+Body	email	%3Ch1%3Etest%3C%2Fh1%3E
+
+street=%3Ch1%3Etest%3C%2Fh1%3E&
+Body	street	%3Ch1%3Etest%3C%2Fh1%3E
+
+street2=%3Ch1%3Etest%3C%2Fh1%3E&
+Body	street2	%3Ch1%3Etest%3C%2Fh1%3E
+
+city=%3Ch1%3Etest%3C%2Fh1%3E&
+Body	city	%3Ch1%3Etest%3C%2Fh1%3E
+
+region=%3Ch1%3Etest%3C%2Fh1%3E&
+Body	region	%3Ch1%3Etest%3C%2Fh1%3E
+
+postal=%3Ch1%3Etest%3C%2Fh1%3E&
+location=%3Ch1%3Etest%3C%2Fh1%3E&
+complaints=%3Ch1%3Etest%3C%2Fh1%3E&
+outcome=%3Ch1%3Etest%3C%2Fh1%3E&
+signature=%3Ch1%3Etest%3C%2Fh1%3E
+
+- Befehl: python3 xss_scanner.py https://www.myserver.com/submit.php attribut1,attribut2,attribut3
+
+Jedes auszufüllende Feld auf der zu testenden Webseite soll anhand einer XSS-Test-String Liste
+getestet werden auf eine XSS Schwachstelle.
+Wenn das Feld "Vulnerable ist", also keine Eingabe Blackliste enthält, soll eine Warnmeldung im generierten Report
+ausgegeben werden.
 
 
 
@@ -11,8 +48,11 @@
 ##############################################################
 2.) Start-Parameter lesen
 ##############################################################
-
-
+1. Parameter: Serverpfad (Domäne und Pfad) -> String
+2. Parameter: Attribute der Felder (Form.php), Liste der Post Parameter, (Komma Separierte Liste)
+3. Durchiterierung in der Liste der Attribute
+4. Einlesen der Textdatei XSS Testparameter
+5. Durchiterierung der Stringliste für die XSS Testparameter aus dem Textfile
 
 
 
@@ -21,6 +61,10 @@
 ##############################################################
 3.) XSS-Test-Strings einlesen
 ##############################################################
+
+
+
+
 
 
 
