@@ -59,9 +59,9 @@ signature=%3Ch1%3Etest%3C%2Fh1%3E
 
 
 
-
+2.) Einleseprozess
 ##############################################################
-2.) Start-Parameter lesen
+2.1) Start-Parameter lesen
 ##############################################################
 1. Parameter: Serverpfad (Domäne und Pfad) -> String
 2. Parameter: Attribute der Felder (Form.php), Liste der Post Parameter, (Komma Separierte Liste)
@@ -73,7 +73,7 @@ signature=%3Ch1%3Etest%3C%2Fh1%3E
 
 
 ##############################################################
-3.) XSS-Test-Strings einlesen
+2.2) XSS-Test-Strings einlesen
 ##############################################################
 -> xss_teststrings.txt
 1. Datei durchiterieren
@@ -83,9 +83,9 @@ signature=%3Ch1%3Etest%3C%2Fh1%3E
 
 
 
-
+3.) Vorbereitungsprozess
 ##############################################################
-4.) Requests vorbereiten
+3.1.) Requests vorbereiten
 ##############################################################
 
 1. Für jeden Eintrag in der XSS Liste "xss_teststrings.txt" wird ein Post Request generiert
@@ -133,8 +133,9 @@ vorname=%3Cscript%3Ealert%28%27test1%27%29%3C%2Fscript%3E&nachname=%3Cscript%3Ea
 
 
 
+4.0 Erstellungsprozess
 ##############################################################
-5.) Request erstellen und absenden
+4.1.) Request erstellen und absenden
 ##############################################################
 1. Request HTTP Library nutzen von Python
 https://requests.readthedocs.io/en/master/
@@ -144,8 +145,9 @@ r = requests.post
 
 
 
+5.0 Responseprozess und Überprüfung
 ##############################################################
-6.) Response auf XSS überprüfen
+5.1.) Response auf XSS überprüfen
 ##############################################################
 1. Response der Test-Strings liste "xss_teststrings.txt" überprüfen
 2. Wenn der String genauso wiederkommt wie eingegeben und kein Escape stattfindet -> Warning "Reflected XSS"
@@ -153,7 +155,7 @@ r = requests.post
 
 
 ##############################################################
-7.) Erweiterung Detektierung von Angriffen
+6.) Erweiterung Detektierung von Angriffen
 ##############################################################
 
 
