@@ -16,38 +16,17 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
-    "host", nargs="?", help="Host to perform the test on"
+    "-u", "--url", dest='target', help="Host to perform the test on"
 )
 
 parser.add_argument(
-    "-p", "--port", default=80, help="Port of webserver, usually 80", type=int
+    "-f", "--file", dest='args_file', help="Load the Payloads from a file"
 )
 
-parser.add_argument(
-    "--https",
-    dest="https",
-    action="store_true",
-    help="Use HTTPS for the requests",
-)
-
-parser.add_argument(
-    "-f",
-    "--field",
-    dest="field",
-    action="store_true",
-    help="This will be used for the field form like name, surname, city",
-)
-
-parser.add_argument(
-    "-l",
-    "--list",
-    dest="list",
-    action="store_true",
-    help="This will be used for the entry in the field form like selected from a XSS-list",
-)
-
-parser.set_defaults(https=False)
 args = parser.parse_args()
+
+
+
 
 
 
