@@ -119,13 +119,12 @@ def xss_finder():
                break
 
 
-   except Exception as err:
-        print(err)
 
 
 
 
-Menu()
+
+    Menu()
 
 
 
