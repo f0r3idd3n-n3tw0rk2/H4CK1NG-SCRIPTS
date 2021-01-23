@@ -124,8 +124,8 @@ def xss_finder():
                        pass
                break
 
-       
-    except Exception as err:
+
+   except Exception as err:
         print(err)
 
 
