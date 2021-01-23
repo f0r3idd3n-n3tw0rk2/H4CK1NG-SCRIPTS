@@ -28,10 +28,11 @@ def Menu():
               "3) ENTER FILE PATH\n "
               "4) EXIT\n"
               "\n"
-        for c in yy:
-            print(colors.y + c, end='')
-            sys.stdout.flush()
-            sleep(0.0015)
+
+
+
+
+
 
 
 
@@ -117,7 +118,7 @@ def xss_finder():
 
 
 
-
+Menu()
 
 
 
