@@ -16,42 +16,6 @@ class bcolors:
 
 
 
-#Einleseprozess
-#Parameterliste und Eingabeparser für die Initialdaten
-parser = argparse.ArgumentParser(
-    description="XSS Scanner, for the testing of Reflected XSS Vulnerabilities in Websites"
-)
-
-parser.add_argument(
-    "-u", "--url", dest='target', help="Host to perform the test on"
-)
-
-parser.add_argument(
-    "-f", "--file", dest='args_file', help="Load the Payloads from a file"
-)
-
-args = parser.parse_args()
-
-
-
-
-
-
-#Exceptionhandling
-#wenn zu wenig argumente ausgewählt werden bricht das Programm ab und gibt die Help Parameter aus
-if len(sys.argv) <= 1:
-    parser.print_help()
-    sys.exit(1)
-
-if not args.host:
-    print("Host required!")
-    parser.print_help()
-    sys.exit(1)
-
-if not args.field:
-    print("Field required!")
-    parser.print_help()
-    sys.exit(1)
 
 
 
@@ -135,6 +99,48 @@ def xss_finder():
 
 
 
+
+
+
+
+
+
+#Einleseprozess
+#Parameterliste und Eingabeparser für die Initialdaten
+parser = argparse.ArgumentParser(
+    description="XSS Scanner, for the testing of Reflected XSS Vulnerabilities in Websites"
+)
+
+parser.add_argument(
+    "-u", "--url", dest='target', help="Host to perform the test on"
+)
+
+parser.add_argument(
+    "-f", "--file", dest='args_file', help="Load the Payloads from a file"
+)
+
+args = parser.parse_args()
+
+
+
+
+
+
+#Exceptionhandling
+#wenn zu wenig argumente ausgewählt werden bricht das Programm ab und gibt die Help Parameter aus
+if len(sys.argv) <= 1:
+    parser.print_help()
+    sys.exit(1)
+
+if not args.host:
+    print("Host required!")
+    parser.print_help()
+    sys.exit(1)
+
+if not args.field:
+    print("Field required!")
+    parser.print_help()
+    sys.exit(1)
 
 
 
