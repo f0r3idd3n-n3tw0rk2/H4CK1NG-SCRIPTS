@@ -7,12 +7,34 @@ import argparse
 import sys
 import logging
 import random
+import entry
+from time import sleep
+
 
 
 
 class bcolors:
     CBLUE = '\33[34m'
     CRED = '\33[31m'
+
+
+
+def Menu():
+    while True:
+        print("XSS-TESTER")
+        yy = ("\n"
+              "1) BASIC PAYLOAD TESTSTRINGS\n"
+              "2) WORDLIST WFUZZ XSS\n"
+              "3) ENTER FILE PATH\n "
+              "4) EXIT\n"
+              "\n"
+        for c in yy:
+            print(colors.y + c, end='')
+            sys.stdout.flush()
+            sleep(0.0015)
+
+
+
 
 
 
