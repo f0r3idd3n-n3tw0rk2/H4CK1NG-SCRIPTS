@@ -5,13 +5,13 @@
 ##############################################################
 
 - Befehl: python3 xss_scanner.py https://www.myserver.com/submit.php attribut1,attribut2,attribut3
-- Befehl2: python3 xss_scanner.py -h https://www.myserver.com/submit.php -f attribut1,attribut2,attribut3 -l xss_teststrings.txt
+- Befehl2: python3 xss_scanner.py -u "https://www.myserver.com/submit.php" -f attribut1,attribut2,attribut3 -f /path/to/file/xss_teststrings.txt
 
 Parameter MAN Liste vom Programm:
--h      Serverhost
--f      Field Entries Server Formular Post
--l      Liste übergeben, durchiterieren und in eine Liste speichern
--h      Hilfeausgabe
+-u or --url      Serverhost
+-f or --file     Teststrings Payload
+-l               Liste übergeben, durchiterieren und in eine Liste speichern
+-h               Hilfeausgabe
 
 
 ------
