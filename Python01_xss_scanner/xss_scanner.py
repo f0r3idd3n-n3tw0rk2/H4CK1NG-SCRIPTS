@@ -45,11 +45,19 @@ def Menu():
 
 
 
+
+
 #Funktion XSS Finder User Agents für die User Agents Eingabe im Programm ausgewählt aus der Liste (useragent.txt)
+
+
+class IDErro(object):
+    pass
+
+
 def get_user_agent():
     try:
         lines = [line.rstrip("\n") for line in open("useragent.txt")]
-    except IDError as e:
+    except IDErro as e:
         print("User Agent error: %s" % e.strerror)
         sys.exit(1)
     return lines
