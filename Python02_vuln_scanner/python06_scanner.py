@@ -15,7 +15,7 @@ class Scanner:
         return re.findall('(?:href=")(.*?)"', response.content)
 
     def crawl(self, url):
-        href_links = self.extract_links_from(self, url)
+        href_links = self.extract_links_from(url)
         for link in href_links:
             link = urllib.parse.urljoin(url, link)
 
