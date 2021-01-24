@@ -50,12 +50,12 @@ for form in forms_list:
         for line in open("result.txt"):
 
             for match in re.finditer(pattern, line):
-                print(line)
+                print("[-]", "Webpage is vulnerable")
 
 
-        if
-        print("[-]", "Webpage is vulnerable")
-        else:
-        print("[+]", "Webpage has no XSS Vulnerability")
+       # if
+       # print("[-]", "Webpage is vulnerable")
+       # else:
+       # print("[+]", "Webpage has no XSS Vulnerability")
 
 
