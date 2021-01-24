@@ -40,9 +40,11 @@ for form in forms_list:
             input_value = "<h1>test</h1>"
         # print(input)
 
-        for input_value_dat in post_data:
+
             post_data[input_name] = input_value
-        # print(input_value)
+
+    for input_value_dat in post_data:
+        #print(input_value)
         result = requests.post(post_url, data=post_data)
         result_p_content = print(result.content)
         #print(result_p)
