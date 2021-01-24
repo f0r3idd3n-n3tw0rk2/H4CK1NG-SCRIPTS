@@ -39,8 +39,8 @@ for form in forms_list:
         post_data[input_name] = input_value
         #print(input_value)
     result = requests.post(post_url, data=post_data)
-    print(result.content)
-    x = re.search("^<h1>.*</h1>$", result.content)
+    result_p = print("Result_p:", result.content)
+    x = re.search("^<h1>.*</h1>$", result.p)
     print(x)
 
 #write the result.content in a file and save it
