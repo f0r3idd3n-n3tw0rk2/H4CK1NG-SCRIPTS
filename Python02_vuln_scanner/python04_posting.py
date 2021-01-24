@@ -37,3 +37,5 @@ for form in forms_list:
         post_data[input_name] = input_value
     result = requests.post(post_url, data=post_data)
     print(result.content)
+    if result.content is not "&lt, &gt":
+        print("Webpage is vulnerable")
