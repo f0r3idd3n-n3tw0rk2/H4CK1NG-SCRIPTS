@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import requests
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 def request(url):
 
