@@ -48,7 +48,8 @@ for form in forms_list:
 
 # read the file with all the results and check if the webpage is vulnerable
         f = open("result.txt", "r")
-        print(f.read())
+        for x in f:
+            print(x)
 
 # if
 # print("[-]", "Webpage is vulnerable")
