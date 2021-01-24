@@ -39,16 +39,9 @@ for form in forms_list:
         post_data[input_name] = input_value
         #print(input_value)
     result = requests.post(post_url, data=post_data)
-    result.p = print("Result_p:", result.content)
+    result_p = print("Result_p:", result.content)
+    print(result_p)
 
-    pattern = '^<h1>....</h1>$'
-    test_string = result.content
-    result = re.match(pattern, test_string)
-
-    if result:
-        print("Search successful.")
-    else:
-        print("Search unsuccessful.")
 
     #write the result.content in a file and save it
     with open("result.txt", "w") as text_file:
