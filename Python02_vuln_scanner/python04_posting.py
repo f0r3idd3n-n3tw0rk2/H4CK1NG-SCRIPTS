@@ -1,19 +1,17 @@
 #!/usr/bin/env python3
 
 
-
 import requests
 from bs4 import BeautifulSoup
 import urllib.parse
 import re
 
-def request(url):
 
+def request(url):
     try:
         return requests.get(url)
     except requests.exception.ConnectionError:
         pass
-
 
 
 target_url = "http://167.71.54.69/"
@@ -35,26 +33,24 @@ for form in forms_list:
         input_value = input.get("value")
         if input_type == "text":
             input_value = "<h1>test</h1>"
-        #print(input)
+        # print(input)
         post_data[input_name] = input_value
-        #print(input_value)
+        # print(input_value)
     result = requests.post(post_url, data=post_data)
-    result_p = print(result.content)
-    #print(result_p)
-    print(forms_list)
+    result_p_content = print(result.content)
+    # print(result_p)
 
-    #write the result.content in a file and save it
+
+
+    # write the result.content in a file and save it
     with open("result.txt", "w") as text_file:
-        print(result.content, file=text_file)
+        #print(result.content, file=text_file)
 
+# read the file with all the results and check if the webpage is vulnerable
+    f = open("result.txt", "r")
+    print(f.read())
 
-#read the file with all the results and check if the webpage is vulnerable
-
-
-
-       # if
-       # print("[-]", "Webpage is vulnerable")
-       # else:
-       # print("[+]", "Webpage has no XSS Vulnerability")
-
-
+# if
+# print("[-]", "Webpage is vulnerable")
+# else:
+# print("[+]", "Webpage has no XSS Vulnerability")
