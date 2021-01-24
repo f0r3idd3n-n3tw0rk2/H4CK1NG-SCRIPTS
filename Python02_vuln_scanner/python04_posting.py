@@ -45,21 +45,17 @@ for form in forms_list:
         print(result.content, file=text_file)
 
 #read the file with all the results and check if the webpage is vulnerable
+        pattern = re.compile("<h1>test</h1>")
+
+        for line in open("result.txt"):
+
+            for match in re.finditer(pattern, line):
+                print(line)
 
 
-
-
-
-
-        mylines = []  # Declare an empty list
-        with open('result.txt', 'rt') as myfile:  # Open lorem.txt for reading text.
-            for line in myfile:  # For each line of text,
-                mylines.append(line)  # add that line to the list.
-            for element in mylines:  # For each element in the list,
-                #print(element)  # print it.
-                if element == (print(mylines[0].find("table"))):
-                    print("[-]", "Webpage is vulnerable")
-                else:
-                    print("[+]", "Webpage has no XSS Vulnerability")
+        if
+        print("[-]", "Webpage is vulnerable")
+        else:
+        print("[+]", "Webpage has no XSS Vulnerability")
 
 
