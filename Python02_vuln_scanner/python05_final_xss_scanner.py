@@ -62,7 +62,7 @@ for form in forms_list:
                     print(bcolors.CBLUE, "\r\n[+++++]", "Webpage has no XSS Vulnerability", "[+++++]")
                 else:
                     print(bcolors.CRED, "\r\n[-----]", "Webpage has an XSS Vulnerability", "[-----]")
-                    print(bcolors.CRED, "\r\n[-----]", input_type)
+                    print(bcolors.CRED, "\r\n[Form_Field:]", input_type)
 
 
 
