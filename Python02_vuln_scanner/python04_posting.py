@@ -43,6 +43,13 @@ for form in forms_list:
     with open("result.txt", "w") as text_file:
         print(result.content, file=text_file)
 
+    with open('result.txt') as f:
+        if '<h1>test</h1>' in f.read():
+            print("[-]", "Webpage is vulnerable")
+        else:
+            print("[+]", "Webpage has no XSS Vulnerability")
+
+
 
 
     vuln_list = open("result.txt", "r")
@@ -50,3 +57,5 @@ for form in forms_list:
         print("[-]", "Webpage is vulnerable")
     else:
         print("[+]", "Webpage has no XSS Vulnerability")
+
+
