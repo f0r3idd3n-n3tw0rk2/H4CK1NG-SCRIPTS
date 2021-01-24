@@ -51,8 +51,8 @@ for form in forms_list:
             for line in myfile:  # For each line of text,
                 mylines.append(line)  # add that line to the list.
             for element in mylines:  # For each element in the list,
-                print(element)  # print it.
-                if element == (print(mylines[0].find("first"))):
+                #print(element)  # print it.
+                if element == (print(mylines[0].find("table"))):
                     print("[-]", "Webpage is vulnerable")
                 else:
                     print("[+]", "Webpage has no XSS Vulnerability")
