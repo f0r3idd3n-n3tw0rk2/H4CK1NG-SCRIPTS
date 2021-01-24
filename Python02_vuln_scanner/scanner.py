@@ -11,7 +11,7 @@ class Scanner:
 
     def extract_links_from(self, url):
         response = requests.get(url)
-        html = response.read()
+        html = response.read(response)
         html = html.decode('ISO-8859-1')
         return re.findall('(?:href=")(.*?)"', response.content, html)
 
