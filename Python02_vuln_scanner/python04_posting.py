@@ -55,9 +55,9 @@ for form in forms_list:
     with open("result.txt", "r") as f:
         for line in f:
             if '<h1>test</h1>' not in line:
-                print(bcolors.CBLUE, "[+]", "Webpage has no XSS Vulnerability")
+                print(bcolors.CBLUE, "\r\n[+++++]", "Webpage has no XSS Vulnerability", "[+++++]")
             else:
-                print(bcolors.CRED, "[+]", "Webpage has an XSS Vulnerability")
+                print(bcolors.CRED, "\r\n[-----]", "Webpage has an XSS Vulnerability", "[-----]")
 
 
 
