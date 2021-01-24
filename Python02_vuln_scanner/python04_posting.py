@@ -7,6 +7,11 @@ import urllib.parse
 import re
 
 
+class bcolors:
+    CBLUE = '\33[34m'
+    CRED = '\33[31m'
+
+
 def request(url):
     try:
         return requests.get(url)
@@ -50,8 +55,9 @@ for form in forms_list:
     with open("result.txt", "r") as f:
         for line in f:
             if '<h1>test</h1>' not in line:
-                print("[+]", "Webpage has no XSS Vulnerability")
+                print(bcolors.CBLUE, "[+]", "Webpage has no XSS Vulnerability")
             else:
-                print("[+]", "Webpage has an XSS Vulnerability")
+                print(bcolors.CRED, "[+]", "Webpage has an XSS Vulnerability")
+
 
 
