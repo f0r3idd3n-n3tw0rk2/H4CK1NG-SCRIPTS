@@ -162,4 +162,8 @@ r = requests.post
 
 
 
-
+##############################################################
+7.) New Scanner Vulnerability
+##############################################################
+- module library beautifulsoup (extract and parse data from html pages)
+- get the html code from the page which we want to parse
