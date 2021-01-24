@@ -38,8 +38,17 @@ for form in forms_list:
     result = requests.post(post_url, data=post_data)
     print(result.content)
 
-    vuln_result = BeautifulSoup(result.content, "html.parser")
-    vuln_list = vuln_result.content.findAll("<h1>test</h1>")
+
+
+
+    f = open("result.txt", "a")
+    f.write(result.content)
+    f.close()
+
+    # open and read the file after the appending:
+    f = open("result.txt", "r")
+    print(f.read())
+    vuln_list = result.content.findAll("<h1>test</h1>")
     if vuln_list == "<h1>test</h1>":
         print("[-]", "Webpage is vulnerable")
     else:
