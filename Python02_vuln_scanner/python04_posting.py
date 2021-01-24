@@ -49,7 +49,7 @@ for form in forms_list:
 # read the file with all the results and check if the webpage is vulnerable
     with open("result.txt", "r") as f:
         for line in f:
-            if 'z' not in line:
+            if 'city' not in line:
                 print("[+]", "Webpage has no XSS Vulnerability")
             else:
                 print("[+]", "Webpage has an XSS Vulnerability")
