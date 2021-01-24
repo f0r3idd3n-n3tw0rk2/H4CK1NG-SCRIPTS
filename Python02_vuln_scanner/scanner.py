@@ -4,6 +4,7 @@ import requests
 import re
 import urllib.parse
 
+
 class Scanner:
     def __init__(self, url):
         self.target_url = url
@@ -11,9 +12,9 @@ class Scanner:
 
     def extract_links_from(self, url):
         response = requests.get(url)
-        html = response.read(response)
-        html = html.decode('ISO-8859-1')
-        return re.findall('(?:href=")(.*?)"', response.content, html)
+        #html = response.read(response)
+        #html = html.decode('ISO-8859-1')
+        return re.findall("<title>(.*?)</title>", response.content)
 
 
     def crawl(self, url):
