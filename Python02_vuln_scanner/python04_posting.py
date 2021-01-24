@@ -27,7 +27,12 @@ for form in forms_list:
     method = form.get("method")
 
     inputs_list = form.findAll("input")
+    post_data = {}
     for input in inputs_list:
         input_name = input.get("name")
         input_type = input.get("type")
-        print(input_type)
+        input_value = input.get("value")
+        if input_type == "text":
+            input_value = "test"
+        post_data[input_name] = input_value
+    requests.post(post_url, data=post_data)
