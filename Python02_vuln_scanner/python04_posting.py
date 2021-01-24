@@ -40,10 +40,9 @@ for form in forms_list:
 
 
 
+    with open("result.txt", "w") as text_file:
+        print(result.content, file=text_file)
 
-    f = open("result.txt", "a")
-    f.write(print(result.content))
-    f.close()
 
     # open and read the file after the appending:
     f = open("result.txt", "r")
