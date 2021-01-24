@@ -36,7 +36,8 @@ for form in forms_list:
             input_value = "<h1>test</h1>"
         post_data[input_name] = input_value
     result = requests.post(post_url, data=post_data)
-    print(result.content [1])
+    print(result.content)
+
 
     vuln_list = form.findAll(result.content)
     if vuln_list == "<h1>test</h1>":
