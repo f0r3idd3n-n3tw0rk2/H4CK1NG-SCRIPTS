@@ -46,6 +46,11 @@ for form in forms_list:
 
 #read the file with all the results and check if the webpage is vulnerable
 
+
+
+
+
+
         mylines = []  # Declare an empty list
         with open('result.txt', 'rt') as myfile:  # Open lorem.txt for reading text.
             for line in myfile:  # For each line of text,
