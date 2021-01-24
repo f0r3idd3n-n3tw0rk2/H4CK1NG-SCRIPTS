@@ -40,10 +40,17 @@ for form in forms_list:
         #print(input_value)
     result = requests.post(post_url, data=post_data)
     result.p = print("Result_p:", result.content)
-    x = re.search("^<h1>.*</h1>$", result.p)
-    print(x)
 
-#write the result.content in a file and save it
+    pattern = '^<h1>....</h1>$'
+    test_string = result.content
+    result = re.match(pattern, test_string)
+
+    if result:
+        print("Search successful.")
+    else:
+        print("Search unsuccessful.")
+
+    #write the result.content in a file and save it
     with open("result.txt", "w") as text_file:
         print(result.content, file=text_file)
 
