@@ -2,6 +2,8 @@
 
 
 #This is a programm to get the URL and print the response of the html code back
+#Then calling Beautifulsoup and giving it the response content for parsing
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -16,4 +18,7 @@ def request(url):
 
 target_url = "http://167.71.54.69/"
 response = request(target_url)
-print(response.content)
+
+parsed_html = BeautifulSoup(response.content)
+forms_list = parsed_html.findAll("forms")
+print(forms_list)
