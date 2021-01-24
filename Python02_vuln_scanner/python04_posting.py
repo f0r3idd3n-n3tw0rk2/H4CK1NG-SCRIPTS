@@ -38,8 +38,8 @@ for form in forms_list:
         #print(input)
         post_data[input_name] = input_value
         #print(input_value)
-        result = requests.post(post_url, data=post_data)
-        print(result.content)
+    result = requests.post(post_url, data=post_data)
+    print(result.content)
 
 
 #write the result.content in a file and save it
