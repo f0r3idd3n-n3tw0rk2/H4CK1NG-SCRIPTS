@@ -2,5 +2,16 @@
 #Then calling Beautifulsoup and giving it the response content for parsing
 #Get and Print the from Content on the Page, here only one form
 #Value for the Action and the Method is really interesting in the page for forms
+
+
 #Get the Action back from the response
 #Get the Method back from the response
+#Get the Names back of the input in forms
+#Attribut = action and method
+#HTML Element = div item input
+#Inputs are part of the form
+#Input List and each element is a input in the list
+
+
+##Action
+#Build up the dictionary to submit the form

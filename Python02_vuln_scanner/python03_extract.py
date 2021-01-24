@@ -25,3 +25,7 @@ for form in forms_list:
     print(action)
     method = form.get("method")
     print(method)
+
+    inputs_list = form.findAll("input")
+    for input in inputs_list:
+        print(input)
