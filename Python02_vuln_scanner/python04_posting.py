@@ -40,7 +40,7 @@ for form in forms_list:
 
 
     vuln_list = form.findAll(result.content)
-    if vuln_list == "<h1>test</h1>":
+    if vuln_list == "b'<table>\n<tr><td>first</td><td>&lt;h1&gt;test&lt;/h1&gt;</td></tr><tr><td>last</td><td>&lt;h1&gt;test&lt;/h1&gt;</td></tr><tr><td>email</td><td>&lt;h1&gt;test&lt;/h1&gt;</td></tr><tr><td>street</td><td>&lt;h1&gt;test&lt;/h1&gt;</td></tr><tr><td>street2</td><td>&lt;h1&gt;test&lt;/h1&gt;</td></tr><tr><td>city</td><td><h1>test</h1></td></tr><tr><td>region</td><td>&lt;h1&gt;test&lt;/h1&gt;</td></tr><tr><td>postal</td><td>&lt;h1&gt;test&lt;/h1&gt;</td></tr><tr><td>location</td><td>&lt;h1&gt;test&lt;/h1&gt;</td></tr></table>\n'":
         print("[-]", "Webpage is vulnerable")
     else:
         print("[+]", "Webpage has no XSS Vulnerability")
