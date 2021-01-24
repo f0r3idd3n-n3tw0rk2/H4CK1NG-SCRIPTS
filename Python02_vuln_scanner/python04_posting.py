@@ -38,13 +38,13 @@ for form in forms_list:
         # print(input_value)
     result = requests.post(post_url, data=post_data)
     result_p_content = print(result.content)
-    # print(result_p)
+    #print(result_p)
 
 
 
     # write the result.content in a file and save it
     with open("result.txt", "w") as text_file:
-        #print(result.content, file=text_file)
+        print(result.content, file=text_file)
 
 # read the file with all the results and check if the webpage is vulnerable
         with open("result.txt", "r") as f:
