@@ -44,6 +44,9 @@ for form in forms_list:
     with open("result.txt", "w") as text_file:
         print(result.content, file=text_file)
 
+        r1 = re.findall("<h1>test</h1>", text_file)
+        print(r1)
+
 #read the file with all the results and check if the webpage is vulnerable
         pattern = re.compile("<h1>test</h1>")
 
