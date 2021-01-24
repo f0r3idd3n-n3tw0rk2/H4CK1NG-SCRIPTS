@@ -29,13 +29,16 @@ for form in forms_list:
     action = form.get("action")
     post_url = urllib.parse.urljoin(target_url, action)
     method = form.get("method")
-
     inputs_list = form.findAll("input")
     post_data = {}
+
+
     for input in inputs_list:
         input_name = input.get("name")
         input_type = input.get("type")
         input_value = input.get("value")
+
+
         if input_type == "text":
             input_value = "<h1>test</h1>"
         # print(input)
@@ -46,7 +49,7 @@ for form in forms_list:
     for input_type in post_data:
         result = requests.post(post_url, data=post_data)
         #result_p_content = print(result.content)
-        print(result.content)
+        #print(result.content)
 
 
 
