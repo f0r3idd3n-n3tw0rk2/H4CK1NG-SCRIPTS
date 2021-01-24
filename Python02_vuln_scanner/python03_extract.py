@@ -28,4 +28,5 @@ for form in forms_list:
 
     inputs_list = form.findAll("input")
     for input in inputs_list:
-        print(input)
+        input_name = input.get("name")
+        print(input_name)

@@ -12,6 +12,9 @@
 #Inputs are part of the form
 #Input List and each element is a input in the list
 
+#Name of the Input is interesting in this case
+
+
 
 ##Action
 #Build up the dictionary to submit the form
