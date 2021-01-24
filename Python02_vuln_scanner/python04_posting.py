@@ -40,24 +40,28 @@ for form in forms_list:
     print(result.content)
 
 
-
+#write the result.content in a file and save it
     with open("result.txt", "w") as text_file:
         print(result.content, file=text_file)
 
+#read the file with all the results and check if the webpage is vulnerable
     with open('result.txt') as f:
-        if (b'<h1>test</h1>') in f.read():
-        #if '<h1>test</h1>' in f.read():
+        for line in f:
+            # For each line, check if line contains the string
+            if '<h1>test</h1>' in line:
+                print("[-]", "Webpage is vulnerable")
+            else:
+                print("[+]", "Webpage has no XSS Vulnerability")
+
+
+
+
+
+
+
+
+        if '<h1>test</h1>' in f.read():
             print("[-]", "Webpage is vulnerable")
         else:
             print("[+]", "Webpage has no XSS Vulnerability")
-
-
-
-
-    vuln_list = open("result.txt", "r")
-    if vuln_list == "<h1>test</h1>":
-        print("[-]", "Webpage is vulnerable")
-    else:
-        print("[+]", "Webpage has no XSS Vulnerability")
-
 
