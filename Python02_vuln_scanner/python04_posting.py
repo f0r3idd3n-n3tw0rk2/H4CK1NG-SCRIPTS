@@ -45,6 +45,31 @@ for form in forms_list:
         print(result.content, file=text_file)
 
 #read the file with all the results and check if the webpage is vulnerable
+
+        mylines = []  # Declare an empty list
+        with open('result.txt', 'rt') as myfile:  # Open lorem.txt for reading text.
+            for line in myfile:  # For each line of text,
+                mylines.append(line)  # add that line to the list.
+            for element in mylines:  # For each element in the list,
+                print(element)  # print it.
+                if element == ('result.txt', 'b'):
+                    print("[-]", "Webpage is vulnerable")
+                else:
+                    print("[+]", "Webpage has no XSS Vulnerability")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     with open('result.txt') as f:
         for line in f:
             # For each line, check if line contains the string
