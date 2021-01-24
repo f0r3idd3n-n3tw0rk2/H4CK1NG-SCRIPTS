@@ -11,7 +11,8 @@ class Scanner:
 
     def extract_links_from(self, url):
         response = requests.get(url)
-        return re.findall('(?:href=")(.*?)"', response.content)
+        #return re.findall('(?:href=")(.*?)"', response.content)
+        return re.findall('', response.content)
 
     def crawl(self, url):
         href_links = self.extract_links_from(url)
