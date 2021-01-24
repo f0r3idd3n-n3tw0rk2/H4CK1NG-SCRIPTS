@@ -46,7 +46,8 @@ for form in forms_list:
     for input_type in post_data:
         #print(input_value)
         result = requests.post(post_url, data=post_data)
-        result_p_content = print(result.content)
+        for result_conten in result_p_content:
+            result_p_content = print(result.content)
         #print(result_p)
 
 
