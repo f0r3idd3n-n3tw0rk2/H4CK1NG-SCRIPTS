@@ -39,7 +39,7 @@ for form in forms_list:
         post_data[input_name] = input_value
         #print(input_value)
     result = requests.post(post_url, data=post_data)
-    result_p = print("Result_p:", result.content)
+    result.p = print("Result_p:", result.content)
     x = re.search("^<h1>.*</h1>$", result.p)
     print(x)
 
