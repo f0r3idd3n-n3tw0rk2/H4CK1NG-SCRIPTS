@@ -51,7 +51,7 @@ for form in forms_list:
         #result_p_content = print(result.content)
         #print(result.content)
 
-
+        xss_test_script = "<h1>test</h1>"
 
         # write the result.content in a file and save it
         with open("result.txt", "w") as text_file:
@@ -60,7 +60,8 @@ for form in forms_list:
         # read the file with all the results and check if the webpage is vulnerable
         with open("result.txt", "r") as f:
             for line in f:
-                if '<h1>test</h1>' not in line:
+                #if '<h1>test</h1>' not in line:
+                if xss_test_script not in line:
                     print(bcolors.CBLUE, "\r\n[+++++]", "Webpage has no XSS Vulnerability", "[+++++]")
                 else:
                     print(bcolors.CRED, "\r\n[---------------------------------------------------------------------------]", "\r\n")
