@@ -1,7 +1,12 @@
 #This is a programm to get the URL and print the response of the html code back
 #Then calling Beautifulsoup and giving it the response content for parsing
-#Get and Print the from Content on the Page, here only one form
+#Get and Print the form Content on the Page, here only one form
+#Stored then in a variable
+
+
 #Value for the Action and the Method is really interesting in the page for forms
+#Use FindAll Method to get all the elements (action, method, input forms)
+#Iterating over the list and output the contents
 
 
 #Get the Action back from the response
@@ -18,3 +23,8 @@
 
 ##Action
 #Build up the dictionary to submit the form
+
+
+##Problems solved
+#action method can be a full URL or a relative path
+#use of urlparse library
