@@ -39,7 +39,7 @@ for form in forms_list:
         if input_type == "text":
             input_value = "<h1>test</h1>"
         # print(input)
-        for Post in input_value:
+        for Post in post_data:
             post_data[input_name] = input_value
             print(Post)
 
