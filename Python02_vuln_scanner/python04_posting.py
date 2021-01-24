@@ -43,3 +43,4 @@ for form in forms_list:
         print("[-]", "Webpage is vulnerable")
     else:
         print("[+]", "Webpage has no XSS Vulnerability")
+
