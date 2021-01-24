@@ -37,5 +37,5 @@ for form in forms_list:
         post_data[input_name] = input_value
     result = requests.post(post_url, data=post_data)
     print(result.content)
-    response = target_url.form(form[0], "testtest", target_url)
+    response = (forms_list[0], "testtest", target_url)
     print(response)
