@@ -14,7 +14,7 @@ class Scanner:
         response = requests.get(url)
         #html = response.read(response)
         #html = html.decode('ISO-8859-1')
-        htmltext = response.read().decode('utf-8')
+        htmltext = response.load().decode('utf-8')
         return re.findall("<title>(.*?)</title>", response.content, htmltext)
 
 
