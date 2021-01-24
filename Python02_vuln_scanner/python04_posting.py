@@ -48,7 +48,7 @@ for form in forms_list:
     with open('result.txt') as f:
         for line in f:
             # For each line, check if line contains the string
-            if '<h1>test</h1>' in line:
+            if 'b' in line:
                 print("[-]", "Webpage is vulnerable")
             else:
                 print("[+]", "Webpage has no XSS Vulnerability")
