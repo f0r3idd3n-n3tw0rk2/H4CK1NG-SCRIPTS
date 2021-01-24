@@ -5,6 +5,7 @@
 import requests
 from bs4 import BeautifulSoup
 import urllib.parse
+import re
 
 def request(url):
 
@@ -44,7 +45,8 @@ for form in forms_list:
         print(result.content, file=text_file)
 
     with open('result.txt') as f:
-        if '<h1>test</h1>' in f.read():
+        if (b'<h1>test</h1>') in f.read():
+        #if '<h1>test</h1>' in f.read():
             print("[-]", "Webpage is vulnerable")
         else:
             print("[+]", "Webpage has no XSS Vulnerability")
