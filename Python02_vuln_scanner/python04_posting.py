@@ -38,7 +38,7 @@ for form in forms_list:
     result = requests.post(post_url, data=post_data)
     print(result.content)
 
-    vuln_list = form.findAll(result.content)
+    vuln_list = result.findAll(result.content)
     if vuln_list == "<h1>test</h1>":
         print("[-]", "Webpage is vulnerable")
     else:
