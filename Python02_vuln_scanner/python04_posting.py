@@ -52,41 +52,9 @@ for form in forms_list:
                 mylines.append(line)  # add that line to the list.
             for element in mylines:  # For each element in the list,
                 print(element)  # print it.
-                if element == ('result.txt', 'b'):
+                if element == (print(mylines[0].find("first"))):
                     print("[-]", "Webpage is vulnerable")
                 else:
                     print("[+]", "Webpage has no XSS Vulnerability")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    with open('result.txt') as f:
-        for line in f:
-            # For each line, check if line contains the string
-            if f==('result.txt', 'b'):
-                print("[-]", "Webpage is vulnerable")
-            else:
-                print("[+]", "Webpage has no XSS Vulnerability")
-
-
-
-
-
-
-
-
-        if '<h1>test</h1>' in f.read():
-            print("[-]", "Webpage is vulnerable")
-        else:
-            print("[+]", "Webpage has no XSS Vulnerability")
 
