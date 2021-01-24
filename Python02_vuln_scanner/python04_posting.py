@@ -42,7 +42,7 @@ for form in forms_list:
 
 #write the result.content in a file and save it
     with open("result.txt", "w") as text_file:
-        print(result.content, file=text_file)
+        #print(result.content, file=text_file)
 
 #read the file with all the results and check if the webpage is vulnerable
 
