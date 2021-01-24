@@ -14,11 +14,13 @@ class Scanner:
         response = requests.get(url)
         #html = response.read(response)
         #html = html.decode('ISO-8859-1')
-        htmltext = response.load().decode('utf-8')
-        return re.findall("<title>(.*?)</title>", response.content, htmltext)
+        #htmltext = response.load().decode('utf-8')
+        return re.findall("<title>(.*?)</title>", response.content)
 
 
-    def crawl(self, url):
+    def crawl(self, url=None):
+        if url == None:
+            url = self.target_url
         href_links = self.extract_links_from(url)
         for link in href_links:
             link = urllib.parse.urljoin(url, link)
