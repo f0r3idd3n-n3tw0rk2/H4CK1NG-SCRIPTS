@@ -40,7 +40,8 @@ for form in forms_list:
         #print(input_value)
     result = requests.post(post_url, data=post_data)
     print(result.content)
-
+    x = re.search("^<h1>.*</h1>$", result.content)
+    print(x)
 
 #write the result.content in a file and save it
     with open("result.txt", "w") as text_file:
