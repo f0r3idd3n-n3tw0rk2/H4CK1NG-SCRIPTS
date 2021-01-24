@@ -38,8 +38,8 @@ for form in forms_list:
     result = requests.post(post_url, data=post_data)
     print(result.content)
 
-
-    vuln_list = result.findAll("<h1>test</h1>")
+    vuln_response = BeautifulSoup(response.content, "html.parser")
+    vuln_list = vuln_response.content.findAll("<h1>test</h1>")
     if vuln_list == "<h1>test</h1>":
         print("[-]", "Webpage is vulnerable")
     else:
