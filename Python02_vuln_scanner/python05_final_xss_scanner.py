@@ -43,7 +43,7 @@ for form in forms_list:
 
             post_data[input_name] = input_value
 
-    for input_name in post_data:
+    for input_type in post_data:
         #print(input_value)
         result = requests.post(post_url, data=post_data)
         result_p_content = print(result.content)
@@ -62,7 +62,7 @@ for form in forms_list:
                     print(bcolors.CBLUE, "\r\n[+++++]", "Webpage has no XSS Vulnerability", "[+++++]")
                 else:
                     print(bcolors.CRED, "\r\n[-----]", "Webpage has an XSS Vulnerability", "[-----]")
-                    print(bcolors.CRED, "\r\n[-----]", line)
+                    print(bcolors.CRED, "\r\n[-----]", input_type)
 
 
 
