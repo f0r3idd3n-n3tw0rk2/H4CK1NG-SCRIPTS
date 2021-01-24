@@ -4,7 +4,7 @@
 
 import requests
 from bs4 import BeautifulSoup
-import urlparse
+import urllib.parse
 
 def request(url):
 
@@ -23,7 +23,7 @@ forms_list = parsed_html.findAll("form")
 
 for form in forms_list:
     action = form.get("action")
-    post_url = urlparse.urljoin(target_url, action)
+    post_url = urllib.parse.urljoin(target_url, action)
 
     print(post_url)
     method = form.get("method")
