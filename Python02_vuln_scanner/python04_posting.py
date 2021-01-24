@@ -33,7 +33,7 @@ for form in forms_list:
         input_type = input.get("type")
         input_value = input.get("value")
         if input_type == "text":
-            input_value = "test"
+            input_value = "<h1>test</h1>"
         post_data[input_name] = input_value
     result = requests.post(post_url, data=post_data)
     print(result.content)
