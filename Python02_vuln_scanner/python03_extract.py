@@ -23,3 +23,5 @@ forms_list = parsed_html.findAll("form")
 for form in forms_list:
     action = form.get("action")
     print(action)
+    method = form.get("method")
+    print(method)
