@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 
 
-#This is a programm to get the URL and print the response of the html code back
-#Then calling Beautifulsoup and giving it the response content for parsing
-#Get and Print the from Content on the Page, here only one form
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -21,4 +19,6 @@ response = request(target_url)
 
 parsed_html = BeautifulSoup(response.content, "html.parser")
 forms_list = parsed_html.findAll("form")
-print(forms_list)
+
+for form in forms_list:
+    print(form)

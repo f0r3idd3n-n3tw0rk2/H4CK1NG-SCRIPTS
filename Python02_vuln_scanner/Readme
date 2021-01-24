@@ -1,0 +1,4 @@
+#This is a programm to get the URL and print the response of the html code back
+#Then calling Beautifulsoup and giving it the response content for parsing
+#Get and Print the from Content on the Page, here only one form
+#Value for the Action is really interesting in the page
