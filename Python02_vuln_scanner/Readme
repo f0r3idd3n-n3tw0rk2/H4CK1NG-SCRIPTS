@@ -12,6 +12,7 @@
 #Get the Action back from the response
 #Get the Method back from the response
 #Get the Names back of the input in forms
+#Get the Type back of the input in forms
 #Attribut = action and method
 #HTML Element = div item input
 #Inputs are part of the form
@@ -21,8 +22,11 @@
 
 
 
+
 ##Action
 #Build up the dictionary to submit the form
+#post_data = {}
+#post_data[input_name]
 
 
 ##Problems solved
