@@ -5,10 +5,9 @@ import re
 import urllib.parse
 
 class Scanner:
-    def __init__(self, url):
+    def __init__(self, url)
         self.target_url = url
         self.target_links = []
-
 
     def extract_links_from(self, url):
         response = requests.get(url)
