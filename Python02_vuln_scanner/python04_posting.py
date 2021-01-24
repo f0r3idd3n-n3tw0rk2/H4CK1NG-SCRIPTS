@@ -35,6 +35,7 @@ for form in forms_list:
         input_value = input.get("value")
         if input_type == "text":
             input_value = "<h1>test</h1>"
+        print(input)
         post_data[input_name] = input_value
     result = requests.post(post_url, data=post_data)
     #print(result.content)
@@ -44,16 +45,9 @@ for form in forms_list:
     with open("result.txt", "w") as text_file:
         print(result.content, file=text_file)
 
-        r1 = re.findall("<h1>test</h1>", text_file)
-        print(r1)
 
 #read the file with all the results and check if the webpage is vulnerable
-        pattern = re.compile("<h1>test</h1>")
 
-        for line in open("result.txt"):
-
-            for match in re.finditer(pattern, line):
-                print("[-]", "Webpage is vulnerable")
 
 
        # if
