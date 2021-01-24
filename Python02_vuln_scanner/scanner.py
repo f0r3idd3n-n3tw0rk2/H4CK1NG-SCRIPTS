@@ -11,8 +11,10 @@ class Scanner:
 
     def extract_links_from(self, url):
         response = requests.get(url)
-        #return re.findall('(?:href=")(.*?)"', response.content)
-        return re.findall('', response.content)
+        html = response.read()
+        html = html.decode('ISO-8859-1')
+        return re.findall('(?:href=")(.*?)"', response.content, html)
+
 
     def crawl(self, url):
         href_links = self.extract_links_from(url)
