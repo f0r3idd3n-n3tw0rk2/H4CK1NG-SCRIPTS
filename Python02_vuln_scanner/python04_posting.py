@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 
 
@@ -24,12 +24,10 @@ forms_list = parsed_html.findAll("form")
 for form in forms_list:
     action = form.get("action")
     post_url = urllib.parse.urljoin(target_url, action)
-
-    print(post_url)
     method = form.get("method")
-    print(method)
 
     inputs_list = form.findAll("input")
     for input in inputs_list:
         input_name = input.get("name")
-        print(input_name)
+        input_type = input.get("type")
+        print(input_type)
