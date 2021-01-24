@@ -67,5 +67,5 @@ for form in forms_list:
                     print(bcolors.CRED, "\r\n[---------------------------]", "\r\n[Form_Field:]", input_type, "\r\n[---------------------------]")
                     print(bcolors.CRED, "\r\n[-----]", "Webpage has an XSS Vulnerability", "[-----]", "\r\n")
 
-
+        print(result.content)
 
