@@ -39,7 +39,7 @@ for form in forms_list:
     print(result.content)
 
 
-    vuln_list = parsed_html.findAll("<h1>test</h1>")
+    vuln_list = result.findAll("<h1>test</h1>")
     if vuln_list == "<h1>test</h1>":
         print("[-]", "Webpage is vulnerable")
     else:
