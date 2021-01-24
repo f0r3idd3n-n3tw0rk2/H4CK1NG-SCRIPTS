@@ -42,7 +42,7 @@ for form in forms_list:
 
 
     f = open("result.txt", "a")
-    f.write(result.content)
+    f.write(print(result.content))
     f.close()
 
     # open and read the file after the appending:
