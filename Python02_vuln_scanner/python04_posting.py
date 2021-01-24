@@ -41,7 +41,7 @@ for form in forms_list:
     result = requests.post(post_url, data=post_data)
     result_p = print(result.content)
     #print(result_p)
-
+    print str(result_p).strip('[]')
 
     #write the result.content in a file and save it
     with open("result.txt", "w") as text_file:
