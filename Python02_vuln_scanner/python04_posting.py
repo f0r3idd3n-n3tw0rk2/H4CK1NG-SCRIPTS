@@ -40,7 +40,7 @@ for form in forms_list:
         #print(input_value)
     result = requests.post(post_url, data=post_data)
     result_p = print("Result_p:", result.content)
-    print(result_p)
+    #print(result_p)
 
 
     #write the result.content in a file and save it
