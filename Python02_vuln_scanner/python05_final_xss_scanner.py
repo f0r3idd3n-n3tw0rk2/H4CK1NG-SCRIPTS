@@ -39,26 +39,28 @@ for form in forms_list:
         if input_type == "text":
             input_value = "<h1>test</h1>"
         # print(input)
-        post_data[input_name] = input_value
+
+        for input_value_dat in post_data:
+            post_data[input_name] = input_value
         # print(input_value)
-    result = requests.post(post_url, data=post_data)
-    result_p_content = print(result.content)
-    #print(result_p)
+        result = requests.post(post_url, data=post_data)
+        result_p_content = print(result.content)
+        #print(result_p)
 
 
 
-    # write the result.content in a file and save it
-    with open("result.txt", "w") as text_file:
-        print(result.content, file=text_file)
+        # write the result.content in a file and save it
+        with open("result.txt", "w") as text_file:
+            print(result.content, file=text_file)
 
-# read the file with all the results and check if the webpage is vulnerable
-    with open("result.txt", "r") as f:
-        for line in f:
-            if '<h1>test</h1>' not in line:
-                print(bcolors.CBLUE, "\r\n[+++++]", "Webpage has no XSS Vulnerability", "[+++++]")
-            else:
-                print(bcolors.CRED, "\r\n[-----]", "Webpage has an XSS Vulnerability", "[-----]")
-                print(bcolors.CRED, "\r\n[-----]", line)
+        # read the file with all the results and check if the webpage is vulnerable
+        with open("result.txt", "r") as f:
+            for line in f:
+                if '<h1>test</h1>' not in line:
+                    print(bcolors.CBLUE, "\r\n[+++++]", "Webpage has no XSS Vulnerability", "[+++++]")
+                else:
+                    print(bcolors.CRED, "\r\n[-----]", "Webpage has an XSS Vulnerability", "[-----]")
+                    print(bcolors.CRED, "\r\n[-----]", line)
 
 
 

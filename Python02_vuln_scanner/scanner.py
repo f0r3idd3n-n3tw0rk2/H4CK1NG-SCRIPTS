@@ -57,3 +57,9 @@ class Scanner:
         if method == "post":
             return self.session.requests.post(post_url, data=post_data)
         return self.session.get(post_url, params=post_data)
+
+
+
+    def test_xss_in_form(self, form, url):
+        xss_test_script = "<script>alert('test')</script>"
+        response = self.submit_form(form, xss_test_script, url)
