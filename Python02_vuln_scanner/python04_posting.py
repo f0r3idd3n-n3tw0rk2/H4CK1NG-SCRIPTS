@@ -44,10 +44,8 @@ for form in forms_list:
         print(result.content, file=text_file)
 
 
-    # open and read the file after the appending:
-    f = open("result.txt", "r")
-    print(f.read())
-    vuln_list = result.content.findAll("<h1>test</h1>")
+
+    vuln_list = open("result.txt", "r")
     if vuln_list == "<h1>test</h1>":
         print("[-]", "Webpage is vulnerable")
     else:
