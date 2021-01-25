@@ -38,6 +38,7 @@ def request(url):
             print("Please type in a correct Website html")
         except Exception:
             pass
+        break
 print("Website is readable")
 
 
