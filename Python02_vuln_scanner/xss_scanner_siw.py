@@ -32,7 +32,7 @@ print(bcolors.CBLUE,"Default Payload ->>>> <h1>XSS-VULNERABLE</h1>")
 print("XSS-SCANNER will load the full Aresenal to attack the given Page")
 time.sleep(3.5)    # Pause 5.5 seconds
 
-for i in tqdm.tqdm(range(100)):
+for i in tqdm.tqdm(range(200)):
     time.sleep(0.01)
     # or other long operations
 
