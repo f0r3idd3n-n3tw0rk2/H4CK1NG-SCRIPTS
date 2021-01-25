@@ -43,6 +43,12 @@ def request(website):
             print(bcolors.CRED, "Please type in a correct Website html")
     sys.exit()
 
+#This is the 2nd function which is calling the variable website after error checks
+#Then it is using this URL to form the response, analyze it with Beautifulsoup for parsing the content
+#put the forms which are found into the forms_list
+#Get the action, method and create the input list
+#Create the Post Data for the website to use the name, type and value
+#If the Value is Text then use the xss test Script String
 def target_url(website):
     target_url = website
     response = request(target_url)
@@ -62,6 +68,7 @@ def target_url(website):
             input_type = input.get("type")
             input_value = input.get("value")
 
+#If input for the variable is text then put in the value for the xss test script string
             if input_type == "text":
                 input_value = "<h1>test</h1>"
                 # print(input)
