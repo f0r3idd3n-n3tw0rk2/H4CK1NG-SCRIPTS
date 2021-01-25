@@ -32,12 +32,14 @@ def request(url):
             print(bcolors.CRED, "OOPS!! General Error")
             print(str(e))
             break
+        except AttributeError:
+            break
         except KeyboardInterrupt:
             print(bcolors.CRED, "Someone closed the program")
             break
-        #except Exception:
+        except Exception:
             #pass
-        except AttributeError:
+        #except AttributeError:
 
             print(bcolors.CRED, "Website is not readable")
             print(bcolors.CRED, "Please type in a correct Website html")
