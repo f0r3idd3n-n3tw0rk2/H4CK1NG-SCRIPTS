@@ -13,7 +13,7 @@ class bcolors:
 
 
 def request(url):
-    url = "http://167.71.54.6/"
+    url = "http://167.71.54.69/"
     while True:
         try:
             return requests.get(url, timeout=6.0)
@@ -40,7 +40,7 @@ def request(url):
             print(bcolors.CRED, "Please type in a correct Website html")
 
 
-def response_xss():
+def target_url():
     target_url = "http://167.71.54.69/"
     response = request(target_url)
 
@@ -93,3 +93,6 @@ def response_xss():
                         print(bcolors.CRED, "\r\n[-----]", "Webpage has an XSS Vulnerability", "[-----]", "\r\n")
 
             print(result.content)
+
+
+target_url()
