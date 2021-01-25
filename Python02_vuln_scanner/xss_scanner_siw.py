@@ -153,7 +153,7 @@ def target_url(website):
 #call the function "target_url" and "requests" with the parameter variable website given in the input
 
 target_url(website)
-requests(website)
+request(website)
 
 
 
