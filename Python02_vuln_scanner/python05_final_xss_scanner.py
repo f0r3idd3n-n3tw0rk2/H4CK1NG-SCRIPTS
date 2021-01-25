@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 import urllib.parse
 import re
+from requests.exceptions import ConnectionError
 
 
 class bcolors:
