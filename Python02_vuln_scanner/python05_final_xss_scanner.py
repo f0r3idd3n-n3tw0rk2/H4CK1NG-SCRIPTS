@@ -23,18 +23,18 @@ def request(url):
         except requests.ConnectionError as e:
             print("OOPS!! Connection Error. Make sure you are connected to Internet. Technical Details given below.\n")
             print(str(e))
-
+            break
         except requests.Timeout as e:
             print("OOPS!! Timeout Error")
             print(str(e))
-
+            break
         except requests.RequestException as e:
             print("OOPS!! General Error")
             print(str(e))
-
+            break
         except KeyboardInterrupt:
             print("Someone closed the program")
-
+            break
         #except Exception:
             #pass
         except AttributeError:
