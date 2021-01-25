@@ -16,8 +16,8 @@ class bcolors:
 
 
 
-def website():
-    website = "http://167.71.54.69/"
+#def website():
+    #website = "http://167.71.54.69/"
     #while True:
       #  print("XSS-TESTER")
        # yy = ("\n"
@@ -26,7 +26,47 @@ def website():
               #"3) ENTER FILE PATH\n "
               #"4) EXIT\n"
               #"\n"
-    return(True)
+    #return(True)
+
+
+
+
+
+def website():
+   try:
+       print(bcolors.CBLUE,"e.g target ->>>> http://target.com/submit.php?name=")
+       url = input("Please Enter Target URL\t:")
+       print(bcolors.CBLUE,"Default Payload List ->>>> xss_teststrings02.txt")
+       y = """
+       1) BASIC PAYLOAD TESTSTRINGS
+       2) WORDLIST WFUZZ XSS
+       3) ENTER FILE PATH
+       4) EXIT
+       """
+       print(y)
+       choice = input("->>>>Please Choose Payload List\t:")
+       if choice == '1':
+           print("Selected Payload payload:xss_teststrings02.txt\n")
+           choice = "xss_teststrings.txt"
+       elif choice == '2':
+           print("Selected Payload payload: /usr/share/wordlists/wfuzz/Injections/XSS.txt")
+           choice = input("Path enter\t:")
+       elif choice == '3':
+           print("Selected Payload payload: /PATH/TO/YOUR/PAYLOAD/XSS.txt")
+           choice = input("Path enter\t:")
+       elif choice == '4':
+           print("Exiting....")
+           sys.exit()
+       else:
+           print("Wrong Choice...")
+           choice = choice.replace("\\", "/")
+
+
+
+
+
+
+
 
 
 
@@ -141,7 +181,7 @@ def target_url(website):
 
 target_url(website)
 requests(website)
-
+website()
 
 
 
