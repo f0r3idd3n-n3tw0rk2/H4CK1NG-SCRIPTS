@@ -130,9 +130,9 @@ def target_url(website):
             #with open("result.txt", "w") as text_file:
                 #print(result.content, file=text_file)
 
-            with open('result.txt', 'r') as reader:
+            with open('result.txt', 'r') as f:
             # Read and print the entire file line by line
-                line = reader.readline()
+                line = f.readline()
                 while line != '':  # The EOF char is an empty string
                     #print(line, end='')
                     #line = reader.readline()
@@ -159,7 +159,7 @@ def target_url(website):
                         print(bcolors.CRED, "\r\n[-----]", "Webpage has an XSS Vulnerability", "[-----]", "\r\n")
 
             #print(result.content)
-                     line = reader.readline()
+                    line = f.readline()
     sys.exit()
 
 
