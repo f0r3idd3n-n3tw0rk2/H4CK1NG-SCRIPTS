@@ -14,7 +14,9 @@ class bcolors:
 
 website = "http://167.71.54.69/"
 
-
+#This is the 1st function for error handling and trying the parameter for the website calling it in the method request
+#Checking for type errors in the website url and checking with Timeout if the website is reachable
+#Also you can skip the script manual with the escape Character "Control+C"
 def request(website):
     url = website
     while True:
