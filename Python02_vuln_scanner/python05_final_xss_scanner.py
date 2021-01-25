@@ -5,7 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 import urllib.parse
 import re
-from requests.exceptions import ConnectionError
+
 
 
 class bcolors:
@@ -14,12 +14,12 @@ class bcolors:
 
 
 def request(url):
-    url = "http://167.71.54.6/"
+    url = "http://167.71.54.69/"
 
     try:
-        return requests.get(url)
-    #except requests.exception.ConnectionError:
-    except requests.ConnectionError:
+        return requests.get(url, timeout=6.0)
+    except requests.exception.ConnectionError:
+
 
         print("Please type in a correct Website html")
         pass
