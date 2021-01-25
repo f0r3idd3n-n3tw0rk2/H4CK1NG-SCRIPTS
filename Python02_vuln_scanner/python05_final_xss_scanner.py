@@ -14,7 +14,7 @@ class bcolors:
 
 def request(url):
     target_url = "http://167.71.54.69/"
-    response = request(target_url)
+    requests = request(target_url)
     try:
         return requests.get(url)
     except requests.exception.ConnectionError:
