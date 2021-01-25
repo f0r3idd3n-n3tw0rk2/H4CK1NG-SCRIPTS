@@ -21,26 +21,26 @@ def request(url):
     #except requests.exception.ConnectionError:
 
         except requests.ConnectionError as e:
-            print("OOPS!! Connection Error. Make sure you are connected to Internet. Technical Details given below.\n")
+            print(bcolors.CRED, "OOPS!! Connection Error. Make sure you are connected to Internet. Technical Details given below.\n")
             print(str(e))
 
         except requests.Timeout as e:
-            print("OOPS!! Timeout Error")
+            print(bcolors.CRED, "OOPS!! Timeout Error")
             print(str(e))
             break
         except requests.RequestException as e:
-            print("OOPS!! General Error")
+            print(bcolors.CRED, "OOPS!! General Error")
             print(str(e))
             break
         except KeyboardInterrupt:
-            print("Someone closed the program")
+            print(bcolors.CRED, "Someone closed the program")
             break
         #except Exception:
             #pass
         except AttributeError:
 
-            print("Website is not readable")
-            print("Please type in a correct Website html")
+            print(bcolors.CRED, "Website is not readable")
+            print(bcolors.CRED, "Please type in a correct Website html")
 
 
 
