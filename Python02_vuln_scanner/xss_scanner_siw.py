@@ -74,7 +74,7 @@ def target_url(website):
             # print(result.content)
 
             # XSS_Test_Script Variable
-            xss_test_script = "<h1>tes</h1>"
+            xss_test_script = "<h1>test</h1>"
 
             # write the result.content in a file and save it
             with open("result.txt", "w") as text_file:
