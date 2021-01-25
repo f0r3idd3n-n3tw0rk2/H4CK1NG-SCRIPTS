@@ -26,7 +26,7 @@ class bcolors:
 
 print(bcolors.CBLUE,"e.g target ->>>> http://target.com/", "or http://IP-ADDRESS/")
 http = 'http://'
-website = input("Please Enter Target URL\t:" + http)
+website = input(http + "Please Enter Target URL\t:" )
 print(bcolors.CBLUE,"Default Payload List ->>>> xss_teststrings02.txt")
 print(bcolors.CBLUE,"Default Payload ->>>> <h1>XSS-VULNERABLE</h1>")
 
