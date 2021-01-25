@@ -37,9 +37,9 @@ def request(url):
         except KeyboardInterrupt:
             print(bcolors.CRED, "Someone closed the program")
             break
-        except Exception:
+        #except Exception:
             #pass
-        #except AttributeError:
+        except requests.AttributeError:
 
             print(bcolors.CRED, "Website is not readable")
             print(bcolors.CRED, "Please type in a correct Website html")
