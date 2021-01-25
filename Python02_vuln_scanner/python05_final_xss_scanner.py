@@ -41,7 +41,7 @@ def request(url):
 
             print("Website is not readable")
             print("Please type in a correct Website html")
-            break
+
 
 
 
