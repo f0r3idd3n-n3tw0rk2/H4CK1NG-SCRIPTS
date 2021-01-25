@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import urllib.parse
 import re
 import sys
-
+import time
 
 class bcolors:
     CBLUE = '\33[34m'
@@ -26,6 +26,9 @@ website = input("Please Enter Target URL\t:")
 print(bcolors.CBLUE,"Default Payload List ->>>> xss_teststrings02.txt")
 print(bcolors.CBLUE,"Default Payload ->>>> <h1>XSS-VULNERABLE</h1>")
 
+print("something")
+time.sleep(5.5)    # Pause 5.5 seconds
+print("something")
 
 
 
