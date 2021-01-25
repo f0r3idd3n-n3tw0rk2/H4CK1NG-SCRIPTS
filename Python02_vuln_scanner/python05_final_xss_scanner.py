@@ -38,10 +38,10 @@ def request(url):
         #except Exception:
             #pass
         except AttributeError:
-            break
-    print("Website is not readable")
-    print("Please type in a correct Website html")
 
+            print("Website is not readable")
+            print("Please type in a correct Website html")
+            break
 
 
 
