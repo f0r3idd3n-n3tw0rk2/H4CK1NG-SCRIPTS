@@ -23,7 +23,7 @@ def request(website):
 
         except requests.ConnectionError as e:
             print(bcolors.CRED,
-                  "OOPS!! Connection Error. Make sure you are connected to Internet. Technical Details given below.\n")
+                  "OOPS!! Connection Error. Make sure you are connected to Internet or check the correct Syntax of IP address. Technical Details given below.\n")
             print(str(e))
             break
         except requests.Timeout as e:
@@ -101,6 +101,9 @@ def target_url(website):
                         print(bcolors.CRED, "\r\n[-----]", "Webpage has an XSS Vulnerability", "[-----]", "\r\n")
 
             print(result.content)
+    sys.exit()
+
+
 
 #call the function "target_url" and "requests" with the parameter variable website given in the input
 
