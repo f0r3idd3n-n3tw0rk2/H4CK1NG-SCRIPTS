@@ -21,7 +21,7 @@ class bcolors:
 
 
 
-
+#-----------------------------------------ENTER--------ATTACKER-HOST--------------------------------------------------
 #here you will define the Attack URL, with your Domain or IP input
 #as a variable http is created with http:// you do not have to define the http protocol
 #After entering the Attack Host you have to wait for loading the Attack Arsenal
@@ -47,7 +47,7 @@ for i in tqdm.tqdm(range(200)):
 
 
 
-
+#-----------------------------------------NEXT--------FUNCTION------01--------------------------------------------------
 #This is the 1st function for error handling and trying the parameter for the website calling it in the method request
 #Checking for type errors in the website url and checking with Timeout if the website is reachable
 #Also you can skip the script manual with the escape Character "Control+C"
@@ -79,6 +79,8 @@ def request(website):
             print(bcolors.CRED, "Please type in a correct Website html")
     sys.exit()
 
+
+#-----------------------------------------NEXT--------FUNCTION-----02---------------------------------------------------
 #This is the 2nd function which is calling the variable website after error checks
 #Then it is using this URL to form the response, analyze it with Beautifulsoup for parsing the content
 #put the forms which are found into the forms_list
