@@ -18,8 +18,8 @@ def request(url):
 
     try:
         return requests.get(url)
-    except requests.exception.ConnectionError:
-
+    #except requests.exception.ConnectionError:
+    except requests.ConnectionError:
 
         print("Please type in a correct Website html")
         pass
