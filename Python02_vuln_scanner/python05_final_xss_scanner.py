@@ -18,7 +18,6 @@ def request(url):
     while True:
         try:
             return requests.get(url, timeout=6.0)
-    #except requests.exception.ConnectionError:
 
         except requests.ConnectionError as e:
             print(bcolors.CRED, "OOPS!! Connection Error. Make sure you are connected to Internet. Technical Details given below.\n")
@@ -32,14 +31,10 @@ def request(url):
             print(bcolors.CRED, "OOPS!! General Error")
             print(str(e))
             break
-        #except AttributeError:
-            #break
         except KeyboardInterrupt:
             print(bcolors.CRED, "Someone closed the program")
             break
-        #except Exception:
-            #pass
-        except requests.AttributeError as e:
+        except AttributeError:
 
             print(bcolors.CRED, "Website is not readable")
             print(bcolors.CRED, "Please type in a correct Website html")
