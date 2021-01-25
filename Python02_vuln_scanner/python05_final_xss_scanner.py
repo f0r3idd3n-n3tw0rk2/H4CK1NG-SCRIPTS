@@ -18,7 +18,12 @@ def request(url):
     try:
         return requests.get(url)
     except requests.exception.ConnectionError:
+        print("Please type in a correct Website html")
         pass
+        print("Website is readable")
+
+
+
 
 
 target_url = "http://167.71.54.69/"
