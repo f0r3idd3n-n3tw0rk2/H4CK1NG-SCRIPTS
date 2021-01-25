@@ -14,7 +14,7 @@ class bcolors:
 website = "http://167.71.54.69/"
 
 
-def request(url):
+def request(website):
     url = website
     while True:
         try:
@@ -42,7 +42,7 @@ def request(url):
             print(bcolors.CRED, "Please type in a correct Website html")
 
 
-def target_url(url):
+def target_url(website):
     target_url = website
     response = request(target_url)
 
