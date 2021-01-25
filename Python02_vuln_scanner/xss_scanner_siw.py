@@ -22,7 +22,7 @@ def request(url):
             print(bcolors.CRED,
                   "OOPS!! Connection Error. Make sure you are connected to Internet. Technical Details given below.\n")
             print(str(e))
-
+            break
         except requests.Timeout as e:
             print(bcolors.CRED, "OOPS!! Timeout Error")
             print(str(e))
