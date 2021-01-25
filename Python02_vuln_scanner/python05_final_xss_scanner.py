@@ -19,7 +19,7 @@ def request(url):
         pass
 
 
-target_url = "http://167.71.54.69/"
+target_url = "http://1.1.1.1/"
 response = request(target_url)
 
 parsed_html = BeautifulSoup(response.content, "html.parser")
@@ -51,6 +51,7 @@ for form in forms_list:
         #result_p_content = print(result.content)
         #print(result.content)
 
+        #XSS_Test_Script Variable
         xss_test_script = "<h1>test</h1>"
 
         # write the result.content in a file and save it
