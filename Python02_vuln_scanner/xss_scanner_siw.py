@@ -11,7 +11,7 @@ class bcolors:
     CBLUE = '\33[34m'
     CRED = '\33[31m'
 
-website = "http://167.71.54.6/"
+website = "http://167.71.54.69/"
 
 
 def request(website):
@@ -96,7 +96,7 @@ def target_url(website):
 
             print(result.content)
 
-#call the function "target_url"
+#call the function "target_url" and "requests" with the parameter variable website given in the input
 
 target_url(website)
 requests(website)
