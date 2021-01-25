@@ -11,7 +11,7 @@ class bcolors:
     CBLUE = '\33[34m'
     CRED = '\33[31m'
 
-website = "http://167.71.54.6/"
+website = "http://167.71.54.69/"
 
 
 def request(url):
