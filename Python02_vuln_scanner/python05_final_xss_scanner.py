@@ -18,11 +18,8 @@ def request(url):
 
     try:
         return requests.get(url)
-    #except requests.exception.ConnectionError:
+    except requests.exception.ConnectionError:
 
-    except requests.exeptions.ConnectionError as e:  # This is the correct syntax
-        print(e)
-        r = "No response"
 
         print("Please type in a correct Website html")
         pass
