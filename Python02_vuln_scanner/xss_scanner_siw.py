@@ -32,7 +32,7 @@ class bcolors:
 
 
 
-def website():
+def website(url):
    try:
        print(bcolors.CBLUE,"e.g target ->>>> http://target.com/submit.php?name=")
        url = input("Please Enter Target URL\t:")
@@ -181,7 +181,7 @@ def target_url(website):
 
 target_url(website)
 requests(website)
-website()
+website(website)
 
 
 
