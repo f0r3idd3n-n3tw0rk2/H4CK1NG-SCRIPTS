@@ -17,15 +17,15 @@ class bcolors:
 
 
 def website():
-    website = "http://167.71.54.69/"
-    while True:
-        print("XSS-TESTER")
-        yy = ("\n"
-              "1) BASIC PAYLOAD TESTSTRINGS\n"
-              "2) WORDLIST WFUZZ XSS\n"
-              "3) ENTER FILE PATH\n "
-              "4) EXIT\n"
-              "\n"
+    website_ip = "http://167.71.54.69/"
+    #while True:
+      #  print("XSS-TESTER")
+       # yy = ("\n"
+              #"1) BASIC PAYLOAD TESTSTRINGS\n"
+              #"2) WORDLIST WFUZZ XSS\n"
+              #"3) ENTER FILE PATH\n "
+              #"4) EXIT\n"
+              #"\n"
 
 
 
