@@ -17,7 +17,7 @@ class bcolors:
 
 
 def website():
-    website_ip = "http://167.71.54.69/"
+    website = "http://167.71.54.69/"
     #while True:
       #  print("XSS-TESTER")
        # yy = ("\n"
