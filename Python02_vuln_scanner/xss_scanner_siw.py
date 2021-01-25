@@ -85,6 +85,11 @@ def target_url(website):
                 for line in f:
                     # if '<h1>test</h1>' not in line:
                     if xss_test_script not in line:
+                        print(bcolors.CBLUE,
+                              "\r\n[---------------------------------------------------------------------------]",
+                              "\r\n")
+                        print(bcolors.CBLUE, "\r\n[---------------------------]", "\r\n[Form_Field:]", input_type,
+                              "\r\n[---------------------------]")
                         print(bcolors.CBLUE, "\r\n[+++++]", "Webpage has no XSS Vulnerability", "[+++++]")
                     else:
                         print(bcolors.CRED,
