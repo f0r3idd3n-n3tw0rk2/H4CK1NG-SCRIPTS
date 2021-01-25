@@ -16,19 +16,6 @@ class bcolors:
 
 
 
-#def website():
-    #website = "http://167.71.54.69/"
-    #while True:
-      #  print("XSS-TESTER")
-       # yy = ("\n"
-              #"1) BASIC PAYLOAD TESTSTRINGS\n"
-              #"2) WORDLIST WFUZZ XSS\n"
-              #"3) ENTER FILE PATH\n "
-              #"4) EXIT\n"
-              #"\n"
-    #return(True)
-
-
 
 
 
@@ -37,22 +24,7 @@ class bcolors:
 print(bcolors.CBLUE,"e.g target ->>>> http://target.com/", "or http://IP-ADDRESS/")
 website = input("Please Enter Target URL\t:")
 print(bcolors.CBLUE,"Default Payload List ->>>> xss_teststrings02.txt")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(bcolors.CBLUE,"Default Payload ->>>> <h1>XSS-VULNERABLE</h1>")
 
 
 
@@ -115,7 +87,7 @@ def target_url(website):
 
 #If input for the variable is text then put in the value for the xss test script string
             if input_type == "text":
-                input_value = "<h1>test</h1>"
+                input_value = "<h1>XSS-VULNERABLE</h1>"
                 # print(input)
                 # for Post in input_name:
                 post_data[input_name] = input_value
@@ -127,7 +99,7 @@ def target_url(website):
             # print(result.content)
 
             # XSS_Test_Script Variable
-            xss_test_script = "<h1>test</h1>"
+            xss_test_script = "<h1>XSS-VULNERABLE</h1>"
 
             # write the result.content in a file and save it
             with open("result.txt", "w") as text_file:
