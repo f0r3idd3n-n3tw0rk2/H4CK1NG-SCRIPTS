@@ -36,8 +36,8 @@ def request(url):
             print("Someone closed the program")
 
             print("Please type in a correct Website html")
-        except Exception:
-            pass
+        #except Exception:
+            #pass
         break
     print("Website is not readable")
 
