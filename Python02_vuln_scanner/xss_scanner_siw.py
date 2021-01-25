@@ -12,7 +12,30 @@ class bcolors:
     CBLUE = '\33[34m'
     CRED = '\33[31m'
 
-website = "http://167.71.54.69/"
+#website = "http://167.71.54.69/"
+
+
+
+def website():
+    website = "http://167.71.54.69/"
+    while True:
+        print("XSS-TESTER")
+        yy = ("\n"
+              "1) BASIC PAYLOAD TESTSTRINGS\n"
+              "2) WORDLIST WFUZZ XSS\n"
+              "3) ENTER FILE PATH\n "
+              "4) EXIT\n"
+              "\n"
+        return(website)
+
+
+
+
+
+
+
+
+
 
 #This is the 1st function for error handling and trying the parameter for the website calling it in the method request
 #Checking for type errors in the website url and checking with Timeout if the website is reachable
@@ -118,7 +141,7 @@ def target_url(website):
 
 target_url(website)
 requests(website)
-
+website()
 
 
 
