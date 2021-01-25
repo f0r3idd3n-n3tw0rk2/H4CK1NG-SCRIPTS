@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 import urllib.parse
 import re
+import sys
 
 
 class bcolors:
@@ -105,3 +106,7 @@ def target_url(website):
 
 target_url(website)
 requests(website)
+
+
+
+sys.exit()
