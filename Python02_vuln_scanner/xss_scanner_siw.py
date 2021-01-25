@@ -123,8 +123,8 @@ def target_url(website):
             xss_test_script = "<h1>XSS-VULNERABLE</h1>"
 
             # write the result.content in a file and save it
-            with open("result.txt", "w") as text_file:
-                print(result.content, file=text_file)
+            #with open("result.txt", "w") as text_file:
+                #print(result.content, file=text_file)
 
             # read the file with all the results and check if the webpage is vulnerable
             with open("result.txt", "r") as f:
