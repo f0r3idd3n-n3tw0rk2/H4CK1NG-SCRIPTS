@@ -39,7 +39,7 @@ def request(url):
             break
         #except Exception:
             #pass
-        except requests.AttributeError:
+        except requests.AttributeError as e:
 
             print(bcolors.CRED, "Website is not readable")
             print(bcolors.CRED, "Please type in a correct Website html")
