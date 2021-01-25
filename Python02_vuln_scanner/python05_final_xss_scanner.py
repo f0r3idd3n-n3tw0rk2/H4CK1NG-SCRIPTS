@@ -35,11 +35,12 @@ def request(url):
         except KeyboardInterrupt:
             print("Someone closed the program")
 
-            print("Please type in a correct Website html")
         #except Exception:
             #pass
-        break
+        except AttributeError:
+            break
     print("Website is not readable")
+    print("Please type in a correct Website html")
 
 
 
