@@ -32,10 +32,10 @@ class bcolors:
 
 
 
-def website(url):
+
    try:
        print(bcolors.CBLUE,"e.g target ->>>> http://target.com/submit.php?name=")
-       url = input("Please Enter Target URL\t:")
+       website = input("Please Enter Target URL\t:")
        print(bcolors.CBLUE,"Default Payload List ->>>> xss_teststrings02.txt")
        y = """
        1) BASIC PAYLOAD TESTSTRINGS
@@ -181,7 +181,7 @@ def target_url(website):
 
 target_url(website)
 requests(website)
-website(website)
+
 
 
 
