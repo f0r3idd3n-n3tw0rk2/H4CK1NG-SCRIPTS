@@ -39,7 +39,7 @@ def request(url):
         except Exception:
             pass
         break
-print("Website is readable")
+    print("Website is not readable")
 
 
 
