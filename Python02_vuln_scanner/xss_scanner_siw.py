@@ -59,19 +59,19 @@ def request(website):
 
         except requests.ConnectionError as e:
             print(bcolors.CRED,
-                  "OOPS!! Connection Error. Make sure you are connected to Internet or check the correct Syntax of IP address. Technical Details given below.\n")
+                  "JA MEI AN ERROR!! Connection Error. Make sure you are connected to Internet or check the correct Syntax of IP address. Technical Details given below.\n")
             print(str(e))
             break
         except requests.Timeout as e:
-            print(bcolors.CRED, "OOPS!! Timeout Error")
+            print(bcolors.CRED, "JA MEI AN ERROR!! Timeout Error")
             print(str(e))
             break
         except requests.RequestException as e:
-            print(bcolors.CRED, "OOPS!! General Error")
+            print(bcolors.CRED, "JA MEI AN ERROR!! General Error")
             print(str(e))
             break
         except KeyboardInterrupt:
-            print(bcolors.CRED, "Someone closed the program")
+            print(bcolors.CRED, "YOU stopped the program")
             break
         except AttributeError:
 
