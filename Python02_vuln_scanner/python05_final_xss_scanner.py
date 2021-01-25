@@ -36,8 +36,8 @@ def request(url):
         print("Someone closed the program")
 
         print("Please type in a correct Website html")
-        pass
-        print("Website is readable")
+    pass
+    print("Website is readable")
 
 
 
