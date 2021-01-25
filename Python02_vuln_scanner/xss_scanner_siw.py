@@ -80,6 +80,9 @@ def request(website):
     sys.exit()
 
 
+
+
+
 #-----------------------------------------NEXT--------FUNCTION-----02---------------------------------------------------
 #This is the 2nd function which is calling the variable website after error checks
 #Then it is using this URL to form the response, analyze it with Beautifulsoup for parsing the content

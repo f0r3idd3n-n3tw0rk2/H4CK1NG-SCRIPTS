@@ -80,6 +80,10 @@ def request(website):
     sys.exit()
 
 
+
+
+
+
 #-----------------------------------------NEXT--------FUNCTION-----02---------------------------------------------------
 #This is the 2nd function which is calling the variable website after error checks
 #Then it is using this URL to form the response, analyze it with Beautifulsoup for parsing the content
@@ -123,16 +127,11 @@ def target_url(website):
             xss_test_script = "<h1>XSS-VULNERABLE</h1>"
 
             # write the result.content in a file and save it
-            #with open("result.txt", "w") as text_file:
-                #print(result.content, file=text_file)
+            with open("result.txt", "wb") as text_file:
+                print(result.content, file=text_file)
 
             # read the file with all the results and check if the webpage is vulnerable
             with open("result.txt", "rb") as f:
-
-
-
-
-
                 for line in f:
                     if xss_test_script not in line:
                         print(bcolors.CBLUE,
