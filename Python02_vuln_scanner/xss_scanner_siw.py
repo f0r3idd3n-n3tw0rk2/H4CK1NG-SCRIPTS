@@ -40,7 +40,7 @@ def request(url):
             print(bcolors.CRED, "Please type in a correct Website html")
 
 
-def target_url():
+def target_url(target_url):
     target_url = "http://167.71.54.69/"
     response = request(target_url)
 
