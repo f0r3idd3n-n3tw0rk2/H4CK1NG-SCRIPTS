@@ -11,9 +11,11 @@ class bcolors:
     CBLUE = '\33[34m'
     CRED = '\33[31m'
 
+website = "http://167.71.54.69/"
+
 
 def request(url):
-    url = "http://167.71.54.69/"
+    url = website
     while True:
         try:
             return requests.get(url, timeout=6.0)
@@ -40,8 +42,8 @@ def request(url):
             print(bcolors.CRED, "Please type in a correct Website html")
 
 
-def target_url(target_url):
-    target_url = "http://167.71.54.69/"
+def target_url(url):
+    target_url = website
     response = request(target_url)
 
     parsed_html = BeautifulSoup(response.content, "html.parser")
@@ -95,4 +97,5 @@ def target_url(target_url):
             print(result.content)
 
 #call the function "target_url"
-target_url()
+requests(website)
+target_url(website)
