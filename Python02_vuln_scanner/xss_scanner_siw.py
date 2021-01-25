@@ -13,7 +13,7 @@ class bcolors:
 
 
 def request(url):
-    url = "http://167.71.54.6/"
+    url = "http://167.71.54.6b/"
     while True:
         try:
             return requests.get(url, timeout=6.0)
