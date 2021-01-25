@@ -13,8 +13,8 @@ class bcolors:
 
 
 def request(url):
-    target_url = "http://167.71.54.69/"
-    requests = request(target_url)
+    url = "http://167.71.54.69/"
+
     try:
         return requests.get(url)
     except requests.exception.ConnectionError:
