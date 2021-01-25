@@ -41,7 +41,7 @@ def request(website):
 
             print(bcolors.CRED, "Website is not readable")
             print(bcolors.CRED, "Please type in a correct Website html")
-
+    sys.exit()
 
 def target_url(website):
     target_url = website
@@ -109,4 +109,4 @@ requests(website)
 
 
 
-sys.exit()
+
