@@ -22,7 +22,10 @@ class bcolors:
 
 
 
-
+#here you will define the Attack URL, with your Domain or IP input
+#as a variable http is created with http:// you do not have to define the http protocol
+#After entering the Attack Host you have to wait for loading the Attack Arsenal
+#Then your Input will be validated in the Exception function for Testing
 
 print(bcolors.CBLUE,"e.g target ->>>> http://target.com/", "or http://IP-ADDRESS/")
 http = "http://"
@@ -37,13 +40,6 @@ time.sleep(3.5)    # Pause 5.5 seconds
 for i in tqdm.tqdm(range(200)):
     time.sleep(0.01)
     # or other long operations
-
-
-
-
-
-
-
 
 
 
