@@ -32,8 +32,8 @@ def request(url):
             print(bcolors.CRED, "OOPS!! General Error")
             print(str(e))
             break
-        except AttributeError:
-            break
+        #except AttributeError:
+            #break
         except KeyboardInterrupt:
             print(bcolors.CRED, "Someone closed the program")
             break
