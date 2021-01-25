@@ -7,6 +7,9 @@ import urllib.parse
 import re
 import sys
 import time
+import tqdm
+
+
 
 class bcolors:
     CBLUE = '\33[34m'
@@ -26,9 +29,24 @@ website = input("Please Enter Target URL\t:")
 print(bcolors.CBLUE,"Default Payload List ->>>> xss_teststrings02.txt")
 print(bcolors.CBLUE,"Default Payload ->>>> <h1>XSS-VULNERABLE</h1>")
 
-print("something")
-time.sleep(5.5)    # Pause 5.5 seconds
-print("something")
+print("XSS-SCANNER will load the full Aresenal to attack the given Page")
+time.sleep(3.5)    # Pause 5.5 seconds
+
+for i in tqdm.tqdm(range(100)):
+    time.sleep(0.01)
+    # or other long operations
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
