@@ -34,7 +34,7 @@ class bcolors:
 
 
 
-print(bcolors.CBLUE,"e.g target ->>>> http://target.com")
+print(bcolors.CBLUE,"e.g target ->>>> http://target.com/", "or http://IP-ADDRESS/")
 website = input("Please Enter Target URL\t:")
 print(bcolors.CBLUE,"Default Payload List ->>>> xss_teststrings02.txt")
 
