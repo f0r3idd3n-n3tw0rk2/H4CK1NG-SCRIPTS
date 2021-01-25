@@ -127,9 +127,16 @@ def target_url(website):
                 print(result.content, file=text_file)
 
             # read the file with all the results and check if the webpage is vulnerable
-            with open("result.txt", "r") as f:
-                for line in f:
-                    if xss_test_script not in line:
+            #with open("result.txt", "r") as f:
+
+            with open("result.txt") as file_in:
+                lines = []
+                for line in file_in:
+                    lines.append(line)
+
+
+                #for line in f:
+                    if xss_test_script not in lines:
                         print(bcolors.CBLUE,
                               "\r\n[---------------------------------------------------------------------------]",
                               "\r\n")
