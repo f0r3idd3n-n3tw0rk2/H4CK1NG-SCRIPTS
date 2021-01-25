@@ -14,7 +14,7 @@ class bcolors:
 
 
 def request(url):
-    url = "http://167.71.54.6/"
+    url = "http://167.71.54.69/"
 
     try:
         return requests.get(url)
