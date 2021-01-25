@@ -20,7 +20,7 @@ def request(url):
         return requests.get(url)
     #except requests.exception.ConnectionError:
 
-    except ConnectionError as e:  # This is the correct syntax
+    except requests.exeptions.ConnectionError as e:  # This is the correct syntax
         print(e)
         r = "No response"
 
