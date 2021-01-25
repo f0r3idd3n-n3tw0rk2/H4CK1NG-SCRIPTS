@@ -97,5 +97,6 @@ def target_url(url):
             print(result.content)
 
 #call the function "target_url"
-requests(website)
+
 target_url(website)
+requests(website)
