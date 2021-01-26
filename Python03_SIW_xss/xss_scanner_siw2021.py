@@ -35,7 +35,7 @@ def main():
         print(xss_test_string)
         data = {'first': xss_test_string, 'last': xss_test_string}
         r = requests.post(url, data)
-        print(r)
+        #print(r)
 
 
 
