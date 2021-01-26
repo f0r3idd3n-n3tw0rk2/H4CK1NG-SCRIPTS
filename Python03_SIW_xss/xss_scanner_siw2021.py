@@ -8,7 +8,7 @@ import sys
 
 
 
-text_file = open("filename.dat", "r")
+text_file = open("xss_test_string.txt", "r")
 lines = text_file.readlines()
 print (lines)
 print (len(lines))
