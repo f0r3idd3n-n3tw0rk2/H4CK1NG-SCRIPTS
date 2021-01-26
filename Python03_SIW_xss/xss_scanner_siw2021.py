@@ -7,8 +7,8 @@ import sys
 #print(sys.argv)
 
 
-url = sys.argv[1]
-parameters = sys.argv[2].split(",")
+#url = sys.argv[1]
+#parameters = sys.argv[2].split(",")
 
 
 
