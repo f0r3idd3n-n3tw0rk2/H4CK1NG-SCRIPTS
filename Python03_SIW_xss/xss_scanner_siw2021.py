@@ -38,15 +38,20 @@ def main():
             data[parameter] = xss_test_string
 
 
-        print(xss_test_string)
-        data = {'first': xss_test_string, 'last': xss_test_string}
+        #print(xss_test_string)
+        #data = {'first': xss_test_string, 'last': xss_test_string}
         response = requests.post(url, data)
 
-        print("Test String:")
-        print(xss_test_string)
+        if xss_test_string in response.text:
+            print("XSS Detected")
+        else:
+            print("Keine Schwachstelle")
 
-        print("Response:")
-        print(response.text)
+        #print("Test String:")
+        #print(xss_test_string)
+
+        #print("Response:")
+        #print(response.text)
 
 
 
