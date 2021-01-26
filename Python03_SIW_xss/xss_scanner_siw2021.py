@@ -4,8 +4,17 @@
 import sys
 
 
-
 #print(sys.argv)
+
+
+
+text_file = open("filename.dat", "r")
+lines = text_file.readlines()
+print (lines)
+print (len(lines))
+text_file.close()
+
+
 
 url = sys.argv[1]
 parameters = sys.argv[2].split(",")
