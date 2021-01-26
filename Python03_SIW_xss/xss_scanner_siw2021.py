@@ -29,12 +29,11 @@ def load_xss_test_strings(filename):
 def main():
     print("|+] Starting Scanner")
 
-    xss_test_strings = load_xss_test_strings('xss_test_string.txt')
+    xss_test_strings = load_xss_test_strings('./xss_test_string.txt')
 
     for xss_test_strings in xss_test_strings:
         print(xss_test_strings)
         data = {'first': 'hans', 'last': 'meier'}
-
         r = requests.post(url, data)
         print(r)
 
