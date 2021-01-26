@@ -8,12 +8,12 @@ import requests
 #print(sys.argv)
 
 
-#url = sys.argv[1]
+url = sys.argv[1]
 parameters = sys.argv[2].split(",")
 
 
 
-url = "http://167.71.54.69/"
+#url = "http://167.71.54.69/"
 
 
 def load_xss_test_strings(filename):
@@ -41,7 +41,12 @@ def main():
         print(xss_test_string)
         data = {'first': xss_test_string, 'last': xss_test_string}
         response = requests.post(url, data)
-        print(response.content)
+
+        print("Test String:")
+        print(xss_test_string)
+
+        print("Response:")
+        print(response.text)
 
 
 
