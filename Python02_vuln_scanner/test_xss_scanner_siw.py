@@ -151,7 +151,7 @@ def target_url(website):
                               "\r\n[---------------------------]")
                         print(bcolors.CRED, "\r\n[-----]", "Webpage has an XSS Vulnerability", "[-----]", "\r\n")
 
-            print(result.content)
+            print(result.text)
 
     sys.exit()
 
