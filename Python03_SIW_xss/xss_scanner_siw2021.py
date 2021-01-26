@@ -35,7 +35,7 @@ def main():
         print(xss_test_strings)
         data = {'first': 'hans', 'last': 'meier'}
         r = requests.post(url, data)
-        print(r)
+        print(r.request.content)
 
 
 
