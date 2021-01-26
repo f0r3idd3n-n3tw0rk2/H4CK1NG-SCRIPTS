@@ -36,12 +36,13 @@ def main():
         data = {'first': 'hans', 'last': 'meier'}
         print(data[1])
         r = requests.post(url, data)
+        print(r)
 
 
 
 
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+        main()
 
 
 
