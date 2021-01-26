@@ -13,10 +13,7 @@ import requests
 
 
 
-target_url = "http://167.71.54.69/"
-response = requests(target_url)
-print(response.content)
-
+url = "http://167.71.54.69/"
 
 
 def load_xss_test_strings(filename):
@@ -36,8 +33,9 @@ def main():
 
     for xss_test_strings in xss_test_strings:
         print(xss_test_strings)
-
-
+        data = {'first': 'hans', 'last': 'meier'}
+        print(data[1])
+        r = requests.post(url, data)
 
 
 
