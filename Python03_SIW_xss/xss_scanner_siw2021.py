@@ -34,7 +34,7 @@ def main():
     for xss_test_strings in xss_test_strings:
         print(xss_test_strings)
         data = {'first': 'hans', 'last': 'meier'}
-        print(data[1])
+
         r = requests.post(url, data)
         print(r)
 
