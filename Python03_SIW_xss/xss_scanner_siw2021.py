@@ -31,11 +31,11 @@ def main():
 
     xss_test_strings = load_xss_test_strings('./xss_test_string.txt')
 
-    for xss_test_strings in xss_test_strings:
-        print(xss_test_strings)
-        data = {'first': 'hans', 'last': 'meier'}
+    for xss_test_string in xss_test_strings:
+        print(xss_test_string)
+        data = {'first': xss_test_string, 'last': xss_test_string}
         r = requests.post(url, data)
-        print(r.request.content)
+        print(r)
 
 
 
