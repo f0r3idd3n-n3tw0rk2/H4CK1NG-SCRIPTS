@@ -2,6 +2,7 @@
 
 #import bibliothek
 import sys
+import requests
 
 
 #print(sys.argv)
@@ -9,6 +10,12 @@ import sys
 
 #url = sys.argv[1]
 #parameters = sys.argv[2].split(",")
+
+
+
+target_url = "http://167.71.54.69/"
+response = requests(target_url)
+print(response.content)
 
 
 
@@ -29,6 +36,9 @@ def main():
 
     for xss_test_strings in xss_test_strings:
         print(xss_test_strings)
+
+
+
 
 
 
