@@ -9,7 +9,7 @@ import requests
 
 
 #url = sys.argv[1]
-#parameters = sys.argv[2].split(",")
+parameters = sys.argv[2].split(",")
 
 
 
@@ -32,10 +32,16 @@ def main():
     xss_test_strings = load_xss_test_strings('./xss_test_string.txt')
 
     for xss_test_string in xss_test_strings:
+        data = {}
+
+        for parameter in parameters:
+            data[parameter] = xss_test_string
+
+
         print(xss_test_string)
         data = {'first': xss_test_string, 'last': xss_test_string}
-        r = requests.post(url, data)
-        #print(r)
+        response = requests.post(url, data)
+        print(response.content)
 
 
 
