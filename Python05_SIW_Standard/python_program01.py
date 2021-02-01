@@ -5,12 +5,26 @@ import sys
 
 
 
+print('Number of arguments:', len(sys.argv), 'arguments.')
+print('Argument List:', str(sys.argv))
+
+#Now run above script as follows −
+#$ python test.py arg1 arg2 arg3
+
+#This produce following result −
+#Number of arguments: 4 arguments.
+#Argument List: ['test.py', 'arg1', 'arg2', 'arg3']
+
+
+
+
 #2.) Define variables
 #sys.arv 1 -> python3 "programme-name.py" "sys.arv 1"
 #sys.arv 2 -> python3 "programme-name.py" "sys.arv 2 and split by ,"
 
 variable1 = sys.argv[1]
 variable2 = sys.argv[2].split(",")
+
 
 #3.) Loading a File and first function
 
