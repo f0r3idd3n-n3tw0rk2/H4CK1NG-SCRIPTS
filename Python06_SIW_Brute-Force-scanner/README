@@ -1,0 +1,52 @@
+Readme: SSH Brute-Force-Detector
+#################################
+
+- Schwellwert / Treshold für fehlerhafte Logins: 5
+- 3 verschiedene Ausgabeformate
+  -> Ausgabe bei 5 fehlerhafte Logins
+  -> Gesamtausgabe bei fehlerhafte Logins
+  -> Ausgabe am Tag fehlerhafte Logins
+- Datei einlesen ssh log -> auth.log
+- Ausgabe nur wenn über 5 Fehlversuche
+- File auth.log muss im Verzeichnis wie Pythonscript liegen
+- Uniq Entry in einer Liste/Dictionary
+
+
+Command:
+#################################
+Befehl: python3 ssh_brute_force_detector.py 5
+
+
+
+
+Ausgabeformat:
+###########################################
+Host/IP und Anzahl fehlerhafte Logins Gesamt
+
+Host#IP     ##  Failed Logins Summary
+---------------------------------------
+45.15.16.37 ##         1000
+
+
+
+Host#IP     ##  Failed Logins within 10 sec ##   Time           ##
+------------------------------------------------------------------
+45.15.16.37 ##         5                    ##  Mar 18 18:50:28 ##
+
+
+
+Host#IP     ##  Failed Logins per day  ##  Day
+-----------------------------------------------
+45.15.16.37 ##         100             ##   Mar 18
+
+
+
+
+
+Beispiel Logs zum durchparsen:
+################################
+Mar 18 13:50:28 bit_server sshd[22625]: Invalid user abridge from 45.15.16.37 port 18397
+Mar 18 13:50:28 bit_server sshd[22625]: pam_unix(sshd:auth): check pass; user unknown
+Mar 18 13:50:28 bit_server sshd[22625]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.15.16.37
+Mar 18 13:50:30 bit_server sshd[22625]: Failed password for invalid user abridge from 45.15.16.37 port 18397 ssh2
+Mar 18 13:50:30 bit_server sshd[22625]: Connection closed by invalid user abridge 45.15.16.37 port 18397 [preauth]
