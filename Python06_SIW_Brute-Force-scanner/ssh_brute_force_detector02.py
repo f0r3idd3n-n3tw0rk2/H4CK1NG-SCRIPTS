@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 
-from apachelogs import LogParser
+import apache_log_parser
 
-
+line_parser = apache_log_parser.make_parser("%v %h %l %u %t \"%r\" %>s %b")
 
 filename = 'server_logfile_test.txt'
 
