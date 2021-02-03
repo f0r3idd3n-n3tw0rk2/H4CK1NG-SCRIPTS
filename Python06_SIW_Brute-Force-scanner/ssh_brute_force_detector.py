@@ -37,7 +37,7 @@ def load_server_logfile(filename):
 
 #Hauptfunktion
 def main():
-    print("[+] Starting Scanner")
+    print("[+] Starting Parsing the logfile")
     #Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
     log_contents = load_server_logfile('server_logfile.txt')
     #Schleife zur Ausgabe der einzelnen Listenelemente
@@ -50,10 +50,11 @@ def main():
         for parameter in parameters:
             log_list[parameter] = log_list
             print(log_list)
+        response = log_list
 
 
         #Überprüfung ob der Teststring in der Response gefunden wird
-        if xss_test_string in response.text:
+        if log_list in response:
             #Verwundbarkeit gefunden
             print("[!] XSS Vulnerability detected")
         else:
