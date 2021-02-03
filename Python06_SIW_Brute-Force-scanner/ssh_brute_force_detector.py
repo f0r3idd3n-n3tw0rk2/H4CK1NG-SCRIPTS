@@ -9,7 +9,7 @@ import sys
 #2.) Define the variable
 
 parameters = sys.argv[1].split(",")
-filename = ('server_logfile_test.txt')
+filename = (server_logfile_test.txt)
 #filename = server_logfile.txt
 
 
