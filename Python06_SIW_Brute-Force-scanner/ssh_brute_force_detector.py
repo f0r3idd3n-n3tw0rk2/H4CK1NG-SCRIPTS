@@ -45,12 +45,12 @@ def main():
         #Debug Textausgabe
         print(log_content)
         #Leeres Dictionary erstellen
-        log_list = {}
+        list = {}
         #Schleife Dictionary erweitern mit den Parametern und den xss_test_strings
         for parameter in parameters:
-            log_list[parameter] = log_list
-            print(log_list)
-        response = log_list
+            list[parameter] = log_content
+            print(list)
+        response = list
 
 
         #Überprüfung ob der Teststring in der Response gefunden wird
