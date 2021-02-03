@@ -54,12 +54,12 @@ def main():
 
 
         #Überprüfung ob der Teststring in der Response gefunden wird
-        if log_list in response:
+        if parameters in response:
             #Verwundbarkeit gefunden
-            print("[!] XSS Vulnerability detected")
+            print("[!] Brute Force Detection")
         else:
             #Keine Verwundbarkeit gefunden
-            print("[+] All good. No XSS Vulnerability detected.")
+            print("[+] All good. No Brute Force On Server.")
 
 if __name__ == '__main__':
     main()
@@ -98,10 +98,10 @@ if __name__ == '__main__':
 
 
 #create a function which is doing the printing of that list. Variable results_list
-def print_result(results_list):
-    print("Host-IP\t\t\tFailed Logins within 10 sec\n-------------------------------------")             #print a header line
-    for host in results_list:
-       print(host["host-ip"] + "\t\t" + host["failed_login"])                                #print clients only ip and mac
+#def print_result(results_list):
+    #print("Host-IP\t\t\tFailed Logins within 10 sec\n-------------------------------------")             #print a header line
+    #for host in results_list:
+      # print(host["host-ip"] + "\t\t" + host["failed_login"])                                #print clients only ip and mac
 
 
 
