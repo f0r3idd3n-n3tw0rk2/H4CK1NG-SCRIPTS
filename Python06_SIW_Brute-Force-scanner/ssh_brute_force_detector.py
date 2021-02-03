@@ -39,7 +39,7 @@ def load_server_logfile(filename):
 def main():
     print("[+] Starting Parsing the logfile")
     #Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
-    log_contents = load_server_logfile('server_logfile.txt')
+    log_contents = load_server_logfile('server_logfile_test.txt')
     #Schleife zur Ausgabe der einzelnen Listenelemente
     for log_content in log_contents:
         #Debug Textausgabe
