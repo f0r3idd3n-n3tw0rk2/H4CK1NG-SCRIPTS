@@ -36,7 +36,7 @@ def load_server_logfile(filename):
     #xss_test_strings = open("xss_teststrings.txt").read().split("\n")
 
 #Hauptfunktion
-def main():
+def log():
     print("[+] Starting Parsing the logfile")
     #Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
     log_contents = load_server_logfile('server_logfile_test.txt')
@@ -61,8 +61,11 @@ def main():
             #Keine Verwundbarkeit gefunden
             print("[+] All good. No Brute Force On Server.")
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+#    main()
+
+
+log()
 
 
 
