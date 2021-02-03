@@ -5,9 +5,9 @@ from apachelogs import LogParser
 
 
 
+filename = 'server_logfile_test.txt'
 
 
-
-with open('/server_logfile_test.txt') as fp:  # doctest: +SKIP
+with open(filename) as fp:  # doctest: +SKIP
     for entry in parser.parse_lines(fp):
         print(str(entry.request_time), entry.request_line)
