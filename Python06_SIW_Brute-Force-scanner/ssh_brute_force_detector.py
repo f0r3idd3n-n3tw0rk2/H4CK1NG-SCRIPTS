@@ -3,12 +3,12 @@
 #1.) Import modules
 
 import re
-
+import sys
 
 
 #2.) Define the variable
 
-
+parameters = sys.argv[1].split(",")
 
 #filename = server_logfile.txt
 
