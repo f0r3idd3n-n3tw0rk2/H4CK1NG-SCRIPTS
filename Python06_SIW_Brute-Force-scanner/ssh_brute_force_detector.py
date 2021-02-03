@@ -10,7 +10,7 @@ import re
 
 
 
-filename = "server_logfile.txt"
+#filename = server_logfile.txt
 
 
 #3.) Read a Log file and add the content to an array
@@ -25,10 +25,10 @@ filename = "server_logfile.txt"
 #print(content.)
 
 
-def load_server_logfile(filename):
-    list = []
-    with open(filename, 'r') as file:
-     for line in file.readlines():
+#def load_server_logfile(filename):
+list = []
+with open(server_logfile.txt, 'r') as file:
+    for line in file.readlines():
         if len(line.split(' - ')) >= 4:
             d = dict()
             d['Date'] = line.split(' - ')[0]
