@@ -16,24 +16,26 @@ filename = "server_logfile.txt"
 #3.) Read a Log file and add the content to an array
 
 
+#def load_server_logfile(filename):
+#    print("[+] Loading Server Logfile")
+#    with open(filename) as f:
+#        content = f.readlines()
+#    content = [x.strip() for x in content]
+#    return content
+#print(content.)
+
+
 def load_server_logfile(filename):
-    print("[+] Loading Server Logfile")
-    with open(filename) as f:
-        content = f.readlines()
-    content = [x.strip() for x in content]
-    return content
-
-
-
-
-#with open("Data.log", "r") as ins:
-
-#    array = []
-
-#    for line in ins:
-
-#        array.append(line)
-
+    list = []
+    with open(filename, 'r') as file:
+     for line in file.readlines():
+        if len(line.split(' - ')) >= 4:
+            d = dict()
+            d['Date'] = line.split(' - ')[0]
+            d['Type'] = line.split(' - ')[2]
+            d['Message'] = line.split(' - ')[3]
+            list.append(d)
+        print(list)
 
 
 
