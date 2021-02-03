@@ -64,7 +64,7 @@ def log():
 #if __name__ == '__main__':
 #    main()
 
-load_server_logfile(parameters)
+
 log()
 
 
