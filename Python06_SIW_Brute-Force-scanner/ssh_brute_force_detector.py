@@ -26,16 +26,42 @@ import re
 
 
 #def load_server_logfile(filename):
-list = []
-with open(server_logfile.txt, 'r') as file:
-    for line in file.readlines():
-        if len(line.split(' - ')) >= 4:
-            d = dict()
-            d['Date'] = line.split(' - ')[0]
-            d['Type'] = line.split(' - ')[2]
-            d['Message'] = line.split(' - ')[3]
-            list.append(d)
-        print(list)
+def load_server_logfile(filename):
+    print("[+] Loading Logfile")
+    with open(filename) as f:
+        content = f.readlines()
+    content = [x.strip() for x in content]
+    return content
+#Alternative xss_teststrings.txt
+    #xss_test_strings = open("xss_teststrings.txt").read().split("\n")
+
+#Hauptfunktion
+def main():
+    print("[+] Starting Scanner")
+    #Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
+    log_contents = load_server_logfile('server_logfile.txt')
+    #Schleife zur Ausgabe der einzelnen Listenelemente
+    for log_content in log_contents:
+        #Debug Textausgabe
+        print(log_content)
+        #Leeres Dictionary erstellen
+        log_list = {}
+        #Schleife Dictionary erweitern mit den Parametern und den xss_test_strings
+        for parameter in parameters:
+            log_list[parameter] = log_list
+            print(log_list)
+
+
+        #Überprüfung ob der Teststring in der Response gefunden wird
+        if xss_test_string in response.text:
+            #Verwundbarkeit gefunden
+            print("[!] XSS Vulnerability detected")
+        else:
+            #Keine Verwundbarkeit gefunden
+            print("[+] All good. No XSS Vulnerability detected.")
+
+if __name__ == '__main__':
+    main()
 
 
 
