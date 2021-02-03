@@ -45,6 +45,7 @@ def load_server_logfile(filename):
 
 
 
+
 #5.) search through the list/array and print only failed logins within on same day and count it
 
 
@@ -68,10 +69,10 @@ def load_server_logfile(filename):
 
 
 #create a function which is doing the printing of that list. Variable results_list
-#def print_result(results_list):
-#    print("IP\t\t\tMAC Address\n-------------------------------------")             #print a header line
-#    for client in results_list:
-#        print(client["ip"] + "\t\t" + client["mac"])                                #print clients only ip and mac
+def print_result(results_list):
+    print("Host-IP\t\t\tFailed Logins within 10 sec\n-------------------------------------")             #print a header line
+    for host in results_list:
+       print(host["host-ip"] + "\t\t" + host["failed_login"])                                #print clients only ip and mac
 
 
 
