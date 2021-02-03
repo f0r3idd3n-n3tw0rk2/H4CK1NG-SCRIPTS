@@ -2,7 +2,7 @@
 
 #1.) Import modules
 
-
+import re
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-
+filename = "server_logfile.txt"
 
 
 #3.) Read a Log file and add the content to an array
