@@ -65,7 +65,7 @@ def log():
 #    main()
 
 
-load_server_logfile(parameters)
+#load_server_logfile(parameters)
 
 
 
