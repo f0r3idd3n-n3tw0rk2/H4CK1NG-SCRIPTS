@@ -22,7 +22,9 @@ try:
     serverlog = logs.read()
 
     content = [x.strip() for x in serverlog]
+    list()
     for i in content:
+        print(list.append)
         print(content)
 
 except:
