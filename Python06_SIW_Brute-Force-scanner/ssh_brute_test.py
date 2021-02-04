@@ -18,8 +18,9 @@ from collections import Counter
 
 try:
     logs = open('server_logfile_test.txt', 'r')
-    serverlog = logs.read()
-    print(serverlog)
+    for i in logs:
+        serverlog = logs.read()
+        print(serverlog)
 
 except:
     print('Can not read the logfile')
