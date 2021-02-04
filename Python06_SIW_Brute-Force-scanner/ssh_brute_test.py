@@ -21,8 +21,8 @@ try:
 
     serverlog = logs.read()
     print(serverlog)
-    for log in serverlog:
-        print(log[0], log[1])
+    for logs in serverlog:
+        print(logs[0], logs[1])
 
 except:
     print('Can not read the logfile')
