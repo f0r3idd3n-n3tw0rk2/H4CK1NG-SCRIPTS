@@ -17,20 +17,23 @@ from collections import Counter
 #deliver a new file object logs and print the output
 
 
-def server_logs():
-    print("[+] File Reading Starting ....")
-    with open('server_logfile_test.txt') as f:
-        content = f.readlines()
-    content = [x.strip() for x in content]
-    print(content)
-    return content
+
+logs = open('server_logfile_test.txt', 'r')
+
+serverlog = logs.read()
+regex = '([\d\.)]+)'
+
+print(re.match(regex, serverlog).groups())
+
+
+
 
 
 
 #try:
-  #  logs = open('server_logfile_test.txt', 'r')
+ # logs = open('server_logfile_test.txt', 'r')
 
-  #  serverlog = logs.read()
+  # serverlog = logs.read()
 
   #  content = [x.strip() for x in serverlog]
   #  list()
