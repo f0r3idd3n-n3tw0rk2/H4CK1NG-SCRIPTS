@@ -20,7 +20,8 @@ try:
     logs = open('server_logfile_test.txt', 'r')
 
     serverlog = logs.read()
-    print(serverlog, sep="\n")
+    for i in serverlog:
+        print(serverlog, sep="\n")
 
 except:
     print('Can not read the logfile')
