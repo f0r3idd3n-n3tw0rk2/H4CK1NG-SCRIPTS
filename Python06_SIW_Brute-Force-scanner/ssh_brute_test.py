@@ -21,6 +21,7 @@ try:
 
     serverlog = logs.read()
     for i in serverlog:
+        content = [x.strip() for x in serverlog]
         print(serverlog, sep="\n")
 
 except:
