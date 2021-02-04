@@ -20,7 +20,7 @@ try:
     logs = open('server_logfile_test.txt', 'r')
 
     serverlog = logs.read()
-    #print(serverlog)
+    print(serverlog, sep="\n")
     for logs in serverlog:
         print(logs[0], logs[1])
 
