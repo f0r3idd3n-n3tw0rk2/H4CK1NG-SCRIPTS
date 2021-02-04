@@ -22,7 +22,7 @@ try:
     serverlog = logs.read()
 
     content = [x.strip() for x in serverlog]
-    print(serverlog, sep="\n")
+    print(content, sep="\n")
 
 except:
     print('Can not read the logfile')
