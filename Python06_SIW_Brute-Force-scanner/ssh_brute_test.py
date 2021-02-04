@@ -20,9 +20,9 @@ try:
     logs = open('server_logfile_test.txt', 'r')
 
     serverlog = logs.read()
-    for i in serverlog:
-        content = [x.strip() for x in serverlog]
-        print(serverlog, sep="\n")
+
+    content = [x.strip() for x in serverlog]
+    print(serverlog, sep="\n")
 
 except:
     print('Can not read the logfile')
