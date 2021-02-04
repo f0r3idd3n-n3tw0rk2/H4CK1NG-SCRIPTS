@@ -21,8 +21,6 @@ try:
 
     serverlog = logs.read()
     print(serverlog, sep="\n")
-    for logs in serverlog:
-        print(logs[0], logs[1])
 
 except:
     print('Can not read the logfile')
