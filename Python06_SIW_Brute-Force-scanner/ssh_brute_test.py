@@ -21,9 +21,9 @@ def server_logs():
     print("[+] File Reading Starting ....")
     with open('server_logfile_test.txt') as f:
         content = f.readlines()
-        content = [x.strip() for x in content]
-        print(content)
-        return content
+    content = [x.strip() for x in content]
+    print(content)
+    return content
 
 
 
