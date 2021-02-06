@@ -36,19 +36,26 @@ threshold = 5
 
 def load_logfile(log_filename):
     print("[+] Loading Server Logfile")
+
     with open(log_filename) as f:
         content = f.readlines()
     content = [line.strip() for line in content]
     print(content)
-    if "Failed" in content:
-        # Brute Force Detected
-        print("[!] Brute Force Detection")
-    else:
-        # Keine Verwundbarkeit gefunden
-        print("[+] All good. No Brute Force On Server.")
-
     log_filename = content
     return content
+
+
+
+
+
+    if match:
+    # Brute Force Detected
+        print("[!] Brute Force Detection")
+    else:
+    # Keine Verwundbarkeit gefunden
+        print("[+] All good. No Brute Force On Server.")
+
+
 
 
 # get lines with login failures
