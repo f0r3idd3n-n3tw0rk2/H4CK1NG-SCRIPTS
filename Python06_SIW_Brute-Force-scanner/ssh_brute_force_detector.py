@@ -45,7 +45,7 @@ def load_server_logfile(log_filename):
         content = f.readlines()
     content = [line.strip() for line in content]
     print(content)
-    entry = content
+    #entry = content
     return content
 
 
@@ -68,10 +68,10 @@ def load_server_logfile(log_filename):
 
 #Hauptfunktion
 unique = []
-def log(entry):
+def log(content):
     print("[+] Starting Parsing the logfile")
     #Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
-    log_contents = entry
+    log_contents = content
     word01 = "Failed"
     #Schleife zur Ausgabe der einzelnen Listenelemente
     for word01 in log_contents:
@@ -102,7 +102,7 @@ def log(entry):
 
 
 load_server_logfile(log_filename)
-log()
+log(content)
 
 
 
