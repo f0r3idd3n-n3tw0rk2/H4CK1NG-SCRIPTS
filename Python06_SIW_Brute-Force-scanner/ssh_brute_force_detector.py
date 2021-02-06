@@ -19,29 +19,32 @@ class bcolors:
 
 print(bcolors.CBLUE,"Default Server Logfile must be in folder ->>>> server_logfile_test.txt")
 print(bcolors.CBLUE,"Default Treshold ->>>> treshold -> integer")
-print(bcolors.CBLUE,"e.g python version ->>>> python3", "logfile", "threshold as Integer")
 
-python_version = "python3"
-log_filename = (python_version + input("Please Enter the logfile to analyze\t:"))
-log_filename_new = log_filename
+log_filename = input("Please Enter the logfile to analyze\t:")
 
 
 
 
-#print("XSS-SCANNER will load the full Aresenal to attack the given Page")
+
+#print("Server Logfile will be analyzed please wait....")
 #time.sleep(3.5)    # Pause 5.5 seconds
 
 #for i in tqdm.tqdm(range(200)):
 #    time.sleep(0.01)
     # or other long operations
 
-#log_filename = sys.argv[1]
-#treshold = int(sys.argv[2])
+
 
 
 #3.) Read a Log file and add the content to an array
 
 
+def load_server_logfile(log_filename):
+    print("[+] Loading Server Logfile")
+    with open(log_filename) as f:
+        content = f.readlines()
+    content = [line.strip() for line in content]
+    return content
 
 
 
@@ -61,12 +64,12 @@ log_filename_new = log_filename
 
 
 #def load_server_logfile(filename):
-def load_server_logfile(filename):
-    print("[+] Loading Logfile")
-    with open(filename) as f:
-        content = f.readlines()
-    content = [x.strip() for x in content]
-    return content
+#def load_server_logfile(filename):
+    #print("[+] Loading Logfile")
+    #with open(filename) as f:
+       # content = f.readlines()
+    #content = [x.strip() for x in content]
+    #return content
 #Alternative xss_teststrings.txt
     #xss_test_strings = open("xss_teststrings.txt").read().split("\n")
 
