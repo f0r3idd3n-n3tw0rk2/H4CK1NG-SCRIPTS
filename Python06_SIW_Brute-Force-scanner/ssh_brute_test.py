@@ -44,6 +44,7 @@ if log_filename == 'default':
 
     print(type(lines))
     print(lines)
+    f = open(log_filename, "r")
     print(f.read(5))
 
 
@@ -55,7 +56,7 @@ else:
 
     print(type(lines))
     print(lines)
-    print(f.read(5))
+
 
 
 def search(log_filename, brute_force):
