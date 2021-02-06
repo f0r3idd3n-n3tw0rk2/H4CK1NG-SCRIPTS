@@ -68,7 +68,6 @@ def load_server_logfile(log_filename):
 
 
 #Hauptfunktion
-unique = []
 def log(entry):
     print("[+] Starting Parsing the logfile")
     #Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
@@ -81,6 +80,7 @@ def log(entry):
         #Leeres Dictionary erstellen
         list = {}
         #Schleife Dictionary erweitern mit den Parametern und den xss_test_strings
+        unique = []
         for parameter in list:
             list[parameter] = log_contents
             unique.append(log)
@@ -103,6 +103,7 @@ def log(entry):
 
 
 load_server_logfile(log_filename)
+log(log)
 
 
 
