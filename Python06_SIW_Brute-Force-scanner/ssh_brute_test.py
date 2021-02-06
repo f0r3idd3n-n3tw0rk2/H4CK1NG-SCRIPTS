@@ -42,7 +42,7 @@ if log_filename == 'default':
     default_logfile = 'server_logfile_test.txt'
     with open(default_logfile) as f:
         lines = f.read().splitlines()
-        variable01 = print(lines[1])
+        #print(lines[1])
         for x in lines:
             regex = r"('^\w\w\w\s\d\d$')"
             match = re.search(regex, 'variable01')
