@@ -43,17 +43,17 @@ if log_filename == 'default':
     with open(default_logfile) as f:
         lines = f.read().splitlines()
 
-    print(type(lines))
-    print(lines)
+    #print(type(lines))
+    #print(lines)
 
-    for x in lines:
-        values = {}
-        for parameter in values:
-            values[parameter] = lines
+        for x in lines:
+            values = {}
+            for parameter in values:
+                values[parameter] = lines
 
         #filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
         #result = re.findall('^\w\w\w\s\d\d$', values)
-            print(values)
+                print(values)
 
 
     #print("Date\t:", str(date)), Regex: '\w\w\w\s\d\d$'
