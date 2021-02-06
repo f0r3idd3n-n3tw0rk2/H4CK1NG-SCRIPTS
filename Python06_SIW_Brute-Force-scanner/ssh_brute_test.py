@@ -47,10 +47,13 @@ if log_filename == 'default':
     print(lines)
 
     for x in lines:
-        values = str(lines)
-        filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
-        result = re.findall('^\w\w\w\s\d\d$', values)
-        print(filtered_values)
+        values = {}
+        for parameter in values:
+            values[parameter] = lines
+
+        #filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
+        #result = re.findall('^\w\w\w\s\d\d$', values)
+        print(lines)
 
 
     #print("Date\t:", str(date)), Regex: '\w\w\w\s\d\d$'
