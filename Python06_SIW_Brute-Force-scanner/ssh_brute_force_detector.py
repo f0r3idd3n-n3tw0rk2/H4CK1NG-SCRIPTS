@@ -40,7 +40,7 @@ def load_logfile(log_filename):
         content = f.readlines()
     content = [line.strip() for line in content]
     print(content)
-    load_logfile = content
+    log_filename = content
     return content
 
 
@@ -60,7 +60,7 @@ def main():
 
     # Überprüfung ob der Teststring in der Response gefunden wird
 
-    if "Failed" in load_logfile:
+    if "Failed" in log_filename:
         # Brute Force Detected
         print("[!] Brute Force Detection")
     else:
@@ -71,7 +71,7 @@ def main():
 
 
 
-#load_logfile(log_filename)
+load_logfile(log_filename)
 
 if __name__ == '__main__':
     main()
