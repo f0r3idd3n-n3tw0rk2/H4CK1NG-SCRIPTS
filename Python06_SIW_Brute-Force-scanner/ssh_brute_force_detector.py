@@ -90,12 +90,12 @@ def log(entry):
 
         #Überprüfung ob der Teststring in der Response gefunden wird
 
-        if log_contents is "Failed" :
-            #Brute Force Detected
-            print("[!] Brute Force Detection")
-        else:
-            #Keine Verwundbarkeit gefunden
-            print("[+] All good. No Brute Force On Server.")
+    if "Failed" in log_contents:
+        #Brute Force Detected
+        print("[!] Brute Force Detection")
+    else:
+        #Keine Verwundbarkeit gefunden
+        print("[+] All good. No Brute Force On Server.")
 
 #if __name__ == '__main__':
 #    main()
