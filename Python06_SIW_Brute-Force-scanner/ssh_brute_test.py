@@ -18,7 +18,7 @@ class bcolors:
 # use argument for input
 
 print(bcolors.CGREEN, "Default Server Logfile must be in folder ->>>> server_logfile_test.txt")
-print(bcolors.CGREEN, "Default Treshold ->>>> treshold -> integer")
+print(bcolors.CGREEN, "Default Treshold ->>>> 5x Error Login")
 
 log_filename = input("Please Enter the logfile to analyze\t:")
 threshold = 5
@@ -33,19 +33,24 @@ threshold = 5
 
 
 
+print("[+] Using default Logfile in Folder")
+default_logfile = 'server_logfile_test.txt'
+
+if default_logfile == ('server_logfile_test.txt'):
+    print("[+] Loading Server Logfile")
+    with open(default_logfile) as f:
+        lines = f.read().splitlines()
+
+    print(type(lines))
+    print(lines)
 
 
-print("[+] Loading Server Logfile")
+else:
+    with open(log_filename) as f:
+        lines = f.read().splitlines()
 
-if log_filename is None:
-    print("[+] Using default Logfile in Folder")
-    log_filename = 'server_logfile_test.txt'
-
-with open(log_filename) as f:
-    lines = f.read().splitlines()
-
-print(type(lines))
-print(lines)
+    print(type(lines))
+    print(lines)
 
 
 
