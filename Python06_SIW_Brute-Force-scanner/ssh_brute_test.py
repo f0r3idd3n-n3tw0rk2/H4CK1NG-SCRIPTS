@@ -46,7 +46,7 @@ if log_filename == 'default':
     print(lines)
     f = open(default_logfile, "r")
     date = print(f.read(6))
-    print("Date\t:", date)
+    print("Date\t:", str(date))
 
 
 else:
