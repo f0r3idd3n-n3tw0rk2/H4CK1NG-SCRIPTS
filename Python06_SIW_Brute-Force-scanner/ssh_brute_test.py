@@ -41,13 +41,13 @@ if log_filename == 'default':
     time.sleep(1.5)  # Pause 5.5 seconds
     default_logfile = 'server_logfile_test.txt'
     lineList = [line.rstrip('\n') for line in open(default_logfile)]
-    print(lineList[1])
-    for x in lineList:
-        regex = r"('^\w\w\w\s\d\d$')"
-        match = re.search(regex, 'lines')
-        if match is None:
-            print("No Match")
-            print(match)
+    lineList2 = print(lineList[1])
+
+    regex = r"('^\w\w\w\s\d\d$')"
+    match = re.search(regex, 'lineList2')
+    if match is None:
+        print("No Match")
+
 
 
     #with open(default_logfile) as f:
