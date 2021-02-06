@@ -61,7 +61,7 @@ def search(login_list, brute_force):
     for i in range(len(lines)):
         if lines[i] == brute_force:
             return True
-         return False
+        return False
 
 login_list = lines
 brute_force = 'Failed'
