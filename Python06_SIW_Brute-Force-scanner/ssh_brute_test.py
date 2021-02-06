@@ -40,7 +40,7 @@ if log_filename == 'default':
     print("[+] Using default Logfile in Folder")
     time.sleep(1.5)  # Pause 5.5 seconds
     default_logfile = 'server_logfile_test.txt'
-    lineList = [line.rstrip('\n') for line in open(log_filename)]
+    lineList = [line.rstrip('\n') for line in open(default_logfile)]
     print(lineList)
 
 
