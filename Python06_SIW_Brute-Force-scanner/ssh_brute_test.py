@@ -44,14 +44,13 @@ print(type(lines))
 print(lines)
 
 
-#content = [line.strip() for line in lines]
-#print(lines)
+match = re.search(("Failed", lines))
 
 
 d = {}
 
 i = "Failed"
-for i in lines:
+for i in match:
     print("[!] Brute Force Detection")
 
 else:
