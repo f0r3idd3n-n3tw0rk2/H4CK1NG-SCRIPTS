@@ -49,6 +49,7 @@ if log_filename == 'default':
     for x in lines:
         values = lines
         filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
+        result = re.findall('^\w\w\w\s\d\d$', values)
         print(filtered_values)
 
 
