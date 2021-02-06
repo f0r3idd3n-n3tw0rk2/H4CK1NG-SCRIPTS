@@ -74,7 +74,7 @@ def main(entry):
 load_server_logfile(log_filename)
 
 if __name__ == '__main__':
-    main()
+    main(entry)
 
 
 
