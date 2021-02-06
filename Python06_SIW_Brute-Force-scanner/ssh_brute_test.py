@@ -44,12 +44,12 @@ if log_filename == 'default':
         lines = f.read().splitlines()
 
     print(type(lines))
-    lines_two = print(lines)
+    print(lines)
 
-    for x in 'lines_two':
+    for x in lines:
         values = {}
         for parameter in values:
-            values[parameter] = lines_two
+            values[parameter] = lines
 
         #filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
         #result = re.findall('^\w\w\w\s\d\d$', values)
