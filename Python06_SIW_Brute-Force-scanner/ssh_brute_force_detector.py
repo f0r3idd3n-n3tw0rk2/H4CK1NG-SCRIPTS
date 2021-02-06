@@ -40,7 +40,7 @@ def load_logfile(log_filename):
         content = f.readlines()
     content = [line.strip() for line in content]
     print(content)
-    load_logfile.function1 = content
+    load_logfile = content
     return content
 
 
