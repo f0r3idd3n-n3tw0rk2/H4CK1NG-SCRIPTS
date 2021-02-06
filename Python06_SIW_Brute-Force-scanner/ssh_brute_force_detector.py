@@ -40,11 +40,12 @@ log_filename = input("Please Enter the logfile to analyze\t:")
 
 
 def load_server_logfile(log_filename):
-    print("[+] Loading Server Logfile")
+    print(bcolors.CRED, "[+] Loading Server Logfile")
     with open(log_filename) as f:
         content = f.readlines()
     content = [line.strip() for line in content]
     print(content)
+    global content
     return content
 
 
@@ -57,7 +58,7 @@ def load_server_logfile(log_filename):
 def log():
     print("[+] Starting Parsing the logfile")
     #Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
-    log_contents = log_filename
+    log_contents = content
     #Schleife zur Ausgabe der einzelnen Listenelemente
     for log_content in log_contents:
         #Debug Textausgabe
