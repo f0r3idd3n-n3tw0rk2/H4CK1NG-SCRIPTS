@@ -68,6 +68,19 @@ else:
     print(lines)
 
 
+    for x in lines:
+        values = str(lines)
+        filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
+        result = re.findall('^\w\w\w\s\d\d$', values)
+        print(filtered_values)
+
+
+
+
+
+
+
+
 
 def search(log_filename, brute_force):
 
