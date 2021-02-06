@@ -48,7 +48,6 @@ if log_filename == 'default':
 
 
 else:
-    log_filename = input()
     print("[+] Loading Server Logfile")
     print("[+] Loading Server Logfile" + log_filename)
     with open(log_filename) as f:
