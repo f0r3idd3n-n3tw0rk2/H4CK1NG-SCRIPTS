@@ -34,8 +34,6 @@ threshold = 5
 
 
 
-
-
 if log_filename == 'default':
     print("[+] Loading Server Logfile")
     print("[+] Using default Logfile in Folder")
@@ -48,8 +46,7 @@ if log_filename == 'default':
 
 
 else:
-    print("[+] Loading Server Logfile")
-    print("[+] Loading Server Logfile" + log_filename)
+    print("[+] Loading Server Logfile\t:" + log_filename)
     with open(log_filename) as f:
         lines = f.read().splitlines()
 
@@ -62,7 +59,7 @@ else:
 
 
 
-i = "Failed"
+i = "root"
 for i in lines:
     print("[!] Brute Force Detection")
 
