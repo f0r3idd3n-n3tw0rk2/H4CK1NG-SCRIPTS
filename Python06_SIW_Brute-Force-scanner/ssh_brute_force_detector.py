@@ -39,7 +39,7 @@ def load_logfile(log_filename):
     with open(log_filename) as f:
         content = f.readlines()
     content = [line.strip() for line in content]
-    print(content)
+    print(content.count(threshold,))
     log_filename = content
     return content
 
