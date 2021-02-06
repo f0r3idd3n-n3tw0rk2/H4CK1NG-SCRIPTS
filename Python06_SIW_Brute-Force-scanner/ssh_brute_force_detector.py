@@ -103,8 +103,8 @@ def log():
 #    main()
 
 
-load_server_logfile(parameters)
-log()
+#load_server_logfile(parameters)
+#log()
 
 
 
