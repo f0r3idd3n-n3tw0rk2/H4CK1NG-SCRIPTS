@@ -45,7 +45,7 @@ if log_filename == 'default':
         #print(lines[1])
         for x in lines:
             regex = r"('^\w\w\w\s\d\d$')"
-            match = re.search(regex, 'variable01')
+            match = re.search(regex, 'lines')
             if match is None:
                 print("No Match")
             #print(match)
