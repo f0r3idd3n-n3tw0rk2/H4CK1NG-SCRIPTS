@@ -38,7 +38,7 @@ threshold = 5
 print("[+] Loading Server Logfile")
 
 with open(log_filename) as f:
-    lines = f.readlines()
+    lines = f.read().splitlines()
 
 print(type(lines))
 print(lines)
