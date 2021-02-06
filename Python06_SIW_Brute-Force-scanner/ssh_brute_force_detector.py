@@ -46,6 +46,7 @@ def load_server_logfile(log_filename):
     content = [line.strip() for line in content]
     print(content)
     entry = content
+    global entry
     return content
 
 
@@ -102,7 +103,7 @@ def log(entry):
 
 
 load_server_logfile(log_filename)
-log(entry)
+
 
 
 
