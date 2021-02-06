@@ -51,9 +51,9 @@ if log_filename == 'default':
         for parameter in values:
             values[parameter] = lines
 
-        #filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
-        #result = re.findall('^\w\w\w\s\d\d$', values)
-            print(values)
+        filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
+        result = re.findall('^\w\w\w\s\d\d$', values)
+        print(result)
 
 
     #print("Date\t:", str(date)), Regex: '\w\w\w\s\d\d$'
