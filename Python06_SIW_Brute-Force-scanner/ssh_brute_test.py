@@ -44,12 +44,14 @@ if log_filename == 'default':
         lines = f.read().splitlines()
 
     print(type(lines))
+    print(lines[0])
     print(lines[1])
+    print(lines[2])
 
     for x in lines:
         r = re.compile('^\w\w\w\s\d\d$')
         newlist = list(filter(r.match, lines))
-        print(newlist)
+        #print(newlist)
 
 
 
