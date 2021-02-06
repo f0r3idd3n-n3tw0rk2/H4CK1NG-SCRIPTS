@@ -1,62 +1,57 @@
 #!/usr/bin/env python3
 
-#define modules to load
+# 1.) Import modules
+
 import re
 import sys
-import argparse
-import datetime
-import apache_log_parser
+import time
+import tqdm
 
 
-#variables
-logfile = "server_logfile_test.txt"
-pp = pprint.PrettyPrinter(indent=4)
-
-re.search(" Failed ", line)
-
+class bcolors:
+    CBLUE = '\33[34m'
+    CRED = '\33[31m'
+    CGREEN = '\33[92m'
 
 
-#   Mar 18 13:50:30 bit_server sshd[22625]: Failed password for invalid user abridge from 45.15.16.37 port 18397 ssh2
-#
+# 2.) Define the variable
+# use argument for input
 
-#Standard function open()
-#deliver a new file object logs and print the output
-logs = open('server_logfile_test.txt', 'r')
+print(bcolors.CGREEN, "Default Server Logfile must be in folder ->>>> server_logfile_test.txt")
+print(bcolors.CGREEN, "Default Treshold ->>>> treshold -> integer")
 
-serverlog = logs.read()
+log_filename = input("Please Enter the logfile to analyze\t:")
+threshold = 5
 
 
-with open(logfile, "r") as f:
-    line = f.readline()
+# print("Server Logfile will be analyzed please wait....")
+# time.sleep(3.5)    # Pause 5.5 seconds
 
-    while line:
-        if (re.search(" Failed ", line)):
-            try:
-                log_line_data = line_parser(line)
+# for i in tqdm.tqdm(range(200)):
+#    time.sleep(0.01)
+# or other long operations
 
 
 
 
 
+print("[+] Loading Server Logfile")
 
-#try:
- # logs = open('server_logfile_test.txt', 'r')
-
-  # serverlog = logs.read()
-
-  #  content = [x.strip() for x in serverlog]
-  #  list()
-  #  for i in content:
-
-   #     print(content)
+with open(log_filename) as f:
+    content = f.readlines()
+content = [line.strip() for line in content]
+print(content)
 
 
-
-    #with open('server_logfile_test.txt') as f:
-        #for line in f:
-            #print(line)
-
-#except:
-    #print('Can not read the logfile')
+d = {}
+i = "Failed"
+for i in content:
+    print("[!] Brute Force Detection")
 
 
+#if match:
+    # Brute Force Detected
+    #print("[!] Brute Force Detection")
+#else:
+    # Keine Verwundbarkeit gefunden
+    #print("[+] All good. No Brute Force On Server.")
