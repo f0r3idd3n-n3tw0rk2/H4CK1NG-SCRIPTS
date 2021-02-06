@@ -36,7 +36,7 @@ threshold = 5
 
 
 
-if log_filename == 0:
+if log_filename == None:
     print("[+] Loading Server Logfile")
     print("[+] Using default Logfile in Folder")
     default_logfile = 'server_logfile_test.txt'
