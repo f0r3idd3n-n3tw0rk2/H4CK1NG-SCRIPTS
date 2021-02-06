@@ -47,8 +47,8 @@ if log_filename == 'default':
     print(lines)
 
     for x in lines:
-        values = lines
-        filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
+        values = str(lines)
+        filtered_values = list(filter(lambda v: match ('\w\w\w\s\d\d$', v), values))
         print(filtered_values)
 
 
