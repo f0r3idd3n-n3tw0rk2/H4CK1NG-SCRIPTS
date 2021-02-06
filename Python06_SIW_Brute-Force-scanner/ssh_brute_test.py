@@ -42,16 +42,22 @@ if log_filename == 'default':
     default_logfile = 'server_logfile_test.txt'
     with open(default_logfile) as f:
         lines = f.read().splitlines()
+        for x in lines:
+            r = re.compile('^\w\w\w\s\d\d$')
+            newlist = list(filter(r.match, lines))
+            for y in newlist:
+                print(newlist)
 
-    print(type(lines))
-    print(lines[0])
-    print(lines[1])
-    print(lines[2])
 
-    for x in lines:
-        r = re.compile('^\w\w\w\s\d\d$')
-        newlist = list(filter(r.match, lines))
-        #print(newlist)
+
+
+
+    #print(type(lines))
+    #print(lines[0])
+    #print(lines[1])
+    #print(lines[2])
+
+
 
 
 
