@@ -53,7 +53,7 @@ if log_filename == 'default':
 
         #filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
         #result = re.findall('^\w\w\w\s\d\d$', values)
-        print(lines)
+        print(values)
 
 
     #print("Date\t:", str(date)), Regex: '\w\w\w\s\d\d$'
