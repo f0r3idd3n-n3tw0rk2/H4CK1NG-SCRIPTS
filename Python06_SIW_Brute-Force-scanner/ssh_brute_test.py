@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 
-
+#define modules to load
 import re
 import sys
 import argparse
-from collections import Counter
+import datetime
+import apache_log_parser
 
 
+#variables
+logfile = "server_logfile_test.txt"
+pp = pprint.PrettyPrinter(indent=4)
+
+re.search(" Failed ", line)
 
 
 
@@ -15,15 +21,18 @@ from collections import Counter
 
 #Standard function open()
 #deliver a new file object logs and print the output
-
-
-
 logs = open('server_logfile_test.txt', 'r')
 
 serverlog = logs.read()
-regex = '([\d\.)]+)'
 
-print(re.match(regex, serverlog).groups())
+
+with open(logfile, "r") as f:
+    line = f.readline()
+
+    while line:
+        if (re.search(" Failed ", line)):
+            try:
+                log_line_data = line_parser(line)
 
 
 
