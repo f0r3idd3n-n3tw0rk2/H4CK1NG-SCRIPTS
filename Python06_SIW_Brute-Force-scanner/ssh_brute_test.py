@@ -44,13 +44,13 @@ print(type(lines))
 print(lines)
 
 
-match = re.search(("Failed", lines))
 
 
-d = {}
+
+
 
 i = "Failed"
-for i in match:
+for i in lines:
     print("[!] Brute Force Detection")
 
 else:
@@ -68,3 +68,10 @@ else:
 #else:
     # Keine Verwundbarkeit gefunden
     #print("[+] All good. No Brute Force On Server.")
+
+
+# get lines with login failures
+# extract IP of this line
+# remove duplicate items from list
+# count how many failed login attempts for this ip
+# print the result if it is above the treshold
