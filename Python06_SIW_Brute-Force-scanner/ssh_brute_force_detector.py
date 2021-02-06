@@ -102,7 +102,7 @@ def log(entry):
 
 
 load_server_logfile(log_filename)
-#log(entry)
+log()
 
 
 
