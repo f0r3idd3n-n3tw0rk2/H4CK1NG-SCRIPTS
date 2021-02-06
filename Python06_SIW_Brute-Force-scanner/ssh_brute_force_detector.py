@@ -45,8 +45,8 @@ def load_server_logfile(log_filename):
         content = f.readlines()
     content = [line.strip() for line in content]
     print(content)
-    entry = content
     global entry
+    entry = content
     return content
 
 
