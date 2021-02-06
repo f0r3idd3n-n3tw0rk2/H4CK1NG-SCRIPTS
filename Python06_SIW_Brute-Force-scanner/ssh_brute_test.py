@@ -49,7 +49,7 @@ if log_filename == 'default':
     for x in lines:
         r = re.compile('^\w\w\w\s\d\d$')
         newlist = list(filter(r.match, lines))
-
+        print(newlist)
 
 
 
@@ -60,7 +60,7 @@ if log_filename == 'default':
 
             #filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), lines))
             #result = re.findall('^\w\w\w\s\d\d$', values)
-            print(newlist)
+
 
 
     #print("Date\t:", str(date)), Regex: '\w\w\w\s\d\d$'
