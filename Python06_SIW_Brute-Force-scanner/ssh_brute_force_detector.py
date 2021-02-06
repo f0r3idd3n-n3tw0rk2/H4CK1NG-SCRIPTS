@@ -12,16 +12,17 @@ import tqdm
 class bcolors:
     CBLUE = '\33[34m'
     CRED = '\33[31m'
+    CGREEN = '\33[92m'
 
 
 #2.) Define the variable
 # use argument for input
 
-print(bcolors.CBLUE,"Default Server Logfile must be in folder ->>>> server_logfile_test.txt")
-print(bcolors.CRED,"Default Treshold ->>>> treshold -> integer")
+print(bcolors.CGREEN,"Default Server Logfile must be in folder ->>>> server_logfile_test.txt")
+print(bcolors.CGREEN,"Default Treshold ->>>> treshold -> integer")
 
 log_filename = input("Please Enter the logfile to analyze\t:")
-
+threshold = 5
 
 
 
@@ -44,8 +45,20 @@ def load_server_logfile(log_filename):
         content = f.readlines()
     content = [line.strip() for line in content]
     print(content)
-    log = content
+    log_content = content
     return content
+
+
+
+
+
+
+#get lines with login failures
+#extract IP of this line
+#remove duplicate items from list
+#count how many failed login attempts for this ip
+#print the result if it is above the treshold
+
 
 
 
@@ -58,15 +71,16 @@ def log(log):
     print("[+] Starting Parsing the logfile")
     #Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
     log_contents = log
+    word01 = "Failed"
     #Schleife zur Ausgabe der einzelnen Listenelemente
-    for log_content in log_contents:
+    for word01 in log_contents:
         #Debug Textausgabe
-        print(log_content)
+        print(log_contents)
         #Leeres Dictionary erstellen
         list = {}
         #Schleife Dictionary erweitern mit den Parametern und den xss_test_strings
         for parameter in list:
-            list[parameter] = log_content
+            list[parameter] = log_contents
             print(list)
         response = list
 
