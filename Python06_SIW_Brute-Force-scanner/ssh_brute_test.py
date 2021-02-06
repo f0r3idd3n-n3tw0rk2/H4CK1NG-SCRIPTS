@@ -42,7 +42,12 @@ if log_filename == 'default':
     default_logfile = 'server_logfile_test.txt'
     lineList = [line.rstrip('\n') for line in open(default_logfile)]
     print(lineList[1])
-
+    for x in lineList:
+        regex = r"('^\w\w\w\s\d\d$')"
+        match = re.search(regex, 'lines')
+        if match is None:
+            print("No Match")
+            print(match)
 
 
     #with open(default_logfile) as f:
