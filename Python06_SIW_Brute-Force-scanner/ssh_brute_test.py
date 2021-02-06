@@ -8,7 +8,7 @@ import time
 import tqdm
 
 
-#class Colors
+# class Colors
 class bcolors:
     CBLUE = '\33[34m'
     CRED = '\33[31m'
@@ -24,6 +24,7 @@ print(bcolors.CGREEN, "Default Treshold ->>>> 5x Error Login")
 print("Please Enter the logfile to analyze or type default\t:")
 log_filename = input()
 threshold = 5
+brute_force = 'Failed'
 
 
 # print("Server Logfile will be analyzed please wait....")
@@ -34,11 +35,7 @@ threshold = 5
 # or other long operations
 
 
-
-
-
-def search(login_list, brute_force):
-
+def search(log_filename, brute_force):
     if log_filename == 'default':
         print("[+] Loading Server Logfile")
         print("[+] Using default Logfile in Folder")
@@ -60,16 +57,13 @@ def search(login_list, brute_force):
         print(type(lines))
         print(lines)
 
-
-
         for i in range(len(lines)):
-         if lines[i] == brute_force:
-            return True
+            if lines[i] == brute_force:
+                return True
         return False
 
     login_list = lines
     brute_force = 'Failed'
-
 
     if search(login_list, brute_force):
         print("[!] Brute Force Detection")
@@ -77,29 +71,23 @@ def search(login_list, brute_force):
         print("[+] All good. No Brute Force On Server.")
 
 
+search(brute_force, log_filename)
 
-
-
-
-#i = "root"
-#for i in lines:
+# i = "root"
+# for i in lines:
 #    print("[!] Brute Force Detection")
 
-#else:
-    #Keine Verwundbarkeit gefunden
+# else:
+# Keine Verwundbarkeit gefunden
 #    print("[+] All good. No Brute Force On Server.")
 
 
-
-
-
-
-#if match:
-    # Brute Force Detected
-    #print("[!] Brute Force Detection")
-#else:
-    # Keine Verwundbarkeit gefunden
-    #print("[+] All good. No Brute Force On Server.")
+# if match:
+# Brute Force Detected
+# print("[!] Brute Force Detection")
+# else:
+# Keine Verwundbarkeit gefunden
+# print("[+] All good. No Brute Force On Server.")
 
 
 # get lines with login failures
