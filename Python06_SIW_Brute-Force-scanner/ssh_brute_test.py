@@ -49,7 +49,7 @@ if log_filename == 'default':
     for x in lines:
         r = re.compile('^\w\w\w\s\d\d$')
         newlist = list(filter(r.match, lines))
-        print(newlist[0])
+        print(newlist)
 
 
 
