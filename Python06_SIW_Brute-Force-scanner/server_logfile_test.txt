@@ -1,2 +1,3 @@
 Mar 18 13:53:14 bit_server sshd[22893]: Failed password for invalid user abstracted from 45.15.16.37 port 18638 ssh2
 Mar 18 13:53:20 bit_server sshd[22903]: Failed password for invalid user abstractionism from 45.15.16.37 port 18640 ssh2
+Mar 18 13:53:05 bit_server sshd[22882]: Invalid user abstinence from 45.15.16.37 port 18636
