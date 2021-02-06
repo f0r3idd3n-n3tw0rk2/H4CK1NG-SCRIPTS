@@ -44,6 +44,7 @@ if log_filename == 'default':
 
     print(type(lines))
     print(lines)
+    print(f.read(5))
 
 
 else:
@@ -54,6 +55,7 @@ else:
 
     print(type(lines))
     print(lines)
+    print(f.read(5))
 
 
 def search(log_filename, brute_force):
@@ -65,6 +67,7 @@ def search(log_filename, brute_force):
         return False
 
     login_list = lines
+
 
     if search(login_list, brute_force):
         print("[!] Brute Force Detection")
