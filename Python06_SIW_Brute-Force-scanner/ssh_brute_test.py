@@ -20,7 +20,8 @@ class bcolors:
 print(bcolors.CGREEN, "Default Server Logfile must be in folder ->>>> server_logfile_test.txt")
 print(bcolors.CGREEN, "Default Treshold ->>>> 5x Error Login")
 
-log_filename = input("Please Enter the logfile to analyze\t:")
+print("Please Enter the logfile to analyze\t:")
+log_filename = input()
 threshold = 5
 
 
