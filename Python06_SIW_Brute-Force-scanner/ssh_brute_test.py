@@ -38,15 +38,29 @@ threshold = 5
 print("[+] Loading Server Logfile")
 
 with open(log_filename) as f:
-    content = f.readlines()
-content = [line.strip() for line in content]
-print(content)
+    lines = f.readlines()
+
+print(type(lines))
+print(lines)
+
+
+#content = [line.strip() for line in lines]
+#print(lines)
 
 
 d = {}
+
 i = "Failed"
-for i in content:
+for i in lines:
     print("[!] Brute Force Detection")
+
+else:
+    #Keine Verwundbarkeit gefunden
+    print("[+] All good. No Brute Force On Server.")
+
+
+
+
 
 
 #if match:
