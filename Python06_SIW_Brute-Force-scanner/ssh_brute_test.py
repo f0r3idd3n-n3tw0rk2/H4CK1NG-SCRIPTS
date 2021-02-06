@@ -35,42 +35,46 @@ threshold = 5
 
 
 
-if log_filename == 'default':
-    print("[+] Loading Server Logfile")
-    print("[+] Using default Logfile in Folder")
-    time.sleep(1.5)  # Pause 5.5 seconds
-    default_logfile = 'server_logfile_test.txt'
-    with open(default_logfile) as f:
-        lines = f.read().splitlines()
-
-    print(type(lines))
-    print(lines)
-
-
-else:
-    print("[+] Loading Server Logfile\t:" + log_filename)
-    time.sleep(1.5)  # Pause 5.5 seconds
-    with open(log_filename) as f:
-        lines = f.read().splitlines()
-
-    print(type(lines))
-    print(lines)
 
 
 def search(login_list, brute_force):
-    for i in range(len(lines)):
-        if lines[i] == brute_force:
+
+    if log_filename == 'default':
+        print("[+] Loading Server Logfile")
+        print("[+] Using default Logfile in Folder")
+        time.sleep(1.5)  # Pause 5.5 seconds
+        default_logfile = 'server_logfile_test.txt'
+        with open(default_logfile) as f:
+            lines = f.read().splitlines()
+
+        print(type(lines))
+        print(lines)
+
+
+    else:
+        print("[+] Loading Server Logfile\t:" + log_filename)
+        time.sleep(1.5)  # Pause 5.5 seconds
+        with open(log_filename) as f:
+            lines = f.read().splitlines()
+
+        print(type(lines))
+        print(lines)
+
+
+
+        for i in range(len(lines)):
+         if lines[i] == brute_force:
             return True
         return False
 
-login_list = lines
-brute_force = 'Failed'
+    login_list = lines
+    brute_force = 'Failed'
 
 
-if search(login_list, brute_force):
-    print("[!] Brute Force Detection")
-else:
-    print("[+] All good. No Brute Force On Server.")
+    if search(login_list, brute_force):
+        print("[!] Brute Force Detection")
+    else:
+        print("[+] All good. No Brute Force On Server.")
 
 
 
