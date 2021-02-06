@@ -22,7 +22,7 @@ print(bcolors.CGREEN, "Default Treshold ->>>> treshold -> integer")
 
 log_filename = input("Please Enter the logfile to analyze\t:")
 threshold = 5
-entry = ()
+
 
 # print("Server Logfile will be analyzed please wait....")
 # time.sleep(3.5)    # Pause 5.5 seconds
@@ -34,13 +34,13 @@ entry = ()
 
 # 3.) Read a Log file and add the content to an array
 
-def load_server_logfile(log_filename):
+def load_logfile(log_filename):
     print("[+] Loading Server Logfile")
     with open(log_filename) as f:
         content = f.readlines()
     content = [line.strip() for line in content]
     print(content)
-    entry = content
+    load_logfile = content
     return content
 
 
@@ -52,7 +52,7 @@ def load_server_logfile(log_filename):
 
 
 # Hauptfunktion
-def main(entry):
+def main():
     print("[+] Starting Parsing the logfile")
     # Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
     #log_contents = entry
@@ -60,7 +60,7 @@ def main(entry):
 
     # Überprüfung ob der Teststring in der Response gefunden wird
 
-    if "Failed" in entry:
+    if "Failed" in load_logfile:
         # Brute Force Detected
         print("[!] Brute Force Detection")
     else:
@@ -71,10 +71,10 @@ def main(entry):
 
 
 
-load_server_logfile(log_filename)
+load_logfile(log_filename)
 
 if __name__ == '__main__':
-    main(entry)
+    main()
 
 
 
