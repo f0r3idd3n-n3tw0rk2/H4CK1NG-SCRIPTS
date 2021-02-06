@@ -6,6 +6,7 @@ import re
 import sys
 import time
 import tqdm
+from re import match
 
 
 # class Colors
@@ -44,9 +45,16 @@ if log_filename == 'default':
 
     print(type(lines))
     print(lines)
-    f = open(default_logfile, "r")
-    date = print(f.read(6))
-    print("Date\t:", str(date))
+
+    for x in lines:
+        values = lines
+        filtered_values = list(filter(lambda v: match ('^\d+$', v), values))
+        print(filtered_values)
+
+
+    #print("Date\t:", str(date))
+    #print("Time\t:", str(time))
+    #print("IP-Adress\t:", str(IP))
 
 
 else:
