@@ -44,7 +44,7 @@ if log_filename == 'default':
 
     print(type(lines))
     print(lines)
-    f = open(log_filename, "r")
+    f = open(default_logfile, "r")
     print(f.read(5))
 
 
