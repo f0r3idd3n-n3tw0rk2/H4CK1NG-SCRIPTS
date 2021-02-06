@@ -44,6 +44,7 @@ def load_server_logfile(log_filename):
     with open(log_filename) as f:
         content = f.readlines()
     content = [line.strip() for line in content]
+    print(content)
     return content
 
 
@@ -52,32 +53,11 @@ def load_server_logfile(log_filename):
 
 
 
-
-
-#def load_server_logfile(filename):
-#    print("[+] Loading Server Logfile")
-#    with open(filename) as f:
-#        content = f.readlines()
-#    content = [x.strip() for x in content]
-#    return content
-#print(content.)
-
-
-#def load_server_logfile(filename):
-#def load_server_logfile(filename):
-    #print("[+] Loading Logfile")
-    #with open(filename) as f:
-       # content = f.readlines()
-    #content = [x.strip() for x in content]
-    #return content
-#Alternative xss_teststrings.txt
-    #xss_test_strings = open("xss_teststrings.txt").read().split("\n")
-
 #Hauptfunktion
 def log():
     print("[+] Starting Parsing the logfile")
     #Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
-    log_contents = load_server_logfile('server_logfile_test.txt')
+    log_contents = log_filename
     #Schleife zur Ausgabe der einzelnen Listenelemente
     for log_content in log_contents:
         #Debug Textausgabe
@@ -85,26 +65,26 @@ def log():
         #Leeres Dictionary erstellen
         list = {}
         #Schleife Dictionary erweitern mit den Parametern und den xss_test_strings
-        for parameter in parameters:
-            list[parameter] = log_content
-            print(list)
-        response = list
+        #for parameter in parameters:
+            #list[parameter] = log_content
+            #print(list)
+        #response = list
 
 
         #Überprüfung ob der Teststring in der Response gefunden wird
-        if parameters in response:
+        #if parameters in response:
             #Verwundbarkeit gefunden
-            print("[!] Brute Force Detection")
-        else:
+            #print("[!] Brute Force Detection")
+        #else:
             #Keine Verwundbarkeit gefunden
-            print("[+] All good. No Brute Force On Server.")
+            #print("[+] All good. No Brute Force On Server.")
 
 #if __name__ == '__main__':
 #    main()
 
 
-#load_server_logfile(parameters)
-#log()
+load_server_logfile(log_filename)
+log()
 
 
 
