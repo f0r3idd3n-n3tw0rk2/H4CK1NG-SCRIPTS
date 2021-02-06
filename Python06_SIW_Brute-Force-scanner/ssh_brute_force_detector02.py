@@ -40,12 +40,15 @@ threshold = 5
 #3.) Read a Log file and add the content to an array
 
 
-print("[+] Loading Server Logfile")
-with open(log_filename) as f:
-    content = f.readlines()
+def load_server_logfile(log_filename):
+    print("[+] Loading Server Logfile")
+    with open(log_filename) as f:
+        content = f.readlines()
     content = [line.strip() for line in content]
     print(content)
-return content
+    global entry
+    entry = content
+    return content
 
 
 
