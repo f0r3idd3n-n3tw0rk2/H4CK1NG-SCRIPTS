@@ -71,26 +71,26 @@ def log(entry):
     print("[+] Starting Parsing the logfile")
     #Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
     log_contents = entry
-    word01 = "Failed"
+    #word01 = "Failed"
     #Schleife zur Ausgabe der einzelnen Listenelemente
-    for word01 in log_contents:
+    #for word01 in log_contents:
         #Debug Textausgabe
-        print(log_contents)
+        #print(log_contents)
         #Leeres Dictionary erstellen
-        list = {}
+        #list = {}
         #Schleife Dictionary erweitern mit den Parametern und den xss_test_strings
-        unique = []
-        for parameter in list:
-            list[parameter] = log_contents
-            unique.append(log)
-            unique.sort()
-            print(list)
-        response = list
+        #unique = []
+        #for parameter in list:
+            #list[parameter] = log_contents
+            #unique.append(log)
+            #unique.sort()
+            #print(list)
+        #response = list
 
 
         #Überprüfung ob der Teststring in der Response gefunden wird
-        word01 = "Failed"
-        if word01 in response:
+
+        if log_contents is "Failed" :
             #Brute Force Detected
             print("[!] Brute Force Detection")
         else:
