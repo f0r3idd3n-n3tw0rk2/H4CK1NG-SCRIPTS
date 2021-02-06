@@ -18,7 +18,7 @@ class bcolors:
 # use argument for input
 
 print(bcolors.CBLUE,"Default Server Logfile must be in folder ->>>> server_logfile_test.txt")
-print(bcolors.CBLUE,"Default Treshold ->>>> treshold -> integer")
+print(bcolors.CRED,"Default Treshold ->>>> treshold -> integer")
 
 log_filename = input("Please Enter the logfile to analyze\t:")
 
@@ -38,9 +38,8 @@ log_filename = input("Please Enter the logfile to analyze\t:")
 
 #3.) Read a Log file and add the content to an array
 
-
 def load_server_logfile(log_filename):
-    print(bcolors.CRED, "[+] Loading Server Logfile")
+    print("[+] Loading Server Logfile")
     with open(log_filename) as f:
         content = f.readlines()
     content = [line.strip() for line in content]
@@ -66,19 +65,20 @@ def log(log):
         #Leeres Dictionary erstellen
         list = {}
         #Schleife Dictionary erweitern mit den Parametern und den xss_test_strings
-        #for parameter in parameters:
-            #list[parameter] = log_content
-            #print(list)
-        #response = list
+        for parameter in list:
+            list[parameter] = log_content
+            print(list)
+        response = list
 
 
         #Überprüfung ob der Teststring in der Response gefunden wird
-        #if parameters in response:
-            #Verwundbarkeit gefunden
-            #print("[!] Brute Force Detection")
-        #else:
+        word01 = "Failed"
+        if word01 in response:
+            #Brute Force Detected
+            print("[!] Brute Force Detection")
+        else:
             #Keine Verwundbarkeit gefunden
-            #print("[+] All good. No Brute Force On Server.")
+            print("[+] All good. No Brute Force On Server.")
 
 #if __name__ == '__main__':
 #    main()
