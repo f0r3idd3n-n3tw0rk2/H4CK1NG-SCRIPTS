@@ -8,6 +8,7 @@ import time
 import tqdm
 
 
+#class Colors
 class bcolors:
     CBLUE = '\33[34m'
     CRED = '\33[31m'
@@ -37,6 +38,7 @@ threshold = 5
 if log_filename == 'default':
     print("[+] Loading Server Logfile")
     print("[+] Using default Logfile in Folder")
+    time.sleep(1.5)  # Pause 5.5 seconds
     default_logfile = 'server_logfile_test.txt'
     with open(default_logfile) as f:
         lines = f.read().splitlines()
