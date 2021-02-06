@@ -22,7 +22,7 @@ print(bcolors.CGREEN, "Default Treshold ->>>> treshold -> integer")
 
 log_filename = input("Please Enter the logfile to analyze\t:")
 threshold = 5
-
+entry = ()
 
 # print("Server Logfile will be analyzed please wait....")
 # time.sleep(3.5)    # Pause 5.5 seconds
