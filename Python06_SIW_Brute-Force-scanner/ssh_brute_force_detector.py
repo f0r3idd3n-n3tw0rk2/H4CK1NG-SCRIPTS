@@ -45,7 +45,7 @@ def load_server_logfile(log_filename):
     content = [line.strip() for line in content]
     print(content)
     log = content
-    #return content
+    return content
 
 
 
