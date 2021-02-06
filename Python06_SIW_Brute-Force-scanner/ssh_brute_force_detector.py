@@ -4,16 +4,51 @@
 
 import re
 import sys
+import time
+import tqdm
+
+
+
+class bcolors:
+    CBLUE = '\33[34m'
+    CRED = '\33[31m'
 
 
 #2.) Define the variable
+# use argument for input
 
-parameters = sys.argv[1].split(",")
-filename = (server_logfile_test.txt)
-#filename = server_logfile.txt
+print(bcolors.CBLUE,"Default Server Logfile must be in folder ->>>> server_logfile_test.txt")
+print(bcolors.CBLUE,"Default Treshold ->>>> treshold -> integer")
+print(bcolors.CBLUE,"e.g python version ->>>> python3", "logfile", "threshold as Integer")
+
+python_version = "python3"
+log_filename = (python_version + input("Please Enter the logfile to analyze\t:"))
+log_filename_new = log_filename
+
+
+
+
+#print("XSS-SCANNER will load the full Aresenal to attack the given Page")
+#time.sleep(3.5)    # Pause 5.5 seconds
+
+#for i in tqdm.tqdm(range(200)):
+#    time.sleep(0.01)
+    # or other long operations
+
+#log_filename = sys.argv[1]
+#treshold = int(sys.argv[2])
 
 
 #3.) Read a Log file and add the content to an array
+
+
+
+
+
+
+
+
+
 
 
 #def load_server_logfile(filename):
