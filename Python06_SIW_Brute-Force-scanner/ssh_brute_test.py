@@ -47,12 +47,12 @@ if log_filename == 'default':
     print(lines)
 
     for x in lines:
-        values = str(lines)
-        filtered_values = list(filter(lambda v: match ('\w\w\w\s\d\d$', v), values))
+        values = lines
+        filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
         print(filtered_values)
 
 
-    #print("Date\t:", str(date))
+    #print("Date\t:", str(date)), Regex: '\w\w\w\s\d\d$'
     #print("Time\t:", str(time))
     #print("IP-Adress\t:", str(IP))
 
