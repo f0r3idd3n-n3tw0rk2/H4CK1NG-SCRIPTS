@@ -40,14 +40,19 @@ if log_filename == 'default':
     print("[+] Using default Logfile in Folder")
     time.sleep(1.5)  # Pause 5.5 seconds
     default_logfile = 'server_logfile_test.txt'
-    with open(default_logfile) as f:
-        lines = f.read().splitlines()
+    lineList = [line.rstrip('\n') for line in open(log_filename)]
+    print(lineList)
+
+
+
+    #with open(default_logfile) as f:
+        #lines = f.read().splitlines()
         #print(lines[1])
-        for x in lines:
-            regex = r"('^\w\w\w\s\d\d$')"
-            match = re.search(regex, 'lines')
-            if match is None:
-                print("No Match")
+        #for x in lines:
+            #regex = r"('^\w\w\w\s\d\d$')"
+           # match = re.search(regex, 'lines')
+            #if match is None:
+            #    print("No Match")
             #print(match)
 
 
