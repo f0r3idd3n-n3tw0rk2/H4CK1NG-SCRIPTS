@@ -37,6 +37,10 @@ threshold = 5
 
 print("[+] Loading Server Logfile")
 
+if log_filename is None:
+    print("[+] Using default Logfile in Folder")
+    log_filename = 'server_logfile_test.txt'
+
 with open(log_filename) as f:
     lines = f.read().splitlines()
 
