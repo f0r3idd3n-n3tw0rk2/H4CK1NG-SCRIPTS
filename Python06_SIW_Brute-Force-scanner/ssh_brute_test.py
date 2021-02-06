@@ -33,11 +33,12 @@ threshold = 5
 
 
 
-print("[+] Using default Logfile in Folder")
-default_logfile = 'server_logfile_test.txt'
 
-if default_logfile == ('server_logfile_test.txt'):
+
+if log_filename == 0:
     print("[+] Loading Server Logfile")
+    print("[+] Using default Logfile in Folder")
+    default_logfile = 'server_logfile_test.txt'
     with open(default_logfile) as f:
         lines = f.read().splitlines()
 
@@ -46,6 +47,8 @@ if default_logfile == ('server_logfile_test.txt'):
 
 
 else:
+    print("[+] Loading Server Logfile")
+    print("[+] Loading Server Logfile" + log_filename)
     with open(log_filename) as f:
         lines = f.read().splitlines()
 
