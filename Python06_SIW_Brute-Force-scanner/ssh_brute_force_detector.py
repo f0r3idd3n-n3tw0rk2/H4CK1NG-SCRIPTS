@@ -40,6 +40,13 @@ def load_logfile(log_filename):
         content = f.readlines()
     content = [line.strip() for line in content]
     print(content.count(threshold,))
+    if "Failed" in log_filename:
+        # Brute Force Detected
+        print("[!] Brute Force Detection")
+    else:
+        # Keine Verwundbarkeit gefunden
+        print("[+] All good. No Brute Force On Server.")
+
     log_filename = content
     return content
 
