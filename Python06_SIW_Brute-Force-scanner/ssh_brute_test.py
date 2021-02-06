@@ -44,7 +44,7 @@ if log_filename == 'default':
         lines = f.read().splitlines()
 
     print(type(lines))
-    print(lines)
+    print(lines[1])
 
     for x in lines:
         r = re.compile('^\w\w\w\s\d\d$')
