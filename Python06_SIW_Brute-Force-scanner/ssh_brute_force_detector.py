@@ -52,15 +52,15 @@ def load_server_logfile(log_filename):
 
 
 # Hauptfunktion
-def log(entry):
+def main(entry):
     print("[+] Starting Parsing the logfile")
     # Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
-    log_contents = entry
+    #log_contents = entry
 
 
     # Überprüfung ob der Teststring in der Response gefunden wird
 
-    if "Failed" in log_contents:
+    if "Failed" in entry:
         # Brute Force Detected
         print("[!] Brute Force Detection")
     else:
@@ -68,12 +68,13 @@ def log(entry):
         print("[+] All good. No Brute Force On Server.")
 
 
-# if __name__ == '__main__':
-#    main()
+
 
 
 load_server_logfile(log_filename)
-log(log)
+
+if __name__ == '__main__':
+    main()
 
 
 
