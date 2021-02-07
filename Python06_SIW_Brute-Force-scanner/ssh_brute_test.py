@@ -102,16 +102,16 @@ else:
 #open the filename, read through, make a list with all findings of IP adresses in variable log and count it
     with open(log_filename) as f:
         log = f.read()
-        if "pam_unix(sshd:auth): authentication failure;" in f:
-            my_iplist = re.findall(ip_myregex, log)
-            ipcount = Counter(my_iplist)
-            for k, v in ipcount.items():
-                if str(v) >= threshold:
-                    print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
-                    print(bcolors.CRED, "IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
-                else:
-                    print(bcolors.CGREEN, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
-                    print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
+
+        my_iplist = re.findall(ip_myregex, log)
+        ipcount = Counter(my_iplist)
+        for k, v in ipcount.items():
+            if str(v) >= threshold:
+                print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
+                print(bcolors.CRED, "IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
+            else:
+                print(bcolors.CGREEN, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
+                print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
 #end of regex and IP
 
 
@@ -121,11 +121,13 @@ else:
 
 #regex to search for Line and Error in the file
 #open the filename, read through, make a list with all findings of "Failed" in variable log and count it
-    #count = 0
-    #print("\nUsing for loop")
+    count = 0
+    print("\nUsing for loop")
 
-    #with open(log_filename) as fp:
-        #log_error = fp.read()
+    with open(log_filename) as fp:
+        log_error = fp.read()
+        if "pam_unix(sshd:auth): authentication failure;" in f:
+            print(f)
         #my_errorlist = re.findall(failed_myregex, log_error)
     #for line in my_errorlist:
         #count += 1
