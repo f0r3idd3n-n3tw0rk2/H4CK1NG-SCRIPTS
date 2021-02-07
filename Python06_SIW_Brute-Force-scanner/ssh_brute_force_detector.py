@@ -1,116 +1,37 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
 
-# 1.) Import modules
-
-import re
 import sys
-import time
-import tqdm
 
+# print("[+] First Parameter --> ", sys.argv[0])           # Script name
+# print("[+] Second Parameter --> ", sys.argv[1])          # Number of failed logins
 
-class bcolors:
-    CBLUE = '\33[34m'
-    CRED = '\33[31m'
-    CGREEN = '\33[92m'
+failed_logins = int(sys.argv[1])
 
+if failed_logins != 0:
+    with open("auth.log", "r") as f:
+        log_lines = f.readlines()
+        # print(type(content))
+        ips_list = []
+        for line in log_lines:
+            if "pam_unix(sshd:auth): authentication failure;" in line:
+                # print(line)
+                line = line.strip().split(" ")
+                # print(line)
+                ips = line[-1].split("=")
+                date = line[1] + " " + line[0] + " " + line[2]
+                # print(date, " --> ", ips[1])
+                ips_list.append(ips[1])
+        # print(ips_list)
 
-# 2.) Define the variable
-# use argument for input
+        ip_count = {}
+        for ip in ips_list:
+            count = ips_list.count(ip)
+            ip_count[ip] = count
+        # print(ip_count)
 
-print(bcolors.CGREEN, "Default Server Logfile must be in folder ->>>> server_logfile_test.txt")
-print(bcolors.CGREEN, "Default Treshold ->>>> treshold -> integer")
+        for ips, counts in ip_count.items():
+            if counts >= failed_logins:
+                print("The IP", ips, "made", counts, "failed login attempts")
 
-log_filename = input("Please Enter the logfile to analyze\t:")
-threshold = 5
-
-
-# print("Server Logfile will be analyzed please wait....")
-# time.sleep(3.5)    # Pause 5.5 seconds
-
-# for i in tqdm.tqdm(range(200)):
-#    time.sleep(0.01)
-# or other long operations
-
-
-# 3.) Read a Log file and add the content to an array
-
-def load_logfile(log_filename):
-    print("[+] Loading Server Logfile")
-
-    with open(log_filename) as f:
-        content = f.readlines()
-    content = [line.strip() for line in content]
-    print(content)
-    log_filename = content
-    return content
-
-
-
-
-
-    if match:
-    # Brute Force Detected
-        print("[!] Brute Force Detection")
-    else:
-    # Keine Verwundbarkeit gefunden
-        print("[+] All good. No Brute Force On Server.")
-
-
-
-
-# get lines with login failures
-# extract IP of this line
-# remove duplicate items from list
-# count how many failed login attempts for this ip
-# print the result if it is above the treshold
-
-
-# Hauptfunktion
-def main():
-    print("[+] Starting Parsing the logfile")
-    # Aufrufen load_xss_test_strings Funktion und einlesen der xss_teststrings.txt
-    #log_contents = entry
-
-
-    # Überprüfung ob der Teststring in der Response gefunden wird
-
-    if "Failed" in log_filename:
-        # Brute Force Detected
-        print("[!] Brute Force Detection")
-    else:
-        # Keine Verwundbarkeit gefunden
-        print("[+] All good. No Brute Force On Server.")
-
-
-
-
-
-load_logfile(log_filename)
-
-if __name__ == '__main__':
-    main()
-
-
-
-
-# 4.) search through the list/array and print only failed logins within 10 seconds
-
-
-# 5.) search through the list/array and print only failed logins within on same day and count it
-
-
-# 6.) search through the list/array and print only failed logins within on total and count it
-
-
-# for element in answered_list:  # for each element from the list in the answer result
-#    client_dict = {"ip": element[1].psrc, "mac": element[1].hwsrc}  # create a dictionary with ip and mac
-#    clients_list.append(client_dict)  # append the result to clients_list from client dict
-
-# return (clients_list)
-
-
-# create a function which is doing the printing of that list. Variable results_list
-# def print_result(results_list):
-# print("Host-IP\t\t\tFailed Logins within 10 sec\n-------------------------------------")             #print a header line
-# for host in results_list:
-# print(host["host-ip"] + "\t\t" + host["failed_login"])                                #print clients only ip and mac
+else:
+    print("[+] You must enter a number other than zero")
