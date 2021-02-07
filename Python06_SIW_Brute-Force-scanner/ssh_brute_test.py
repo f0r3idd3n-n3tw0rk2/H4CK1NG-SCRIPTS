@@ -25,6 +25,8 @@ print(bcolors.CGREEN, "Default Treshold ->>>> 5x Error Login")
 
 print("Please Enter the logfile to analyze or type default\t:")
 log_filename = input()
+#print("Please Enter the Threshold for failed Login attempts\t:")
+#treshold = input()
 threshold = 5
 brute_force = 'Failed'
 
@@ -199,7 +201,7 @@ else:
 
 
 # get lines with login failures
-# extract IP of this line
+# extract IP of this line                           -> OK
 # remove duplicate items from list
-# count how many failed login attempts for this ip
-# print the result if it is above the treshold
+# count how many failed login attempts for this ip  -> OK
+# print the result if it is above the treshold      -> OK
