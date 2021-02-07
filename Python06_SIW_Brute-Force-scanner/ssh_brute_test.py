@@ -63,7 +63,7 @@ if log_filename == 'default':
 
 
 
-            match_date = re.search(r'^\w\w\w\s\d\d$', 'fp')
+            match_date = re.search(r'^\w\w\w\s\d\d$', 'line')
             if match_date is None:
                 print("No Match")
             else:
