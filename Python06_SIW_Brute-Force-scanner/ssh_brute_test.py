@@ -161,18 +161,18 @@ else:
 
 
 
-    with open(log_filename) as f:
-        lines = f.read().splitlines()
+    #with open(log_filename) as f:
+       # lines = f.read().splitlines()
 
-    print(type(lines))
-    print(lines)
+    #print(type(lines))
+    #print(lines)
 
 
-    for x in lines:
-        values = str(lines)
-        filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
-        result = re.findall('^\w\w\w\s\d\d$', values)
-        print(filtered_values)
+    #for x in lines:
+        #values = str(lines)
+        #filtered_values = list(filter(lambda v: match ('^\w\w\w\s\d\d$', v), values))
+        #result = re.findall('^\w\w\w\s\d\d$', values)
+        #print(filtered_values)
 
 
 
