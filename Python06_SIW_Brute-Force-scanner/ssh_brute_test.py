@@ -7,6 +7,7 @@ import sys
 import time
 import tqdm
 from re import match
+from collections import Counter
 
 
 # class Colors
@@ -40,13 +41,22 @@ if log_filename == 'default':
     print("[+] Using default Logfile in Folder")
     time.sleep(1.5)  # Pause 5.5 seconds
     default_logfile = 'server_logfile_test.txt'
-    #lineList = [line.rstrip('\n') for line in open(default_logfile)]
-    #lineList2 = print(lineList[1])
 
 
+    #regex and IP
 
-    #if match is None:
-       # print("No Match")
+    myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+
+    with open(default_logfile) as f:
+        log = f.read()
+        my_iplist = re.findall(myregex, log)
+        ipcount = Counter(my_iplist)
+        for k, v in ipcount.items():
+            print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
+
+    # regex and IP
+
+
 
 
 
@@ -63,7 +73,7 @@ if log_filename == 'default':
 
 
 
-            match_date = re.search(r'^\w\w\w\w\d:\w\w\w\s\d\d$', line)
+            match_date = re.search(r'Mar$', line)
             if match_date is None:
                 print("No Match")
             else:
@@ -76,6 +86,7 @@ if log_filename == 'default':
         #print(lines[1])
         #for x in lines:
             #regex = r"('^\w\w\w\s\d\d$')"
+    #^\w\w\w\w\d:\w\w\w\s\d\d$
            # match = re.search(regex, 'lines')
             #if match is None:
             #    print("No Match")
