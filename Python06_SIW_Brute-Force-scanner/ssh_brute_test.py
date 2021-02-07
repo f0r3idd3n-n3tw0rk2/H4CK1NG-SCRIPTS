@@ -54,8 +54,9 @@ if log_filename == 'default':
         ipcount = Counter(my_iplist)
         for k, v in ipcount.items():
             print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
-            if str(v) == threshold:
-                print(k, "is on Blacklist")
+
+        if str(v) == 5:
+            print(k, "is on Blacklist")
     # regex and IP
 
 
