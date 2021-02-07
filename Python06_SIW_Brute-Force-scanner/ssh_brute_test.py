@@ -109,17 +109,7 @@ else:
 
 
 
-    # regex to search for Line and Error in the file
-    # open the filename, read through, make a list with all findings of "Failed" in variable log and count it
-    count = 0
-    print("\nUsing for loop for Errors")
 
-    with open(log_filename, "r") as fp:
-        log_error = fp.read()
-        my_error_list = re.search(pattern_failed_myregex, log_error)
-        for item in my_error_list:
-            if re.match(r'Failed', item):
-                print(item)
 
 
 
@@ -149,7 +139,17 @@ else:
 
 
 
+    # regex to search for Line and Error in the file
+    # open the filename, read through, make a list with all findings of "Failed" in variable log and count it
+    count = 0
+    print("\nUsing for loop for Errors")
 
+    with open(log_filename, "r") as fp:
+        log_error = fp.read()
+        my_error_list = re.search(pattern_failed_myregex, log_error)
+        for item in my_error_list:
+            if re.match(r'Failed', item):
+                print(item)
 
 
 
