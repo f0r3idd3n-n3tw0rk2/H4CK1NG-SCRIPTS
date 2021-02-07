@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+#What should it do
+# get lines with login failures
+# extract IP of this line                           -> OK
+# remove duplicate items from list
+# count how many failed login attempts for this ip  -> OK
+# print the result if it is above the treshold      -> OK
+
 # 1.) Import modules for this python script
 
 import re
@@ -19,7 +26,6 @@ class bcolors:
 
 # 2.) Define the variable
 # enter the logfile and the treshold for the analyzing task
-
 print(bcolors.CGREEN, "Server Logfile must be in folder ->>>> DEFAULT: server_logfile_test.txt")
 print(bcolors.CGREEN, "Default Treshold ->>>> 5 Times Error Login")
 
@@ -30,10 +36,12 @@ threshold = input()
 #threshold = 5
 brute_force = 'Failed'
 
+
 #Regular Expression for parsing the logfile
 ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
 date_myregex = r''
 failed_myregex = r''
+
 
 ##################################################################
 #if clause for the choice default logfile: server_logfile_test.txt
@@ -62,6 +70,21 @@ if log_filename == 'default':
                 print(bcolors.CGREEN, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
 #end of regex and IP
+
+
+
+#regex to search for Line and Error in the file
+#open the filename, read through, make a list with all findings of "Failed" in variable log and count it
+    count = 0
+    print("\nUsing for loop")
+
+    with open(default_logfile) as fp:
+        for line in fp:
+            count += 1
+            print("Line{}: {}".format(count, line.strip()))
+
+
+
 
 
 #########################################################
@@ -95,15 +118,24 @@ else:
 
 
 
+#regex to search for Line and Error in the file
+#open the filename, read through, make a list with all findings of "Failed" in variable log and count it
+    count = 0
+    print("\nUsing for loop")
 
-    # Using for loop
-    #count = 0
-    #print("\nUsing for loop")
+    with open(log_filename) as fp:
+        for line in fp:
+            count += 1
+            print("Line{}: {}".format(count, line.strip()))
 
-    #with open(default_logfile) as fp:
-        #for line in fp:
-            #count += 1
-            #print("Line{}: {}".format(count, line.strip()))
+
+
+
+
+
+
+
+
 
 
 
