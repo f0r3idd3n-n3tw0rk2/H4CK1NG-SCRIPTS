@@ -56,10 +56,10 @@ if log_filename == 'default':
         ipcount = Counter(my_iplist)
         for k, v in ipcount.items():
             if str(v) >= threshold:
-                print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
-                print("IP-Address\t:", str(k), "\nBruteforce Attack", str(k), "is on Blacklist")
+                print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
+                print(bcolors.CRED, "IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
             else:
-                print("IP-Address\t:", str(k), "Threshold not reached")
+                print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
     # regex and IP
 
 
@@ -143,10 +143,10 @@ else:
         ipcount = Counter(my_iplist)
         for k, v in ipcount.items():
             if str(v) >= threshold:
-                print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
-                print("IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
+                print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
+                print(bcolors.CRED, "IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
             else:
-                print("IP-Address\t:", str(k), "Threshold not reached")
+                print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
     # regex and IP
 
 
