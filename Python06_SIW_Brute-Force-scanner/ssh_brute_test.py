@@ -43,7 +43,7 @@ if log_filename == 'default':
     #lineList = [line.rstrip('\n') for line in open(default_logfile)]
     #lineList2 = print(lineList[1])
 
-    regex_date = r"('^\w\w\w\s\d\d$')"
+
 
     #if match is None:
        # print("No Match")
@@ -59,6 +59,7 @@ if log_filename == 'default':
         for line in fp:
             count += 1
             print("Line{}: {}".format(count, line.strip()))
+            regex_date = r"('^\w\w\w\s\d\d$')"
             match_date = re.search(regex_date, 'line')
             if match is None:
                 print("No Match")
