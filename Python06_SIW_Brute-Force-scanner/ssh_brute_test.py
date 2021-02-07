@@ -120,8 +120,7 @@ else:
         for item in log_error:
             if re.match(pattern_failed_myregex, item):
                 print(item)
-            else:
-                print("No Authentication failure")
+
 
 
 
