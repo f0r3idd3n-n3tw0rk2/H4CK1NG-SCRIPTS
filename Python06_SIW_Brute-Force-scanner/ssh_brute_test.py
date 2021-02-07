@@ -62,13 +62,12 @@ if log_filename == 'default':
 
 
 
-            regex_date = (r'^\w\w\w\s\d\d$')
-            match_date = re.search(r'Mar', 'fp')
-            if match is None:
+
+            match_date = re.search(r'^\w\w\w\s\d\d$', 'fp')
+            if match_date is None:
                 print("No Match")
             else:
-                print(match)
-                print(regex_date)
+                print(match_date)
 
 
 
