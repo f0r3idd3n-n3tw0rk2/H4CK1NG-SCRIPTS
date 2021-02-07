@@ -55,7 +55,7 @@ if log_filename == 'default':
         my_iplist = re.findall(ip_myregex, log)
         ipcount = Counter(my_iplist)
         for k, v in ipcount.items():
-            if str(v) <= threshold:
+            if str(v) >= threshold:
                 print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print("IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
             else:
@@ -142,7 +142,7 @@ else:
         my_iplist = re.findall(ip_myregex, log)
         ipcount = Counter(my_iplist)
         for k, v in ipcount.items():
-            if str(v) <= threshold:
+            if str(v) >= threshold:
                 print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print("IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
             else:
