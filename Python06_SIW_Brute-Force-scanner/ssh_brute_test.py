@@ -115,7 +115,7 @@ else:
     with open(log_filename, "r") as fp:
         log_error = fp.readlines()
         for line in log_error:
-            if "pam_unix(sshd:auth): authentication failure;" in f:
+            if "pam_unix(sshd:auth): authentication failure;" in fp:
                 print(line)
 
 
