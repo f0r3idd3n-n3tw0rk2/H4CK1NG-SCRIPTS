@@ -57,7 +57,7 @@ if log_filename == 'default':
         for k, v in ipcount.items():
             if str(v) >= threshold:
                 print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
-                print("IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
+                print("IP-Address\t:", str(k), "\nBruteforce Attack", str(k), "is on Blacklist")
             else:
                 print("IP-Address\t:", str(k), "Threshold not reached")
     # regex and IP
