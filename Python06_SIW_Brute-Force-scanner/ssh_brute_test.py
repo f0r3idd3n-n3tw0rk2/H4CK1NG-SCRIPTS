@@ -129,6 +129,7 @@ else:
     for line in my_errorlist:
         count += 1
         print("Line{}: {}".format(count, line.strip().split(" ")))
+        print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
 
 
 
