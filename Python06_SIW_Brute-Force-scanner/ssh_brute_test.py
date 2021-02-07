@@ -42,7 +42,7 @@ ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
 date_myregex = r''
 failed_myregex = re.compile(r"\bFailed\b")
 pattern_failed_myregex = r"Failed"
-sequence_failed_myregex = "Failed"
+
 
 
 ##################################################################
@@ -118,8 +118,8 @@ else:
         log_error = fp.read()
         my_error_list = re.split(pattern_failed_myregex, log_error)
         for item in log_error:
-            if re.match(pattern_failed_myregex, sequence_failed_myregex):
-                print(my_error_list)
+            if re.match(pattern_failed_myregex, item):
+                print(item)
             else:
                 print("No Authentication failure")
 
