@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# 1.) Import modules
+# 1.) Import modules for this python script
 
 import re
 import sys
@@ -10,7 +10,7 @@ from re import match
 from collections import Counter
 
 
-# class Colors
+# class Colors to mark the print lines with specified color
 class bcolors:
     CBLUE = '\33[34m'
     CRED = '\33[31m'
@@ -18,7 +18,7 @@ class bcolors:
 
 
 # 2.) Define the variable
-# use argument for input
+# enter the logfile and the treshold for the analyzing task
 
 print(bcolors.CGREEN, "Server Logfile must be in folder ->>>> DEFAULT: server_logfile_test.txt")
 print(bcolors.CGREEN, "Default Treshold ->>>> 5 Times Error Login")
@@ -46,7 +46,7 @@ if log_filename == 'default':
 
 
 
-    #regex and IP
+    #regex to search for IP-Address in the file
 
     ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
 
@@ -61,6 +61,30 @@ if log_filename == 'default':
             else:
                 print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
     # regex and IP
+
+
+
+else:
+    print("[+] Using", log_filename, "Logfile in Folder")
+    print("[+] Loading Server Logfile\t:" + log_filename)
+    time.sleep(1.5)  # Pause 5.5 seconds
+
+    # regex and IP
+
+    ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+
+    with open(log_filename) as f:
+        log = f.read()
+        my_iplist = re.findall(ip_myregex, log)
+        ipcount = Counter(my_iplist)
+        for k, v in ipcount.items():
+            if str(v) >= threshold:
+                print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
+                print(bcolors.CRED, "IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
+            else:
+                print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
+    # regex and IP
+
 
 
 
@@ -126,28 +150,6 @@ if log_filename == 'default':
     #print("IP-Adress\t:", str(IP))
 
 
-else:
-    print("[+] Using", log_filename, "Logfile in Folder")
-    print("[+] Loading Server Logfile\t:" + log_filename)
-    time.sleep(1.5)  # Pause 5.5 seconds
-
-
-
-    #regex and IP
-
-    ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
-
-    with open(log_filename) as f:
-        log = f.read()
-        my_iplist = re.findall(ip_myregex, log)
-        ipcount = Counter(my_iplist)
-        for k, v in ipcount.items():
-            if str(v) >= threshold:
-                print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
-                print(bcolors.CRED, "IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
-            else:
-                print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
-    # regex and IP
 
 
 
