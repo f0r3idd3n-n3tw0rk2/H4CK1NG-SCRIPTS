@@ -142,7 +142,7 @@ else:
         my_iplist = re.findall(myregex, log)
         ipcount = Counter(my_iplist)
         for k, v in ipcount.items():
-            if str(v) == str(threshold):
+            if str(v) <= str(threshold):
                 print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print("IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
             else:
