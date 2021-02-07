@@ -20,14 +20,14 @@ class bcolors:
 # 2.) Define the variable
 # use argument for input
 
-print(bcolors.CGREEN, "Default Server Logfile must be in folder ->>>> server_logfile_test.txt")
-print(bcolors.CGREEN, "Default Treshold ->>>> 5x Error Login")
+print(bcolors.CGREEN, "Server Logfile must be in folder ->>>> DEFAULT: server_logfile_test.txt")
+print(bcolors.CGREEN, "Default Treshold ->>>> 5 Times Error Login")
 
 print("Please Enter the logfile to analyze or type default\t:")
 log_filename = input()
-#print("Please Enter the Threshold for failed Login attempts\t:")
-#treshold = input()
-threshold = 5
+print("Please Enter the Threshold for failed Login attempts\t:")
+threshold = input()
+#threshold = 5
 brute_force = 'Failed'
 
 
@@ -48,14 +48,14 @@ if log_filename == 'default':
 
     #regex and IP
 
-    myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+    ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
 
     with open(default_logfile) as f:
         log = f.read()
-        my_iplist = re.findall(myregex, log)
+        my_iplist = re.findall(ip_myregex, log)
         ipcount = Counter(my_iplist)
         for k, v in ipcount.items():
-            if str(v) == str(threshold):
+            if str(v) <= str(threshold):
                 print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print("IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
             else:
@@ -135,11 +135,11 @@ else:
 
     #regex and IP
 
-    myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+    ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
 
     with open(log_filename) as f:
         log = f.read()
-        my_iplist = re.findall(myregex, log)
+        my_iplist = re.findall(ip_myregex, log)
         ipcount = Counter(my_iplist)
         for k, v in ipcount.items():
             if str(v) <= str(threshold):
