@@ -64,7 +64,7 @@ if log_filename == 'default':
             if match is None:
                 print("No Match")
             else:
-                print(type(match))
+                print(match)
 
 
 
