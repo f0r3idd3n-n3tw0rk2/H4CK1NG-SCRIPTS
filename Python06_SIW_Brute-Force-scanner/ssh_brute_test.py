@@ -99,6 +99,33 @@ else:
     # regex and IP
 
 
+
+
+
+
+
+
+
+
+    # regex to search for Line and Error in the file
+    # open the filename, read through, make a list with all findings of "Failed" in variable log and count it
+    count = 0
+    print("\nUsing for loop")
+
+    with open(log_filename, "r") as fp:
+        log_error = fp.readlines()
+        for line in log_error:
+            if "pam_unix(sshd:auth): authentication failure;" in f:
+                print(line)
+
+
+
+
+
+
+
+
+
 #open the filename, read through, make a list with all findings of IP adresses in variable log and count it
     with open(log_filename) as f:
         log = f.read()
@@ -119,16 +146,14 @@ else:
 
 
 
-#regex to search for Line and Error in the file
-#open the filename, read through, make a list with all findings of "Failed" in variable log and count it
-    count = 0
-    print("\nUsing for loop")
 
-    with open("log_filename", "r") as fp:
-        log_error = fp.readlines()
-        for line in log_error:
-            if "pam_unix(sshd:auth): authentication failure;" in f:
-                print(line)
+
+
+
+
+
+
+
         #my_errorlist = re.findall(failed_myregex, log_error)
     #for line in my_errorlist:
         #count += 1
