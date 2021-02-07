@@ -126,9 +126,9 @@ else:
     with open(log_filename) as fp:
         log_error = fp.read()
         my_errorlist = re.findall(failed_myregex, log_error)
-        for line in my_errorlist:
-            count += 1
-            print("Line{}: {}".format(count, line.strip()), log_error)
+    for line in my_errorlist:
+        count += 1
+        print("Line{}: {}".format(count, line.strip()), log_error)
 
 
 
