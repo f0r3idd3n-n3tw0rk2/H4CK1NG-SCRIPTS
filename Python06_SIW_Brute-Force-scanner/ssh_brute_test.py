@@ -119,7 +119,7 @@ else:
         my_error_list = re.split(pattern_failed_myregex, log_error)
         for item in log_error:
             if re.match(pattern_failed_myregex, sequence_failed_myregex):
-                print(item)
+                print(my_error_list)
             else:
                 print("No Authentication failure")
 
