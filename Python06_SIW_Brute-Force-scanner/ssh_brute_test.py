@@ -127,8 +127,40 @@ if log_filename == 'default':
 
 
 else:
+    print("[+] Loading Server Logfile")
+    print("[+] Using", log_filename, "Logfile in Folder")
+    time.sleep(1.5)  # Pause 5.5 seconds
+
     print("[+] Loading Server Logfile\t:" + log_filename)
     time.sleep(1.5)  # Pause 5.5 seconds
+
+
+
+    #regex and IP
+
+    myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+
+    with open(log_filename) as f:
+        log = f.read()
+        my_iplist = re.findall(myregex, log)
+        ipcount = Counter(my_iplist)
+        for k, v in ipcount.items():
+            if str(v) == threshold:
+                print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
+                print("IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
+            else:
+                print("IP-Address\t:", str(k), "Threshold not reached")
+    # regex and IP
+
+
+
+
+
+
+
+
+
+
     with open(log_filename) as f:
         lines = f.read().splitlines()
 
