@@ -118,7 +118,7 @@ else:
         log_error = fp.read()
         my_error_list = re.search(pattern_failed_myregex, log_error)
         for item in my_error_list:
-            if re.match(pattern_failed_myregex, log_error):
+            if re.match(r'Failed', log_error):
                 print(item)
 
 
