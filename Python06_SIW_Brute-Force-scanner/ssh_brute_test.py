@@ -113,7 +113,7 @@ else:
     print("\nUsing for loop")
 
     with open(log_filename, "r") as fp:
-        log_error = fp.readlines()
+        log_error = fp.read()
         for line in log_error:
             if "pam_unix(sshd:auth): authentication failure;" in fp:
                 print(line)
