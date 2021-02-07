@@ -43,6 +43,7 @@ if log_filename == 'default':
     default_logfile = 'server_logfile_test.txt'
 
 
+
     #regex and IP
 
     myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
@@ -53,7 +54,8 @@ if log_filename == 'default':
         ipcount = Counter(my_iplist)
         for k, v in ipcount.items():
             print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
-
+            if str(v) == threshold:
+                print(k, "is on Blacklist")
     # regex and IP
 
 
@@ -62,22 +64,22 @@ if log_filename == 'default':
 
 
     # Using for loop
-    count = 0
-    print("\nUsing for loop")
+    #count = 0
+    #print("\nUsing for loop")
 
-    with open(default_logfile) as fp:
-        for line in fp:
-            count += 1
-            print("Line{}: {}".format(count, line.strip()))
-
-
+    #with open(default_logfile) as fp:
+        #for line in fp:
+            #count += 1
+            #print("Line{}: {}".format(count, line.strip()))
 
 
-            match_date = re.search(r'Mar$', line)
-            if match_date is None:
-                print("No Match")
-            else:
-                print(match_date)
+
+
+            #match_date = re.search(r'Mar$', line)
+            #if match_date is None:
+                #print("No Match")
+            #else:
+                #print(match_date)
 
 
 
