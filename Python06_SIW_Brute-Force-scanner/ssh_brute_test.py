@@ -43,10 +43,22 @@ if log_filename == 'default':
     lineList = [line.rstrip('\n') for line in open(default_logfile)]
     lineList2 = print(lineList[1])
 
-    regex = r"('^\w\w\w\s\d\d$')"
-    match = re.search(regex, 'lineList2')
-    if match is None:
-        print("No Match")
+    #regex = r"('^\w\w\w\s\d\d$')"
+    #match = re.search(regex, 'lineList2')
+    #if match is None:
+       # print("No Match")
+
+
+
+
+    # Using for loop
+    count = 0
+    print("\nUsing for loop")
+
+    with open(default_logfile) as fp:
+        for line in fp:
+            count += 1
+            print("Line{}: {}".format(count, line.strip()))
 
 
 
@@ -112,24 +124,24 @@ else:
 
 
 
-def search(log_filename, brute_force):
+#def search(log_filename, brute_force):
 
 
-    for i in range(len(lines)):
-        if lines[i] == brute_force:
-            return True
-        return False
+    #for i in range(len(lines)):
+        #if lines[i] == brute_force:
+           # return True
+        #return False
 
-    login_list = lines
-
-
-    if search(login_list, brute_force):
-        print("[!] Brute Force Detection")
-    else:
-        print("[+] All good. No Brute Force On Server.")
+   # login_list = lines
 
 
-search(brute_force, log_filename)
+    #if search(login_list, brute_force):
+       # print("[!] Brute Force Detection")
+    #else:
+        #print("[+] All good. No Brute Force On Server.")
+
+
+#search(brute_force, log_filename)
 
 
 
