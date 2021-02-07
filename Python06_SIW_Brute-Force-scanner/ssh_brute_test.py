@@ -57,7 +57,7 @@ if log_filename == 'default':
                 print("IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print(str(k), "is on Blacklist")
             else:
-                print(str(k), "Threshold not reached")
+                print("IP-Address\t:", str(k), "Threshold not reached")
     # regex and IP
 
 
