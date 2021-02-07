@@ -58,12 +58,12 @@ if log_filename == 'default':
     with open(default_logfile) as fp:
         for line in fp:
             count += 1
-            print("Line{}: {}".format(count, str(line.strip())))
+            print("Line{}: {}".format(count, line.strip()))
 
 
 
-            regex_date = r"('^\w\w\w\s\d\d$')"
-            match_date = re.search(regex_date, 'fp')
+            #regex_date = r"('^\w\w\w\s\d\d$')"
+            match_date = re.search(r'Mar', 'fp')
             if match is None:
                 print("No Match")
             else:
