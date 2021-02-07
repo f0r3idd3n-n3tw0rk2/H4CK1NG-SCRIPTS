@@ -81,7 +81,7 @@ if log_filename == 'default':
     with open(default_logfile) as fp:
         for line in fp:
             count += 1
-            print("Line{}: {}".format(count, line.strip()))
+            print("Line{}: {}".format(count, line.strip().split(" ")))
 
 
 
@@ -128,7 +128,7 @@ else:
         my_errorlist = re.findall(failed_myregex, log_error)
     for line in my_errorlist:
         count += 1
-        print("Line{}: {}".format(count, line.strip()), log_error)
+        print("Line{}: {}".format(count, line.strip().split(" ")))
 
 
 
