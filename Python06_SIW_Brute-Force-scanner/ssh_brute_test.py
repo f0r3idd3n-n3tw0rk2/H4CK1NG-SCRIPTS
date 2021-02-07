@@ -130,7 +130,7 @@ else:
             log_error = line.strip()
             my_errorlist = re.findall(failed_myregex, log_error)
         for k in my_errorlist:
-            print(my_errorlist)
+            print("Line{}: {}".format(count, line.strip()), log_error)
 
 
 
