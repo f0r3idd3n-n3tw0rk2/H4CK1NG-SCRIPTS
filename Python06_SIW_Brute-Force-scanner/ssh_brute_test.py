@@ -124,13 +124,12 @@ else:
     print("\nUsing for loop")
 
     with open(log_filename) as fp:
-        for line in fp:
+        log_error = fp.read()
+        my_errorlist = re.findall(failed_myregex, log_error)
+        for line in my_errorlist:
             count += 1
-            #print("Line{}: {}".format(count, line.strip()))
-            log_error = line.strip()
-            my_errorlist = re.findall(failed_myregex, log_error)
-        for k in my_errorlist:
             print("Line{}: {}".format(count, line.strip()), log_error)
+
 
 
 
