@@ -8,7 +8,7 @@ import sys
 failed_logins = int(sys.argv[1])
 
 if failed_logins != 0:
-    with open("auth.log", "r") as f:
+    with open("server_logfile.txt", "r") as f:
         log_lines = f.readlines()
         # print(type(content))
         ips_list = []
