@@ -60,7 +60,7 @@ if log_filename == 'default':
             count += 1
             print("Line{}: {}".format(count, line.strip()))
             regex_date = r"('^\w\w\w\s\d\d$')"
-            match_date = re.search(regex_date, 'line')
+            match_date = re.search(regex_date, 'fp')
             if match is None:
                 print("No Match")
             else:
