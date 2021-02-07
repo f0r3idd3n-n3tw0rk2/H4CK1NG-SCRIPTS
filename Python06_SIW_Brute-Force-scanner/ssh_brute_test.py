@@ -58,7 +58,7 @@ if log_filename == 'default':
     with open(default_logfile) as fp:
         for line in fp:
             count += 1
-            print("Line{}: {}".format(count, line.strip()))
+            print("Line{}: {}".format(count, str(line.strip())))
 
 
 
