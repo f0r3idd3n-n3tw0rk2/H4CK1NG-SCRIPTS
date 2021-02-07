@@ -114,9 +114,9 @@ else:
 
     with open(log_filename, "r") as fp:
         log_error = fp.read()
-        my_error_list = re.split(r'\[[^R]\w+\s\w]', log_error)
+        my_error_list = re.split(failed_myregex, log_error)
         for item in log_error:
-            if "pam_unix(sshd:auth): authentication failure;" in fp:
+            if failed_myregex in fp:
                 print(item)
             else:
                 print("No Authentication failure")
