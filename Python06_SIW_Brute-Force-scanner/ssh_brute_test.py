@@ -40,7 +40,7 @@ brute_force = 'Failed'
 #Regular Expression for parsing the logfile
 ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
 date_myregex = r''
-failed_myregex = r''
+failed_myregex = re.compile(r"\bFailed\b")
 
 
 ##################################################################
@@ -124,9 +124,13 @@ else:
     print("\nUsing for loop")
 
     with open(log_filename) as fp:
-        for line in fp:
-            count += 1
-            print("Line{}: {}".format(count, line.strip()))
+        #for line in fp:
+            #count += 1
+            #print("Line{}: {}".format(count, line.strip()))
+        log_error = fp.read()
+        my_errorlist = re.findall(failed_myregex, log_error)
+        for k in my_errorlist:
+            print(my_errorlist)
 
 
 
