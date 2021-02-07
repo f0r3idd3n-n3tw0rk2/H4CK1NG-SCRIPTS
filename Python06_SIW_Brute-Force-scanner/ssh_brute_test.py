@@ -59,6 +59,7 @@ if log_filename == 'default':
                 print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print(bcolors.CRED, "IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
             else:
+                print(bcolors.CGREEN, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
     # regex and IP
 
@@ -82,6 +83,7 @@ else:
                 print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print(bcolors.CRED, "IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
             else:
+                print(bcolors.CGREEN, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
     # regex and IP
 
