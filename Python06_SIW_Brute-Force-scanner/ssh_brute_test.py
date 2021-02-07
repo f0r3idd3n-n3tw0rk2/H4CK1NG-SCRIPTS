@@ -110,13 +110,14 @@ else:
     # regex to search for Line and Error in the file
     # open the filename, read through, make a list with all findings of "Failed" in variable log and count it
     count = 0
-    print("\nUsing for loop")
+    print("\nUsing for loop for Errors")
 
     with open(log_filename, "r") as fp:
         log_error = fp.read()
-        for line in log_error:
+        my_error_list = re.split(r'\[[^R]\w+\s\w]', log_error)
+        for item in log_error:
             if "pam_unix(sshd:auth): authentication failure;" in fp:
-                print(line)
+                print(item)
 
 
 
