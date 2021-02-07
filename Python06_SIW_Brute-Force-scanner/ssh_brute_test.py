@@ -116,8 +116,8 @@ else:
 
     with open(log_filename, "r") as fp:
         log_error = fp.read()
-        my_error_list = re.split(pattern_failed_myregex, log_error)
-        for item in log_error:
+        my_error_list = re.search(pattern_failed_myregex, log_error)
+        for item in my_error_list:
             if re.match(pattern_failed_myregex, item):
                 print(item)
 
