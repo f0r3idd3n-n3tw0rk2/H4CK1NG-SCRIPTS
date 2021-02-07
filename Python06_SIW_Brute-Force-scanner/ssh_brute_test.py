@@ -30,26 +30,26 @@ threshold = input()
 #threshold = 5
 brute_force = 'Failed'
 
+#Regular Expression for parsing the logfile
+ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+date_myregex = r''
+failed_myregex = r''
 
-# print("Server Logfile will be analyzed please wait....")
-# time.sleep(3.5)    # Pause 5.5 seconds
-
-# for i in tqdm.tqdm(range(200)):
-#    time.sleep(0.01)
-# or other long operations
-
+##################################################################
+#if clause for the choice default logfile: server_logfile_test.txt
 if log_filename == 'default':
     print("[+] Loading Server Logfile")
     print("[+] Using default Logfile in Folder")
     time.sleep(1.5)  # Pause 5.5 seconds
+    #for i in tqdm.tqdm(range(200)):
+    # time.sleep(0.01)
     default_logfile = 'server_logfile_test.txt'
 
 
 
-    #regex to search for IP-Address in the file
-
-    ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
-
+#regex to search for IP-Address in the file
+#ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+#open the filename, read through, make a list with all findings of IP adresses in variable log and count it
     with open(default_logfile) as f:
         log = f.read()
         my_iplist = re.findall(ip_myregex, log)
@@ -61,19 +61,22 @@ if log_filename == 'default':
             else:
                 print(bcolors.CGREEN, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
-    # regex and IP
+#end of regex and IP
 
 
-
+#########################################################
+#else clause for the choice own logfile to parse through
 else:
     print("[+] Using", log_filename, "Logfile in Folder")
     print("[+] Loading Server Logfile\t:" + log_filename)
     time.sleep(1.5)  # Pause 5.5 seconds
+    # for i in tqdm.tqdm(range(200)):
+    # time.sleep(0.01)
 
     # regex and IP
 
-    ip_myregex = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
 
+#open the filename, read through, make a list with all findings of IP adresses in variable log and count it
     with open(log_filename) as f:
         log = f.read()
         my_iplist = re.findall(ip_myregex, log)
@@ -85,7 +88,7 @@ else:
             else:
                 print(bcolors.CGREEN, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
-    # regex and IP
+#end of regex and IP
 
 
 
