@@ -118,6 +118,8 @@ else:
         for item in log_error:
             if "pam_unix(sshd:auth): authentication failure;" in fp:
                 print(item)
+            else:
+                print("No Authentication failure")
 
 
 
