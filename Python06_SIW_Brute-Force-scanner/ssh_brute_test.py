@@ -124,10 +124,11 @@ else:
     count = 0
     print("\nUsing for loop")
 
-    with open(log_filename) as fp:
-        log_error = fp.read()
-        if "pam_unix(sshd:auth): authentication failure;" in f:
-            print(f)
+    with open(log_filename, "r") as fp:
+        log_error = fp.readlines()
+        for line in log_error:
+            if "pam_unix(sshd:auth): authentication failure;" in f:
+                print(line)
         #my_errorlist = re.findall(failed_myregex, log_error)
     #for line in my_errorlist:
         #count += 1
