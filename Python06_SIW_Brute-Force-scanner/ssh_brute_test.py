@@ -59,6 +59,10 @@ if log_filename == 'default':
         for line in fp:
             count += 1
             print("Line{}: {}".format(count, line.strip()))
+
+            line2 = print("Line{}: {}".format(count, line.strip()))
+            print(line2)
+
             regex_date = r"('^\w\w\w\s\d\d$')"
             match_date = re.search(regex_date, 'fp')
             if match is None:
