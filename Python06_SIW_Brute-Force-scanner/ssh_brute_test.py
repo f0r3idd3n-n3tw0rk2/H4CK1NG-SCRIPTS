@@ -117,7 +117,7 @@ else:
             if "pam_unix(sshd:auth): authentication failure;" in item:
                 #print(item)
                 item = item.strip().split(" ")
-
+                print(item[3])
 
                 ########copy-paste######
             with open(log_filename) as f:
