@@ -148,7 +148,7 @@ else:
         log_error = fp.readlines()
         #my_error_list = re.search(pattern_failed_myregex, log_error)
         for item in log_error:
-            if re.match(r'Failed', item):
+            if "pam_unix" in item:
                 print(item)
 
 
