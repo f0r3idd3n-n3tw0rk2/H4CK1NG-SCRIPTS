@@ -121,11 +121,11 @@ else:
 
 
 #open the filename, read through, make a list with all findings of IP adresses in variable log and count it
-    with open(log_filename) as f:
-        log = f.read()
+    #with open(log_filename) as f:
+        #log = f.read()
 
-        my_iplist = re.findall(ip_myregex, log)
-        ipcount = Counter(my_iplist)
+        #my_iplist = re.findall(ip_myregex, log)
+        #ipcount = Counter(my_iplist)
         #for k, v in ipcount.items():
             #if str(v) >= threshold:
                 #print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
@@ -157,7 +157,7 @@ else:
                 with open(log_filename) as f:
                     log = f.read()
                 my_iplist = re.findall(ip_myregex, log)
-                #ipcount = Counter(my_iplist)
+                ipcount = Counter(my_iplist)
             for k, v in ipcount.items():
                 if str(v) >= threshold:
                     print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
