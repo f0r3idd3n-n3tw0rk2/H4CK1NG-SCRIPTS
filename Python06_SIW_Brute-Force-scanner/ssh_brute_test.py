@@ -150,7 +150,7 @@ else:
         for item in log_error:
             if "pam_unix(sshd:auth): authentication failure;" in item:
                 print(item)
-                line = line.strip().split(" ")
+                item = item.strip().split(" ")
 
 
                 ########copy-paste######
