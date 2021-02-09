@@ -149,7 +149,7 @@ else:
         #my_error_list = re.search(pattern_failed_myregex, log_error)
         for item in log_error:
             if "pam_unix(sshd:auth): authentication failure;" in item:
-                print(item)
+                #print(item)
                 item = item.strip().split(" ")
 
 
