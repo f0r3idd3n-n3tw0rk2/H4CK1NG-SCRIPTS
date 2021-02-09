@@ -150,9 +150,12 @@ else:
         for item in log_error:
             if "pam_unix(sshd:auth): authentication failure;" in item:
                 print(item)
+                line = line.strip().split(" ")
+
+
                 ########copy-paste######
-            my_iplist = re.findall(ip_myregex, log)
-            ipcount = Counter(my_iplist)
+                my_iplist = re.findall(ip_myregex, log)
+                ipcount = Counter(my_iplist)
             for k, v in ipcount.items():
                 if str(v) >= threshold:
                     print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
