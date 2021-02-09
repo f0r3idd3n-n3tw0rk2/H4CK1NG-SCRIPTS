@@ -122,6 +122,7 @@ else:
                 ########copy-paste######
             with open(log_filename) as f:
                 log = f.read()
+                log_error = fp.readlines()
                 my_iplist = re.findall(ip_myregex, log)
                 ipcount = Counter(my_iplist)
         for items in item:
