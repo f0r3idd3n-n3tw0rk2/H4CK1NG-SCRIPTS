@@ -113,11 +113,13 @@ else:
     with open(log_filename, "r") as fp:
         log_error = fp.readlines()
         #my_error_list = re.search(pattern_failed_myregex, log_error)
+        login_failure_ips = []
         for item in log_error:
             if "pam_unix(sshd:auth): authentication failure;" in item:
                 #print(item)
-                item = item.strip().split(" ")
+                login_failure_ips.append(item.strip().split(" "))
                 date = print(item[2])
+                print(login_failure_ips)
 
                 ########copy-paste######
             with open(log_filename) as f:
