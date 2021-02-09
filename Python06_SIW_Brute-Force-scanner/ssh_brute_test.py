@@ -145,9 +145,9 @@ else:
     print("\nUsing for loop for Errors")
 
     with open(log_filename, "r") as fp:
-        log_error = fp.read()
-        my_error_list = re.search(pattern_failed_myregex, log_error)
-        for item in my_error_list:
+        log_error = fp.readlines()
+        #my_error_list = re.search(pattern_failed_myregex, log_error)
+        for item in log_error:
             if re.match(r'Failed', item):
                 print(item)
 
