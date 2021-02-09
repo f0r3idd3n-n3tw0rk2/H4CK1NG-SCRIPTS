@@ -162,6 +162,7 @@ else:
             if str(v) >= threshold:
                 print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print(bcolors.CRED, "IP-Address\t:", str(k), "Bruteforce Attack", str(k), "is on Blacklist")
+                print(item)
             else:
                 print(bcolors.CGREEN, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
                 print(bcolors.CGREEN, "IP-Address\t:", str(k), "Threshold not reached")
