@@ -155,7 +155,7 @@ else:
 
                 ########copy-paste######
                 my_iplist = re.findall(ip_myregex, log)
-                ipcount = Counter(my_iplist)
+                #ipcount = Counter(my_iplist)
             for k, v in ipcount.items():
                 if str(v) >= threshold:
                     print(bcolors.CRED, "IP Address " + "=> " + str(k) + " " + "Count " + "=> " + str(v))
