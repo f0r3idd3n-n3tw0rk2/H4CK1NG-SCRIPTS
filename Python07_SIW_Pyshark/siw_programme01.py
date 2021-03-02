@@ -9,7 +9,7 @@ for packet in capture:
     if packet.http.request not in request_uri:
         request_uri.append(packet.http.request)
 
-print(request_uri)
+    print(request_uri)
 
 
 
