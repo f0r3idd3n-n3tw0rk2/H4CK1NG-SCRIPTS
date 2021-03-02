@@ -7,9 +7,9 @@ capture = pyshark.FileCapture('data-exfiltration1.pcap', display_filter='http.re
 
 for packet in capture:
     if packet.http.request_full_uri not in request_uri:
-        request_uri.append(packet.http.request_full_uri)
+        request_uri.append(packet.http.request_full_uri.split('='[-1]))
 
-    print(request_uri[-1])
+    print(request_uri)
 
 
 
